@@ -1,0 +1,198 @@
+/* roboto-regular - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./statics/fonts/RobotoLatin/roboto-v20-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-italic - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('./statics/fonts/RobotoLatin/roboto-v20-latin-italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-italic.woff') format('woff'), /* Modern Browsers */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-italic.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-500 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./statics/fonts/RobotoLatin/roboto-v20-latin-500.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-500.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-500italic - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('./statics/fonts/RobotoLatin/roboto-v20-latin-500italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-500italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-500italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-500italic.woff') format('woff'), /* Modern Browsers */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-500italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./statics/fonts/RobotoLatin/roboto-v20-latin-500italic.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-regular - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./statics/fonts/roboto-v20-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('./statics/fonts/roboto-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./statics/fonts/roboto-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./statics/fonts/roboto-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('./statics/fonts/roboto-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./statics/fonts/roboto-v20-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-slab-regular - latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/RobotoSlab/roboto-slab-v12-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/RobotoSlab/roboto-slab-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/RobotoSlab/roboto-slab-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/RobotoSlab/roboto-slab-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/RobotoSlab/roboto-slab-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/RobotoSlab/roboto-slab-v12-latin-regular.svg#RobotoSlab') format('svg'); /* Legacy iOS */
+}
+
+/* roboto-slab-500 - latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/RobotoSlab/roboto-slab-v12-latin-500.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/RobotoSlab/roboto-slab-v12-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/RobotoSlab/roboto-slab-v12-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/RobotoSlab/roboto-slab-v12-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/RobotoSlab/roboto-slab-v12-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/RobotoSlab/roboto-slab-v12-latin-500.svg#RobotoSlab') format('svg'); /* Legacy iOS */
+}
+
+
+body *:not(.fa):not(.fas):not(.fab){
+   font-family: 'Roboto Slab' !important;
+}
+
+body {
+  background-image: url("../statics/bg1.png");
+}
+
+.topnav {
+  background-color: #870000;
+  color: white;
+}
+
+a .social-icon{
+  color: blue;
+}
+
+.emoji
+{
+  width: 1.1em;
+  height: 1.1em;
+  vertical-align: baseline;
+}
+
+/*h1, h2{
+  font-weight: bold;
+}*/
+
+.easy-icon{
+  background: url("../statics/icons/easy-black.png") no-repeat;
+  width: 32px;
+  height: 32px;
+  background-size:contain;;
+  display: inline-grid;
+  vertical-align: top;
+}
+
+.easy-icon:hover{
+  background: url("../statics/icons/easy.png") no-repeat;
+  width: 32px;
+  height: 32px;
+  background-size:contain;;
+  display: inline-grid;
+  vertical-align: top;
+}
+
+/*.easy-icon img{
+  /*background: url('../statics/icons/easy.png');*/
+  /*max-height: 1em;
+  max-width: 1em;*/
+  /*max-height: 15px;*/
+  /*display: flex;*/
+  /* Other styles here */
+/*}*/
+
+.profile-photo img
+{
+  width: 90%;
+  height: 90%;
+  max-width: 60vw;
+  object-fit: cover;
+  /*margin-left: auto;
+  margin-right: auto;*/
+}
+
+.homepage-content{
+  margin-top: 5em;
+}
+
+#index{
+  vertical-align: middle;
+  margin-top: -.26em;
+}
+
+a {
+  text-decoration: none;
+  color: #9b0000;
+}
+/*a:link{  color: #607D8B;}*/
+
+/* Social Icons */
+i.fab, i.fa, i.fas {color: #222; padding-right: 5px;}
+i.fa-gitlab:hover{color: #E65100;}
+i.fa-github:hover{color: #333388;}
+i.fa-envelope:hover{color: #1E88E5;}
+i.fa-youtube:hover{color: #ab000d;}
+i.fa-telegram:hover{color: #006db3;}
+
+.footer {
+  margin-top: 2em;
+}
+
+.box{
+  background-color: white;
+  border-radius: .7vw;
+  border: solid 1px #ddd;
+  padding: .2em .8em .8em .8em;
+  margin-bottom: 2em;
+}
