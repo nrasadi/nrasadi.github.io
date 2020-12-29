@@ -185,6 +185,16 @@ i.fa-telegram:hover{color: #006db3;}
 
 .footer {
   margin-top: 2em;
+  padding: 20px 0 20px 0;
+  font-size: small;
+}
+
+.footer *{
+  color: #cdcccc;
+}
+
+.footer a{
+  color: red;
 }
 
 .box{
@@ -212,6 +222,7 @@ i.fa-telegram:hover{color: #006db3;}
     background-color:#870000;
   }
 }
+
 
 #main-content{
   /*margin-top: 0px;*/
