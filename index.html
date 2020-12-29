@@ -9,10 +9,14 @@
 <meta charset="utf-8">
 
 <link rel="stylesheet" href="./styles/w3.css">
-<script src="scripts/scripts.js"></script>
+<!-- <script src="scripts/scripts.js"></script> -->
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/script.js"></script>
 <script src="https://kit.fontawesome.com/4da492d6c3.js" crossorigin="anonymous"></script>
 <link href="assets/css/feather.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="./styles/style.css">
+<link rel="stylesheet" href="./styles/topnav.css">
 
 </head>
 <body>
@@ -22,22 +26,36 @@
 <!-- =================================================  -->
 
 <!-- Top Navigation Bar -->
-<div class="w3-container  w3-bar topnav">
- <h3><a href="about" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white w3-margin-right" onclick="gotopage('index')" id="index" style="padding-bottom:.5em;">
-   <b>Navid</b></a></h3>
- <a href="pages/research.html" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white" onclick="gotopage('research')" id="research">
-   Work & Research</a>
- <a href="pages/teaching.html" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white" onclick="gotopage('teaching')" id="teaching">
-   Teaching</a>
- <a href="pages/resources.html" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white" onclick="gotopage('resources')" id="resources">
-   Resources</a>
- <a href="pages/resources.html" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white" onclick="gotopage('resources')" id="resources">
-   Contact</a>
+<div class="topnav" id="main-topnav">
+  <h3><a href="about" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white w3-margin-right clearfix" onclick="gotopage('index')" id="index" style="padding-bottom:.5em;">
+    <b>Navid</b></a></h3>
+    <!-- <div class="topmenu"> -->
+      <a href="pages/research.html" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white" onclick="gotopage('research')" id="research">
+       Work & Research</a>
+      <a href="pages/teaching.html" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white" onclick="gotopage('teaching')" id="teaching">
+       Teaching</a>
+      <a href="pages/resources.html" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white" onclick="gotopage('resources')" id="resources">
+       Resources</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white" onclick="gotopage('resources')" id="resources">Contact</a>
+      <!-- <a href="javascript:void(0);" class=" w3-hide-large w3-hide-medium burger" onclick="burgermenu()" style="z-index: 100000;">
+        <i class="fa fa-bars"></i></a> -->
+
+        <div id="burger" onclick="burgermenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+    <!-- </div> -->
+
+
 </div>
 <!-- =================================================  -->
 
 <!-- Main Content -->
-<div class="w3-row-padding homepage-content w3-mobile">
+<div class="w3-row-padding homepage-content w3-mobile" id="main-content">
 
 <!-- Left Sidebar -->
 <div class="w3-col m12 l3 w3-mobile" style="">
@@ -135,6 +153,19 @@
 </div>
 <!-- <div id="footerDiv" style="margin-bottom:-20em; "><object type="text/html" data="pages/footer.html" style="width: 100%; margin-bottom:-100px"></object></div> -->
 
+
+<button onclick="topFunction()" id="toTopBtn" title="Go to Top" class="w3-button w3-card w3-circle">
+  <i class="fas fa-arrow-up w3-center" style="color:white;"></i>
+</button>
+
+
+<script type="text/javascript">
+var mybutton = document.getElementById("toTopBtn");
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {toTop()};
+
+window.onresize = windowSizeChanged;
+</script>
 
 </body>
 
