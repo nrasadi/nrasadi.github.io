@@ -1,0 +1,60 @@
+name:
+  firstname: Navidreza
+  lastname: Asadi
+  nickname: Navid
+
+status:
+  title: Graduate Student
+  place:
+    name: CE dept. Sharif Uni. of Tech. (SUT)
+    link: http://ce.sharif.edu
+  photo: Navid.jpg  # Put your profile picture inside statics/photos directory (Resize it to 500x500 before)
+
+contact:
+  address: EASY Lab, Room 507, CE Department, Sharif University of Technology, Tehran, Iran.
+  googlemap: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1020.5272096014382!2d51.35066905502277!3d35.70230391530531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQyJzA5LjMiTiA1McKwMjEnMDMuOSJF!5e0!3m2!1sen!2s!4v1609704470210!5m2!1sen!2s
+  calendly: https://calendly.com/nrasadi/15min
+  formspree: https://formspree.io/f/mrgoybop
+
+social:
+  - name: telegram
+    link: https://t.me/nrasadi
+    class: fab fa-telegram fa-2x
+  - name: youtube
+    link: /
+    class: fab fa-youtube fa-2x
+  - name: github
+    link: https://github.com/nrasadi
+    class: fab fa-github fa-2x
+  - name: gitlab
+    link: https://gitlab.com/nrasadi
+    class: fab fa-gitlab fa-2x
+  - name: tacacademy
+    link: https://tacacademy.github.io/
+    class: fas fa-2x easy-icon
+
+research_interests:
+  title: "My research interests include but not limited to the following:"
+  items:
+    - Pervasive (Edge/Fog/Cloud) Computing
+    - Machine Learning
+    - Computer Vision
+    - Smart Health
+    - Signal Processing
+
+hobbies:
+  title: "Besides being a computer engineer/scientist, I also follow other hobbies:"
+  items:
+    - name: Watching and playing basketball
+      icon: https://github.githubassets.com/images/icons/emoji/unicode/1f3c0.png
+      link:
+    - name: Reading books and poetries
+      icon: https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png
+      link:
+      desc: (Parsi (Persian) and English literatures)
+    - name: Listening to musics
+      icon: https://github.githubassets.com/images/icons/emoji/unicode/1f3b5.png
+      link:
+    - name: And surely, thinking of dreams!
+      icon: https://github.githubassets.com/images/icons/emoji/unicode/270c.png
+      link:

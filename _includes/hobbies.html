@@ -1,0 +1,21 @@
+{% assign hobbies = site.data.profile.hobbies %}
+<div class="w3-container box w3-mobile">
+  <!-- <h5>{{page.hobbies_title}}</h5> -->
+  <!-- {{hobbies | markdownify}} -->
+  <h5>{{hobbies.title}}</h5>
+  <ul>
+  {% for hobby in hobbies.items %}
+    <li>
+      {% if hobby.link %}
+      <a href="{{hobby.link}}" style="decoration:none;">
+        {{hobby.name}}
+      </a>
+      {% else %}
+        {{hobby.name}}
+      {% endif %}
+      <img src="{{hobby.icon}}" alt="" class="emoji"/>
+    </li>
+  {% endfor %}
+  </ul>
+
+</div>

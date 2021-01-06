@@ -1,0 +1,84 @@
+{% assign contact_vars = site.data.profile.contact %}
+
+<div id="contact-modal" class="w3-modal">
+ <div class="w3-modal-content w3-animate-zoom">
+  <div class="w3-container w3-black w3-text-red">
+    <div class="w3-row">
+      <div class="w3-col l10 w3-left"><h2>Contact</h2></div>
+      <!-- <div class="w3-col l1 m1 s2 w3-right  "
+        onclick="document.getElementById('contact-modal').style.display='none'"
+        id="close-btn">&times;
+     </div> -->
+      </span>
+    </div>
+
+ </div>
+
+  <div class="w3-bar w3-border-bottom w3-black">
+   <button class="tablink w3-bar-item w3-button w3-hover-none w3-hover-text-white" onclick="openContactTab(event, 'ContactForm')">Contact Form</button>
+   <button class="tablink w3-bar-item w3-button w3-hover-none w3-hover-text-white" onclick="openContactTab(event, 'Address')">Address</button>
+   <button class="tablink w3-bar-item w3-button w3-hover-none w3-hover-text-white" id="scheduleBtn"
+   onclick="Calendly.initPopupWidget({url: '{{contact_vars.calendly}}'});return false;">Schedule time with me</button>
+   <!-- <button class="tablink w3-bar-item w3-button" onclick="openContactTab(event, 'Schedule')">Schedule</button> -->
+  </div>
+
+  <div id="ContactForm" class="w3-container contactTab w3-margin-top">
+   <form class="w3-container" id="my-form" action="{{contact_vars.formspree}}" method="POST" name="Navid's form">
+
+   <div class="w3-row-padding w3-margin-bottom">
+     <div class="w3-col w3-half">
+
+
+    <label>Name</label>
+    <input class="w3-input w3-light-grey" type="text" required name="Name">
+</div><div class="w3-col w3-half">
+
+    <label>Email</label>
+    <input class="w3-input w3-light-grey" type="email" required name="Email">
+      </div>
+    </div>
+    <div class="w3-section w3-padding-left" style="padding-left:1em; padding-right:1em;">
+    <label>Subject</label>
+    <input class="w3-input w3-light-grey" type="text" required name="Subject">
+
+    <label>Message</label>
+    <textarea class="w3-input w3-light-grey" required name="Message"></textarea>
+
+    <!-- <input class="w3-input w3-light-grey" type="area" required name="message"> -->
+
+    <br>
+    <button id="my-form-button" class="w3-button w3-hover-black" style="background-color:#870000;color:white;"><i class="fa fa-send-o w3-text-white"></i>Send</button>
+    </div>
+    <p id="my-form-status"></p>
+
+  </form>
+
+  </div>
+
+  <div id="Address" class="w3-container contactTab">
+   <!-- <h1>Paris</h1> -->
+   <p> {{ contact_vars.address }} </p>
+   <div class="w3-center map-container">
+   <iframe src="{{contact_vars.googlemap}}"
+    width="500" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="map">
+   </iframe></div>
+  </div>
+
+  <div id="Schedule" class="w3-container contactTab" style="display:none">
+    <h4><b>Schedule a meeting with me</b></h4>
+
+    <!-- Calendly link widget begin -->
+    <div class="w3-center">
+    <a href="" class="w3-button" id="scheduleBtn"
+    onclick="Calendly.initPopupWidget({url: '{{contact_vars.calendly}}'});return false;">Schedule time with me</a>
+    </div>
+    <!-- Calendly link widget end -->
+
+  </div>
+
+  <div class="w3-container w3-light-grey w3-padding">
+   <button class="w3-button w3-right w3-white w3-border"
+   onclick="document.getElementById('contact-modal').style.display='none'">Close</button>
+  </div>
+ </div>
+</div>

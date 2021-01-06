@@ -1,0 +1,25 @@
+{% assign profile = site.data.profile %}
+{% assign social = profile.social %}
+
+<!-- Left Sidebar -->
+<div class=" profile-photo w3-center w3-mobile">
+  <!-- <img src="https://s.gravatar.com/avatar/04cfcefac35f36f6311d0906ea4790e6?s=270%27)" alt="" class="w3-padding w3-circle w3-image w3-hover-opacity"/> -->
+  <img src="{{site.url}}/statics/photos/{{profile.status.photo}}" alt="" class="w3-padding w3-card-3 w3-circle w3-image w3-hover-opacity" style="border-radius:35%;">
+
+  <div class="w3-container">
+    <h3 class="w3-center" ><b>{{profile.name.firstname}} {{profile.name.lastname}}</b></h3>
+    <span class="w3-text-darkgray">{{profile.status.title}}</span><br>
+    <a href="{{profile.status.place.link}}">{{profile.status.place.name}}</a>
+
+    <!-- Social Accounts -->
+    <div class="w3-row-padding w3-margin-top w3-mobile">
+      <a onclick="document.getElementById('contact-modal').style.display='block';openContactTab(event, 'ContactForm');">
+        <i class="fas fa-envelope fa-2x"></i></a>
+      {% for soc in social %}
+      <a href="{{soc.link}}"><i class="{{soc.class}}"></i></a>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+<!-- ======================================================================  -->

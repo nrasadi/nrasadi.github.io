@@ -1,0 +1,9 @@
+{% assign interests = site.data.profile.research_interests %}
+<div class="w3-container box w3-mobile">
+  <h5>{{interests.title}}</h5>
+  <ul>
+  {% for interest in interests.items %}
+  <li>{{interest}}</li>
+  {% endfor %}
+  </ul>
+</div>

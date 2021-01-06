@@ -1,0 +1,23 @@
+<div class="topnav" id="main-topnav">
+  <h3><a href="/" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white w3-margin-right clearfix" id="index" style="padding-bottom:.5em;">
+    <b>{{site.data.profile.name.nickname}}</b></a></h3>
+    <!-- <div class="topmenu"> -->
+    {% for item in site.data.header %}
+
+      <a href="{{ item.link }}" {% if page.url == item.link %}style="color: white;"{% endif %}
+        class="w3-bar-item w3-button w3-hover-none w3-hover-text-white" id="{{ item.link}}">
+        {{ item.name }}
+      </a>
+    {% endfor %}
+      <a class="w3-bar-item w3-button w3-hover-none w3-hover-text-white w3-text-white" onclick="document.getElementById('contact-modal').style.display='block';;openContactTab(event, 'ContactForm');" id="contactBtn">Contact</a>
+
+      <div id="burger" onclick="burgermenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+</div>

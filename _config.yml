@@ -1,0 +1,17 @@
+title: Navid Asadi
+name: My Jekyll Website
+url: http://localhost:4000
+dir_addrs:
+  statics: /statics/
+  photos: /statics/photos/
+  fonts: /statics/fonts/
+  icons: /statics/icons/
+  styles: /styles/
+  scripts: /scripts/
+
+
+kramdown:
+ input: GFM
+ auto_ids: true
+ hard_wrap: false
+ syntax_highlighter: rouge
