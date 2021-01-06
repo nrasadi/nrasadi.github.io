@@ -84,7 +84,13 @@
 
 /* roboto-slab-500 - latin */
 
+* {
+  margin: 0;
+}
 
+html, body {
+  height: 100%;
+}
 
 body *:not(.fa):not(.fas):not(.fab){
    font-family: 'Roboto Slab' !important;
@@ -177,7 +183,7 @@ a .social-icon{
 
 .homepage-content{
   margin-top: 5em;
-  margin-bottom: 7em;
+  /*margin-bottom: 7em;*/
 }
 
 #index{
@@ -199,11 +205,30 @@ i.fa-envelope:hover{color: #1E88E5;}
 i.fa-youtube:hover{color: #ab000d;}
 i.fa-telegram:hover{color: #006db3;}
 
+.wrapper {
+  min-height: 100%;
+  /*margin-bottom: -5em;*/
+  /*margin-bottom: -00px;*/
+}
+
+/*.wrapper:after{
+  content: "";
+  display: block;
+}*/
+
+/*.footer, .wrapper:after {
+  height: 100px;
+}*/
+
 .footer {
-  margin-top: 20em;
+  /*height: 100px;*/
+  height: auto;
+  /*margin-top: 1em;*/
+  /*max-height: 50%;*/
+  /*margin-top: 20em;*/
   padding: 20px 0 20px 0;
   font-size: small;
-  position: fixed;
+  /*position: absolute;*/
   width: 100%;
   bottom: 0;
   left: 0;
@@ -215,6 +240,13 @@ i.fa-telegram:hover{color: #006db3;}
 
 .footer a{
   color: red;
+}
+
+@media only screen and (max-width: 650px){
+  .footer, .wrapper:after {
+    height: 200px;
+  }
+
 }
 
 .box{

@@ -1,6 +1,16 @@
+{% assign nickname = site.data.profile.name.nickname %}
+{% assign fname = site.data.profile.name.firstname %}
 <div class="topnav" id="main-topnav">
   <h3><a href="/" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white w3-margin-right clearfix" id="index" style="padding-bottom:.5em;">
-    <b>{{site.data.profile.name.nickname}}</b></a></h3>
+    <b>
+      {% if nickname %}
+      {{nickname}}
+      {% elsif fname %}
+      {{fname}}
+      {% else %}
+      Home
+      {% endif %}
+    </b></a></h3>
     <!-- <div class="topmenu"> -->
     {% for item in site.data.header %}
 
