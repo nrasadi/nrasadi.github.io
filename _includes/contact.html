@@ -15,55 +15,72 @@
  </div>
 
   <div class="w3-bar w3-border-bottom w3-black">
+    {% if contact_vars.formspree or contact_vars.email or contact_vars.phone %}
    <button class="tablink w3-bar-item w3-button w3-hover-none w3-hover-text-white" onclick="openContactTab(event, 'ContactForm')">Contact Form</button>
+    {% endif %}
+    {% if contact_vars.address or contact_vars.googlemap %}
    <button class="tablink w3-bar-item w3-button w3-hover-none w3-hover-text-white" onclick="openContactTab(event, 'Address')">Address</button>
+    {% endif %}
+   {% if contact_vars.calendly %}
    <button class="tablink w3-bar-item w3-button w3-hover-none w3-hover-text-white" id="scheduleBtn"
    onclick="Calendly.initPopupWidget({url: '{{contact_vars.calendly}}'});return false;">Schedule time with me</button>
+   {% endif %}
    <!-- <button class="tablink w3-bar-item w3-button" onclick="openContactTab(event, 'Schedule')">Schedule</button> -->
   </div>
 
+  {% if contact_vars.formspree or contact_vars.email or contact_vars.phone %}
   <div id="ContactForm" class="w3-container contactTab w3-margin-top">
-   <form class="w3-container" id="my-form" action="{{contact_vars.formspree}}" method="POST" name="Navid's form">
+  {% if contact_vars.email %}
+    <p class="w3-margin"><i class="fas fa-envelope fa-x w3-text-black" aria-hidden="true"></i> {{contact_vars.email}} <br></p>
+  {% endif %}
+  {% if contact_vars.phone %}
+    <p class="w3-margin"><i class="fas fa-phone fa-x w3-text-black" aria-hidden="true"></i> {{contact_vars.phone }} <br> </p>
+  {% endif %}
+  {% if contact_vars.formspree %}
+    <form class="w3-container" id="my-form" action="{{contact_vars.formspree}}" method="POST" name="Navid's form">
 
-   <div class="w3-row-padding w3-margin-bottom">
-     <div class="w3-col w3-half">
-
-
-    <label>Name</label>
-    <input class="w3-input w3-light-grey" type="text" required name="Name">
-</div><div class="w3-col w3-half">
-
-    <label>Email</label>
-    <input class="w3-input w3-light-grey" type="email" required name="Email">
+      <div class="w3-row-padding w3-margin-bottom">
+      <div class="w3-col w3-half">
+      <label>Name</label>
+      <input class="w3-input w3-light-grey" type="text" required name="Name">
       </div>
-    </div>
-    <div class="w3-section w3-padding-left" style="padding-left:1em; padding-right:1em;">
-    <label>Subject</label>
-    <input class="w3-input w3-light-grey" type="text" required name="Subject">
+      <div class="w3-col w3-half">
+      <label>Email</label>
+      <input class="w3-input w3-light-grey" type="email" required name="Email">
+      </div>
+      </div>
+      <div class="w3-section w3-padding-left" style="padding-left:1em; padding-right:1em;">
+      <label>Subject</label>
+      <input class="w3-input w3-light-grey" type="text" required name="Subject">
 
-    <label>Message</label>
-    <textarea class="w3-input w3-light-grey" required name="Message"></textarea>
+      <label>Message</label>
+      <textarea class="w3-input w3-light-grey" required name="Message"></textarea>
 
-    <!-- <input class="w3-input w3-light-grey" type="area" required name="message"> -->
+      <!-- <input class="w3-input w3-light-grey" type="area" required name="message"> -->
 
-    <br>
-    <button id="my-form-button" class="w3-button w3-hover-black" style="background-color:#870000;color:white;"><i class="fa fa-send-o w3-text-white"></i>Send</button>
-    </div>
-    <p id="my-form-status"></p>
+      <br>
+      <button id="my-form-button" class="w3-button w3-hover-black" style="background-color:#870000;color:white;">
+        <i class="fa fa-send-o w3-text-white"></i>Send
+      </button>
+      </div>
+      <p id="my-form-status"></p>
 
-  </form>
-
+    </form>
+    {% endif %}
   </div>
-
+  {% endif %}
+  {% if contact_vars.address or contact_vars.googlemap %}
   <div id="Address" class="w3-container contactTab">
    <!-- <h1>Paris</h1> -->
-   <p> {{ contact_vars.address }} </p>
+   <p class="w3-margin-bottom"> {{ contact_vars.address }} </p>
+   {% if contact_vars.googlemap %}
    <div class="w3-center map-container">
    <iframe src="{{contact_vars.googlemap}}"
     width="500" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="map">
    </iframe></div>
+   {% endif %}
   </div>
-
+  {% endif %}
   <div id="Schedule" class="w3-container contactTab" style="display:none">
     <h4><b>Schedule a meeting with me</b></h4>
 

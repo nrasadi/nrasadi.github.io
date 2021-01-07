@@ -1,6 +1,16 @@
 {% assign profile = site.data.profile %}
+{% assign contact = profile.contact %}
 {% assign social = profile.social %}
 
+{% if contact.formspree or contact.email or contact.phone %}
+{% assign contact_tab = 'ContactForm'%}
+{% elsif contact.address or contact.googlemap %}
+{% assign contact_tab = 'Address'%}
+{% elsif contact.calendly %}
+{% assign contact_tab = 'schedule'%}
+{% else %}
+{% assign nocontact = "True" %}
+{% endif %}
 <!-- Left Sidebar -->
 <div class=" profile-photo w3-center w3-mobile">
   <!-- <img src="https://s.gravatar.com/avatar/04cfcefac35f36f6311d0906ea4790e6?s=270%27)" alt="" class="w3-padding w3-circle w3-image w3-hover-opacity"/> -->
@@ -13,10 +23,13 @@
 
     <!-- Social Accounts -->
     <div class="w3-row-padding w3-margin-top w3-mobile">
-      <a onclick="document.getElementById('contact-modal').style.display='block';openContactTab(event, 'ContactForm');">
+      {% if nocontact == False %}
+      <a title="Contact" onclick="document.getElementById('contact-modal').style.display='block';openContactTab(event, '{{contact_tab}}');">
         <i class="fas fa-envelope fa-2x"></i></a>
+      {% endif %}
+
       {% for soc in social %}
-      <a href="{{soc.link}}"><i class="{{soc.class}}"></i></a>
+      <a title="{{soc.name}}" href="{{soc.link}}"><i class="{{soc.class}}"></i></a>
       {% endfor %}
     </div>
 

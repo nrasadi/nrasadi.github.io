@@ -8,28 +8,33 @@ status:
   place:
     name: CE dept. Sharif Uni. of Tech. (SUT)
     link: http://ce.sharif.edu
-  photo: Navid.jpg  # Put your profile picture inside statics/photos directory (Resize it to 500x500 before)
+  photo: Navid.jpg  # Put your profile picture inside the statics/photos directory (Resize it to 500x500 before)
 
 contact:
+  email: info@gmail.com
+  phone: +001 55 33 11
   address: EASY Lab, Room 507, CE Department, Sharif University of Technology, Tehran, Iran.
   googlemap: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1020.5272096014382!2d51.35066905502277!3d35.70230391530531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQyJzA5LjMiTiA1McKwMjEnMDMuOSJF!5e0!3m2!1sen!2s!4v1609704470210!5m2!1sen!2s
   calendly: https://calendly.com/nrasadi/15min
   formspree: https://formspree.io/f/mrgoybop
 
 social:
-  - name: telegram
+  - name: Google Scholar
+    link: /
+    class: fas fa-graduation-cap fa-2x
+  - name: Telegram
     link: https://t.me/nrasadi
     class: fab fa-telegram fa-2x
-  - name: youtube
+  - name: Youtube
     link: /
     class: fab fa-youtube fa-2x
-  - name: github
+  - name: Github
     link: https://github.com/nrasadi
     class: fab fa-github fa-2x
-  - name: gitlab
+  - name: Gitlab
     link: https://gitlab.com/nrasadi
     class: fab fa-gitlab fa-2x
-  - name: tacacademy
+  - name: Tac Academy
     link: https://tacacademy.github.io/
     class: fas fa-2x easy-icon
 

@@ -32,6 +32,11 @@
 <!-- Top Navigation Bar -->
 
 
+
+
+
+
+
 <div class="topnav" id="main-topnav">
   <h3><a href="/" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white w3-margin-right clearfix" id="index" style="padding-bottom:.5em;">
     <b>
@@ -59,7 +64,13 @@
         Resources
       </a>
     
-      <a class="w3-bar-item w3-button w3-hover-none w3-hover-text-white w3-text-white" onclick="document.getElementById('contact-modal').style.display='block';;openContactTab(event, 'ContactForm');" id="contactBtn">Contact</a>
+    
+      <a class="w3-bar-item w3-button w3-hover-none w3-hover-text-white w3-text-white"
+      onclick="document.getElementById('contact-modal').style.display='block';
+               openContactTab(event, 'ContactForm');"
+      id="contactBtn">Contact
+      </a>
+    
 
       <div id="burger" onclick="burgermenu()">
         <span></span>
@@ -84,8 +95,6 @@
 
 
 
-
-
 <!-- Left Sidebar -->
 <div class=" profile-photo w3-center w3-mobile">
   <!-- <img src="https://s.gravatar.com/avatar/04cfcefac35f36f6311d0906ea4790e6?s=270%27)" alt="" class="w3-padding w3-circle w3-image w3-hover-opacity"/> -->
@@ -99,17 +108,22 @@
     <!-- Social Accounts -->
     <div class="w3-row-padding w3-margin-top w3-mobile">
       
+      <a title="Contact" onclick="document.getElementById('contact-modal').style.display='block';openContactTab(event, 'ContactForm');">
+        <i class="fas fa-envelope fa-2x"></i></a>
       
+
       
-      <a href="https://t.me/nrasadi"><i class="fab fa-telegram fa-2x"></i></a>
+      <a title="Google Scholar" href="/"><i class="fas fa-graduation-cap fa-2x"></i></a>
       
-      <a href="/"><i class="fab fa-youtube fa-2x"></i></a>
+      <a title="Telegram" href="https://t.me/nrasadi"><i class="fab fa-telegram fa-2x"></i></a>
       
-      <a href="https://github.com/nrasadi"><i class="fab fa-github fa-2x"></i></a>
+      <a title="Youtube" href="/"><i class="fab fa-youtube fa-2x"></i></a>
       
-      <a href="https://gitlab.com/nrasadi"><i class="fab fa-gitlab fa-2x"></i></a>
+      <a title="Github" href="https://github.com/nrasadi"><i class="fab fa-github fa-2x"></i></a>
       
-      <a href="https://tacacademy.github.io/"><i class="fas fa-2x easy-icon"></i></a>
+      <a title="Gitlab" href="https://gitlab.com/nrasadi"><i class="fab fa-gitlab fa-2x"></i></a>
+      
+      <a title="Tac Academy" href="https://tacacademy.github.io/"><i class="fas fa-2x easy-icon"></i></a>
       
     </div>
 
@@ -262,7 +276,9 @@ I have participated in several projects during my studies, which have provided m
     
    <button class="tablink w3-bar-item w3-button w3-hover-none w3-hover-text-white" onclick="openContactTab(event, 'ContactForm')">Contact Form</button>
     
+    
    <button class="tablink w3-bar-item w3-button w3-hover-none w3-hover-text-white" onclick="openContactTab(event, 'Address')">Address</button>
+    
    
    <button class="tablink w3-bar-item w3-button w3-hover-none w3-hover-text-white" id="scheduleBtn"
    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/nrasadi/15min'});return false;">Schedule time with me</button>
@@ -272,42 +288,49 @@ I have participated in several projects during my studies, which have provided m
 
   
   <div id="ContactForm" class="w3-container contactTab w3-margin-top">
-   <form class="w3-container" id="my-form" action="https://formspree.io/f/mrgoybop" method="POST" name="Navid's form">
+  
+    <p class="w3-margin"><i class="fas fa-envelope fa-x w3-text-black" aria-hidden="true"></i> info@gmail.com <br></p>
+  
+  
+    <p class="w3-margin"><i class="fas fa-phone fa-x w3-text-black" aria-hidden="true"></i> +001 55 33 11 <br> </p>
+  
+  
+    <form class="w3-container" id="my-form" action="https://formspree.io/f/mrgoybop" method="POST" name="Navid's form">
 
-   <div class="w3-row-padding w3-margin-bottom">
-     <div class="w3-col w3-half">
-
-
-    <label>Name</label>
-    <input class="w3-input w3-light-grey" type="text" required name="Name">
-</div><div class="w3-col w3-half">
-
-    <label>Email</label>
-    <input class="w3-input w3-light-grey" type="email" required name="Email">
+      <div class="w3-row-padding w3-margin-bottom">
+      <div class="w3-col w3-half">
+      <label>Name</label>
+      <input class="w3-input w3-light-grey" type="text" required name="Name">
       </div>
-    </div>
-    <div class="w3-section w3-padding-left" style="padding-left:1em; padding-right:1em;">
-    <label>Subject</label>
-    <input class="w3-input w3-light-grey" type="text" required name="Subject">
+      <div class="w3-col w3-half">
+      <label>Email</label>
+      <input class="w3-input w3-light-grey" type="email" required name="Email">
+      </div>
+      </div>
+      <div class="w3-section w3-padding-left" style="padding-left:1em; padding-right:1em;">
+      <label>Subject</label>
+      <input class="w3-input w3-light-grey" type="text" required name="Subject">
 
-    <label>Message</label>
-    <textarea class="w3-input w3-light-grey" required name="Message"></textarea>
+      <label>Message</label>
+      <textarea class="w3-input w3-light-grey" required name="Message"></textarea>
 
-    <!-- <input class="w3-input w3-light-grey" type="area" required name="message"> -->
+      <!-- <input class="w3-input w3-light-grey" type="area" required name="message"> -->
 
-    <br>
-    <button id="my-form-button" class="w3-button w3-hover-black" style="background-color:#870000;color:white;"><i class="fa fa-send-o w3-text-white"></i>Send</button>
-    </div>
-    <p id="my-form-status"></p>
+      <br>
+      <button id="my-form-button" class="w3-button w3-hover-black" style="background-color:#870000;color:white;">
+        <i class="fa fa-send-o w3-text-white"></i>Send
+      </button>
+      </div>
+      <p id="my-form-status"></p>
 
-  </form>
-
+    </form>
+    
   </div>
   
   
   <div id="Address" class="w3-container contactTab">
    <!-- <h1>Paris</h1> -->
-   <p> EASY Lab, Room 507, CE Department, Sharif University of Technology, Tehran, Iran. </p>
+   <p class="w3-margin-bottom"> EASY Lab, Room 507, CE Department, Sharif University of Technology, Tehran, Iran. </p>
    
    <div class="w3-center map-container">
    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1020.5272096014382!2d51.35066905502277!3d35.70230391530531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQyJzA5LjMiTiA1McKwMjEnMDMuOSJF!5e0!3m2!1sen!2s!4v1609704470210!5m2!1sen!2s"

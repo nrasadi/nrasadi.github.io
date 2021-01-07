@@ -1,5 +1,18 @@
 {% assign nickname = site.data.profile.name.nickname %}
 {% assign fname = site.data.profile.name.firstname %}
+
+{% assign profile = site.data.profile %}
+{% assign contact = profile.contact %}
+{% if contact.formspree or contact.email or contact.phone %}
+{% assign contact_tab = 'ContactForm'%}
+{% elsif contact.address or contact.googlemap %}
+{% assign contact_tab = 'Address'%}
+{% elsif contact.calendly %}
+{% assign contact_tab = 'schedule'%}
+{% else %}
+{% assign nocontact = "True" %}
+{% endif %}
+
 <div class="topnav" id="main-topnav">
   <h3><a href="/" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white w3-margin-right clearfix" id="index" style="padding-bottom:.5em;">
     <b>
@@ -19,7 +32,13 @@
         {{ item.name }}
       </a>
     {% endfor %}
-      <a class="w3-bar-item w3-button w3-hover-none w3-hover-text-white w3-text-white" onclick="document.getElementById('contact-modal').style.display='block';;openContactTab(event, 'ContactForm');" id="contactBtn">Contact</a>
+    {% if nocontact == False %}
+      <a class="w3-bar-item w3-button w3-hover-none w3-hover-text-white w3-text-white"
+      onclick="document.getElementById('contact-modal').style.display='block';
+               openContactTab(event, '{{contact_tab}}');"
+      id="contactBtn">Contact
+      </a>
+    {% endif %}
 
       <div id="burger" onclick="burgermenu()">
         <span></span>
