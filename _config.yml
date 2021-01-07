@@ -10,6 +10,7 @@ dir_addrs:
   styles: /styles/
   scripts: /scripts/
 
+highlighter: rouge
 
 kramdown:
  input: GFM
