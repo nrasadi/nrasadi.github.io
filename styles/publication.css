@@ -1,0 +1,78 @@
+.icon::before {
+  color: #555;
+  font-size: 1.3em;
+  margin-right: 5px;
+  vertical-align: bottom;
+
+  /*width: 1.1em;
+  height: 1.1em;*/
+}
+
+.icon{
+  margin-top: 1em;
+}
+ .icon:hover::before{
+   color: #870000;
+ }
+
+ .ai-google-scholar-square.icon {
+   font-size: 1.2em;
+   vertical-align: bottom;
+ }
+
+ a.pub-title{
+   color: #222;
+   /*text-decoration: */
+   font-weight: bold;
+ }
+
+.icon.quote{
+  /*color: white;
+  background-color: #333;*/
+  /*padding: 1px;*/
+  /*font-size: 1.4em;*/
+  /*vertical-align: baseline;*/
+}
+
+.ai{
+  font-size: 1.4em;
+}
+
+.pub {
+  padding: 1px 5px 1px 5px;
+  border-radius: 10px;
+  font-size: 85%;
+  margin-right: .5em;
+}
+
+.pub-stat{
+  padding: 0;
+  margin-right: 0;
+}
+
+.pub-goodness{
+  background-color: #555;
+  color: white;
+
+}
+
+.pub-award{
+  background-color: rgb(240,210,75);
+  /*background-image: radial-gradient(circle, rgba(218,165,32,1), rgba(218,165,32,0));*/
+  font-weight: bold;
+  color: black;
+}
+
+.pub-icons{
+  margin-top: 0.7sem;
+  color: red;
+}
+
+
+.pub-misc{
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 2px;
+  margin-top: 1em;
+  color: #222;
+}

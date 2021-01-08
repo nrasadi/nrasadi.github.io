@@ -1,0 +1,153 @@
+---
+layout: full_width
+---
+
+{{ content }}
+
+{% assign pubs = site.data.publication | sort: "year" | reverse %}
+{% assign n_pubs = pubs.size %}
+
+{% assign confs = pubs | where: "type", "c" %}
+{% assign jours = pubs | where: "type", "j" %}
+{% assign reprts = pubs | where: "type", "r" %}
+{% assign books = pubs | where: "type", "b" %}
+
+{% assign n_conf = confs.size %} {% assign n_jour = jours.size %}
+{% assign n_book = books.size %} {% assign n_report = reprts.size %}
+
+{% assign current_year = pubs.first.year | plus: 0 %}
+
+<h6><b>{{ current_year }}</b></h6>
+
+{% for pub in pubs %}
+{% assign year = pub.year | plus:0 %}
+
+{% if year != current_year %}
+{% assign current_year = year %}
+<h6><b>{{ current_year }}</b></h6>
+{% endif %}
+
+{% case pub.type %}
+{% when "c" %}
+{% assign count = n_conf %}
+{% assign n_conf = n_conf | minus:1 %}
+{% when "j" %}
+{% assign count = n_jour %}
+{% assign n_jour = n_jour | minus:1 %}
+{% when "b" %}
+{% assign count = n_book %}
+{% assign n_book = n_book | minus:1 %}
+{% when "r" %}
+{% assign count = n_report %}
+{% assign n_report = n_report | minus:1 %}
+{% endcase %}
+
+
+{% case pub.status %}
+{% when "a" %}
+{% assign pub_stat = "Accepted" %}
+{% when "r" %}
+{% assign pub_stat = "Under review" %}
+{% when "s" %}
+{% assign pub_stat = "Submitted" %}
+{% when "f" %}
+{% assign pub_stat = "Final stages of submission" %}
+{% when "i" %}
+{% assign pub_stat = "In preparation" %}
+{% else %}
+{% assign pub_stat = nil %}
+{% endcase %}
+
+<div class="w3-row box" style="">
+  <div class="w3-col l1 m1 s2 type" style="">[{{ pub.type | upcase }}{{count}}] </div>
+  <!-- <div class="w3-col" style="width:2%"></div> -->
+  <div class="w3-col w3-left l10 m11 s10" style="">
+    <a href="{{pub.link}}" class="pub-title">{{ pub.title }}</a> <br>
+    {{pub.authors}}
+    <p>
+      <strong>{{pub.name}}</strong>
+      {% if pub.IF %}
+      <span class="pub pub-goodness">
+      Impact Factor: {{pub.IF}}
+      {% elsif pub.acceptance_rate %}
+      <span class="pub pub-goodness">
+      Acceptance Rate: {{ pub.acceptance_rate }}%
+      {% endif %}
+      </span>
+      {% if pub_stat %}
+      <span class="pub pub-stat">({{pub_stat}})</span>
+      {% endif %}
+      {% if pub.award %}
+      <span class="pub pub-award">
+        <i class="fas fa-award"></i>{{ pub.award }}
+      </span>
+      {% endif %}
+    </p>
+    <p class="pub-icons">
+      {% if pub.pdf %}
+      <a href="{{pub.pdf}}" title="PDF file"><i class="fas fa-file-alt icon"></i></a>
+      {% endif %}
+      {% if pub.presentation %}
+      <a href="{{pub.presentation}}" title="Presentation"><i class="fas fa-file-powerpoint icon"></i></a>
+      {% endif %}
+      {% if pub.video %}
+      <a href="{{pub.video}}" title="Video"><i class="fas fa-file-video icon"></i></a>
+      {% endif %}
+      {% if pub.poster %}
+      <a href="{{pub.poster}}" title="Poster"><i class="fas fa-file-image icon"></i></a>
+      {% endif %}
+      {% if pub.code %}
+      <a href="{{pub.code}}" title="Source Code"><i class="fas fa-file-code icon"></i></a>
+      {% endif %}
+      {% if pub.supplementary %}
+      <a href="{{pub.supplementary}}" title="Supplementary"><i class="fas fa-file-archive icon"></i></a>
+      {% endif %}
+      {% if pub.link %}
+      <a href="{{pub.link}}" title="Link"><i class="fas fa-external-link-alt icon"></i></a>
+      {% endif %}
+      {% if pub.bibetex %}
+      <a href="{{pub.bibetex}}" title="Cite (Bibetex)"><i class="fas fa-quote-right icon"></i></a>
+      {% endif %}
+      {% if pub.scholar %}
+      <a href="{{pub.scholar}}" title="Google Scholar"><i class="ai ai-google-scholar-square icon"></i></a>
+      {% endif %}
+
+      {% if pub.misc.size > 0 %}
+      {% for misc in pub.misc %}
+        {% if misc.link and misc.title %}
+        <span class="pub pub-misc">
+        <a href="{{misc.link}}">{{misc.title}}
+        {{misc.desc}}
+        </a>
+        </span>
+        {% elsif misc.title  %}
+        <span class="pub pub-misc">
+        {{misc.title}}
+        {{misc.desc}}
+        </span>
+        {% endif %}
+
+        &#160;  <!-- space -->
+      {% endfor %}
+      {% endif %}
+
+    </p>
+  </div>
+  <!-- <div class="w3-col w3-left l3 m4"> -->
+    <!-- {% if pub.pdf %}
+    <a href="#" title=""><i class="feather-file-text"></i></a>
+
+    {% endif %} -->
+  <!-- </div> -->
+</div>
+<!-- <p>
+  <ul class="pub-row">
+    <li style="">[{{ pub.type | upcase }}{{count}}] <a href="{{pub.link}}">{{ pub.title }}</a></li>
+  </ul>
+</p> -->
+
+{% endfor %}
+</ul>
+
+
+{{ content }}
