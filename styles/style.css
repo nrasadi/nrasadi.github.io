@@ -92,8 +92,8 @@ html, body {
   height: 100%;
 }
 
-body *:not(.fa):not(.fas):not(.fab){
-   font-family: 'Roboto Slab' !important;
+body *:not(.fa):not(.fas):not(.fab):not(.feather-*){
+   font-family: 'Raleway', 'Roboto Slab' !important;
 }
 
 body {
