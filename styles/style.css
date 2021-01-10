@@ -86,15 +86,23 @@
 
 * {
   margin: 0;
-  font-family: "Raleway" !important;
+
 }
+
+/**:not(.fa):not(.fas):not(.fab):not(.far):not(.feather-*):not(.ai){
+  font-family: "Raleway" !important;
+}*/
 
 html, body {
   height: 100%;
 }
 
-html, body *:not(.fa):not(.fas):not(.fab):not(.far):not(.feather-*):not(.ai){
+html, body{
    font-family: "Raleway" !important;
+}
+
+.fa, .fas, .fab, .far, .feather-*, .ai{
+  font-family: inherit;
 }
 
 body {
