@@ -1,4 +1,6 @@
 ---
 title: Resources
-layout: boxed
+layout: full_width
 ---
+
+### I will add useful resources here!
