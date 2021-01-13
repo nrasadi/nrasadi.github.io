@@ -1,8 +1,8 @@
-- name: Work & Research
-  link: experience
 - name: Teaching
   link: teaching
+- name: Work & Research
+  link: experience
+- name: Publication
+  link: publication
 - name: Resources
   link: resources
-# - name: Contact
-# - link: contact
