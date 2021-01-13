@@ -4,6 +4,12 @@
   top: 0px;
 }*/
 
+#index {
+  vertical-align: middle;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
 
 .topnav {
   overflow: hidden;
@@ -15,6 +21,8 @@
   width: 100%;
   margin-bottom: 0;
   display: inline-flex;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .topnav a {
