@@ -1,0 +1,22 @@
+---
+layout: boxed
+---
+
+{{ content }}
+
+{% assign experiences = site.data.experience %}
+<!-- {{ experiences | inspect}} -->
+{% for exp in experiences %}
+
+<div class="w3-row-padding">
+  <div class="w3-col l9 m9 s9 w3-mobile w3-left w3-padding-right">
+      <h4>{{exp.title}}</h4>
+      <p>{{exp.desc}}</p>
+      <span>{{exp.tags}}</span>
+  </div>
+  <div class="w3-col w3-right l3 m3 s3 w3-mobile w3-padding-left" style="text-align:right">
+      <a href="{{exp.place.link}}">{{exp.place.name}}</a> <br> {{exp.begin | date: "%b %Y" }} - {{exp.end | date: "%b %Y" }}
+  </div>
+</div>
+<hr>
+{% endfor %}

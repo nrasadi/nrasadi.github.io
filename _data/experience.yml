@@ -1,0 +1,85 @@
+- title: "Research Assistant"
+  begin: "2019/02"
+  end: "Present"
+  place:
+    name: "EASY Lab., SUT, Iran"
+    link: "http://easy.ce.sharif.edu/"
+  desc: "I collaborate on a variety of projects related to deep learning and efficient computing."
+  tags: Edge and Cloud Computing, Environment-Aware Systems Design, Deep Learning
+  photo: #
+
+- title: "Ubiquitous Ensemble Learning"
+  begin: "2020/07"
+  end: "Present"
+  place:
+    name: "EASY Lab., SUT, Iran"
+    link: "http://easy.ce.sharif.edu/"
+  desc: #
+  tags: Machine (Deep) Learning, Edge Computing, Quantization, Data Compression
+  photo: #
+
+- title: "Research Internship on Deep Learning"
+  model: #
+  begin: "2019/09"
+  end: "2019/11"
+  place:
+    name: "Fraunhofer (FhG) IDMT, Germany"
+    link: "https://www.idmt.fraunhofer.de/en.html"
+  desc: #<i>details to be added</i>
+  tags: Information Embedding, Deep Neural Network Model Design, Dataset Preparation, Samples Similarity, Siamese Networks
+  photo: #
+
+- title: "Research on Music Similarity Embedding Using Deep Learning"
+  model: "part-time"
+  begin: "2019/12"
+  end: "?"
+  place:
+    name: "Fraunhofer (FhG) IDMT, Germany"
+    link: "https://www.idmt.fraunhofer.de/en.html"
+  desc: #
+  tags: Information Embedding, Deep Neural Network Model Design, Dataset Preparation, Samples Similarity, Siamese Networks
+  photo: #
+
+- title: "Software Engineer / R&D"
+  model: "part-time"
+  begin: "2019/03"
+  end: "Present"
+  place:
+    name: "iDia , Iran & Canada"
+    link: "https://www.f6s.com/idiacanada"
+  desc: #
+  tags: Network Load Tests, API Stress Tests, Edge Computing, TensorFlow Lite, Microservice Deployment via Flask, Edge Computing, Dataset Generation, Number and Digit Recognition on various Medical Devices
+  photo: #
+
+- title: "Undergraduate Research: Bread Quality Assessment by Computer Vision"
+  model: "full-time"
+  begin: "2017/09"
+  end: "2018/12"
+  place:
+    name: "Ferdowsi University of Mashhad & QIET, Iran"
+    link: ""
+  desc: #
+  tags: Image Aquisition Techniques, Dataset Gathering, Data Preparation, Image Processing, Machine Learning, (Multi) Fractal, Unsupervised Segmentation, Classification
+  photo: #
+
+- title: "Undergraduate: Evaluation of MANET Routing Protocols"
+  model: #
+  begin: "2016/11"
+  end: "2017/02"
+  place:
+    name: "IoT Lab, QIET, Iran"
+    link: ""
+  desc: #
+  tags: NS-3, AODV, DSDV, OLSR, GSR
+  photo: #
+
+- title: "Undergraduate: Face and Eyes Localization to Emulate Mouse Functionality"
+  model: #"part-time"
+  begin: "2016/03"
+  end: "2016/05"
+  place:
+    name: "EE Department, QIET, Iran"
+    link: ""
+  desc: #
+  tags: HOG, SVM, Random Forests, Image Enhancement Techniques
+  photo: #
