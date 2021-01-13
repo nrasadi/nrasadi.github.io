@@ -4,7 +4,14 @@ layout: full_width
 
 {{ content }}
 
-{% assign pubs = site.data.publication | sort: "year" | reverse %}
+{% assign pubs = site.data.publication | sort: "date" | reverse %}
+
+
+<!-- {% for pb in pubs %}
+{{pb.date | inspect }}
+{% endfor %} -->
+
+
 {% assign n_pubs = pubs.size %}
 
 {% assign confs = pubs | where: "type", "c" %}
@@ -15,12 +22,12 @@ layout: full_width
 {% assign n_conf = confs.size %} {% assign n_jour = jours.size %}
 {% assign n_book = books.size %} {% assign n_report = reprts.size %}
 
-{% assign current_year = pubs.first.year | plus: 0 %}
+{% assign current_year = pubs.first.date | date: "%Y" | plus: 0 %}
 
 <h6><b>{{ current_year }}</b></h6>
 
 {% for pub in pubs %}
-{% assign year = pub.year | plus:0 %}
+{% assign year = pub.date | date: "%Y" | plus:0 %}
 
 {% if year != current_year %}
 {% assign current_year = year %}
