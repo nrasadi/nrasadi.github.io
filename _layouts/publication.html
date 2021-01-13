@@ -131,6 +131,13 @@ layout: full_width
       {% endfor %}
       {% endif %}
 
+      {% if pub.abstract %}
+        <a class="pub pub-abstract unselectable" onclick="toggleAbstract('{{ pub.type | upcase }}{{count}}')">Abstract <i class="fas fa-2x fa-sort-down"></i></a>
+        <div id="{{ pub.type | upcase }}{{count}}" class="w3-hide w3-animate-zoom" style="text-align:justify; margin-top:.5em;">
+          <p>{{pub.abstract}}</p>
+        </div>
+      {% endif %}
+
     </p>
   </div>
   <!-- <div class="w3-col w3-left l3 m4"> -->
