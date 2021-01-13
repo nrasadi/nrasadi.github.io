@@ -4,7 +4,7 @@
   type: "j"
   name: "IEEE Transactions on Services Computing"
   IF: "5.8" # Impact Factor
-  year: "2021"
+  date: "2021/01"
   status: "f" # published (p) or accepted (a) or under review (r) or submitted (s) or final stages of submission (f) or in preparation (i)
   abstract: "Regular monitoring of health factors such as blood pressure and glucose is essential to manage human health. In many such software applications, the patients have to manually enter the value sensed by medical devices such as glucometers into the app. According to medical specialists, this procedure has several drawbacks: (1) Entering values by patients, several times in a day is bothersome, and makes users leave the app, (2) due to the direct intervention of the patient in the procedure, it is error-prone, and besides, (3) users tend to enter unrealistic values. With edge computing, cloud infrastructures, and mobile phones which are ubiquitous and can capture images, it is now possible to automate this procedure, but there are some problems in the development and implementation of these services: (1) Lack of a related public dataset: learning models, e.g., deep learning algorithms, need a dataset containing different values recorded from various medical devices, but to the best of our knowledge, such a dataset does not exist, (2) the accuracy and reliability of the proposed algorithm are very important; previous methods have high error rates, (3) response time of the proposed algorithm should be low enough to keep patients’ tendency for regular logging and also to save edge-device energy consumption. In this work, we address the mentioned problems; we provide an artificially generated dataset and collect real-world test data from patients; we design an ensemble deep learning number recognition algorithm, and propose a novel hybrid edge/cloud computing service architecture to obtain the best of both worlds: fast and low energy inference on the edge device together with high accuracy inference in the cloud. Based on the results, the proposed system achieved the following objectives: (1) Outperforming previous methods by a huge margin of 40% more accuracy, (2) improving response time by at least 10x compared to the manual method, (3) reducing required bandwidth by 45x while losing only 1% of accuracy, and (4) increasing reliability and availability compared to edge-only and cloud-only service models."
   code: https://github.com/nrasadi/glucometer-reading
@@ -13,7 +13,7 @@
   tags: "Edge Computing, Deep Learning, Object Detection, Object Recognition, Distributed Systems"
   authors: "Navidreza Asadi, Maziar Goudarzi"
   type: "c"
-  year: "2021"
+  date: "2021/02"
   status: "i"
 
 
@@ -27,7 +27,7 @@
   name: ICCV
   acceptance_rate: "23%"
   IF: "12"
-  year: "2017"
+  date: "2017/03"
   status: "p" # published (p) or accepted (a) or under review (r) or submitted (s) or final stages of submission (f) or in preparation (i)
   abstract: "We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without tricks, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code will be made available."
   bibetex: "https://scholar.googleusercontent.com/scholar.bib?q=info:GLlOkqZcB58J:scholar.google.com/&output=citation&scisdr=CgUWlAGpEOjJhQmvr4s:AAGBfm0AAAAAX_aqt4uYYfePivXMJ4LYY9Llip6kXJTZ&scisig=AAGBfm0AAAAAX_aqt_YZHeiMVwXL3QwZa1e3PsLsHhy6&scisf=4&ct=citation&cd=-1&hl=en"
@@ -51,7 +51,7 @@
   authors: "Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick"
   type: "c" # conference (c) or journal (j) or books (b) or technical report (t)
   name: ICCV
-  year: "2020"
+  date: "2020/05"
   status: "r"
   award: "Best Paper"
   acceptance_rate: "23"
@@ -73,7 +73,7 @@
   authors: "Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick"
   type: "c" # conference (c) or journal (j) or books (b) or technical report (t)
   name: FMCAD
-  year: "2020"
+  date: "2020/01"
   abstract: "We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without tricks, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code will be made available."
   bibetex: "https://scholar.googleusercontent.com/scholar.bib?q=info:GLlOkqZcB58J:scholar.google.com/&output=citation&scisdr=CgUWlAGpEOjJhQmvr4s:AAGBfm0AAAAAX_aqt4uYYfePivXMJ4LYY9Llip6kXJTZ&scisig=AAGBfm0AAAAAX_aqt_YZHeiMVwXL3QwZa1e3PsLsHhy6&scisf=4&ct=citation&cd=-1&hl=en"
   link: "https://openaccess.thecvf.com/content_iccv_2017/html/He_Mask_R-CNN_ICCV_2017_paper.html"
@@ -91,7 +91,7 @@
   authors: "Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick"
   type: "j" # conference (c) or journal (j) or books (b) or technical report (t)
   name: ICCV
-  year: "2019"
+  date: "2019/10"
   abstract: "We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without tricks, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code will be made available."
   bibetex: "https://scholar.googleusercontent.com/scholar.bib?q=info:GLlOkqZcB58J:scholar.google.com/&output=citation&scisdr=CgUWlAGpEOjJhQmvr4s:AAGBfm0AAAAAX_aqt4uYYfePivXMJ4LYY9Llip6kXJTZ&scisig=AAGBfm0AAAAAX_aqt_YZHeiMVwXL3QwZa1e3PsLsHhy6&scisf=4&ct=citation&cd=-1&hl=en"
   link: "https://openaccess.thecvf.com/content_iccv_2017/html/He_Mask_R-CNN_ICCV_2017_paper.html"
@@ -108,7 +108,7 @@
   authors: #
   type: # conference (c) or journal (j) or books (b) or technical report (t)
   name: # the name of conference/journal/etc
-  year: #
+  date: #
   abstract: #
   link: #
   pdf: #
