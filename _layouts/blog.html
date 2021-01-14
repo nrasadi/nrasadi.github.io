@@ -1,0 +1,28 @@
+---
+layout: full_width
+---
+
+{{ content }}
+
+<div class="w3-container">
+  {% for post in site.posts %}
+  <div class="post_excerpt w3-content" style="width:80%">
+    <h1><a href="{{post.url}}">{{ post.title }}</a></h1>
+    <br> <i class="fas fa-th-list"></i> {{post.category}}
+    <figure class="w3-center" style="width:100%;">
+      <img src="{{ post.photo.link }}" alt="{{ post.photo.caption }}" width="100%" class="" style="margin-left:0px;"/>
+      <figcaption class="" style="font-size:90%">{{ post.photo.caption | markdownify }}</figcaption>
+    </figure>
+    <!-- <div class="w3-container" sz>
+
+    </div> -->
+    <div style="text-align:justify" class="">
+      {{post.content | truncatewords: 125 }}
+    </div>
+  </div>
+
+{% if post.title != site.posts.last.title %}
+<hr>
+{% endif %}
+{% endfor %}
+</div>

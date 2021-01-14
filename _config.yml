@@ -10,6 +10,10 @@ dir_addrs:
   styles: /styles/
   scripts: /scripts/
 
+collections:
+  courses:
+  resources:
+
 highlighter: rouge
 
 kramdown:
