@@ -1,9 +1,9 @@
 ---
+title: I am from future
 layout: full_width
-title: My Second Post
 photo:
-  link: /statics/photos/posts/1.jpg
-  caption: image from [unsplash](https://images.unsplash.com/photo-1610598887446-a54d73b517f9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixlib=rb-1.2.1&q=80&w=120)
+  link: https://images.unsplash.com/photo-1610356646952-3f83311ad60c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixlib=rb-1.2.1&q=80&w=1200
+  caption: image from unsplash
 category: random
 tags: new, lorem, ipsum
 ---
