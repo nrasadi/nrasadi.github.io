@@ -1,0 +1,28 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway";
+  line-height: .95em;
+}
+
+.blog-container {
+
+}
+
+.blog-title {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.blog {
+  /*width: 55%;*/
+  /*width: 50ch;*/
+}
+
+/*.blog-figure{
+  margin: 5px 0 5px 0;
+}*/
+
+.blog-photo {
+  object-fit: contain;
+  /*width: 6/00px;*/
+  /*height: 400px;*/
+}

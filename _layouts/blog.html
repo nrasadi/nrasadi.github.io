@@ -1,28 +1,67 @@
----
-layout: full_width
----
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
 
-{{ content }}
+<div class="wrapper">
 
-<div class="w3-container">
-  {% for post in site.posts %}
-  <div class="post_excerpt w3-content" style="width:80%">
-    <h1><a href="{{post.url}}">{{ post.title }}</a></h1>
-    <br> <i class="fas fa-th-list"></i> {{post.category}}
-    <figure class="w3-center" style="width:100%;">
-      <img src="{{ post.photo.link }}" alt="{{ post.photo.caption }}" width="100%" class="" style="margin-left:0px;"/>
-      <figcaption class="" style="font-size:90%">{{ post.photo.caption | markdownify }}</figcaption>
-    </figure>
-    <!-- <div class="w3-container" sz>
+<!-- Top Navigation Bar -->
+{% include header.html %}
+<!-- ======================================================================  -->
 
-    </div> -->
-    <div style="text-align:justify" class="">
-      {{post.content | truncatewords: 125 }}
+<!-- Main Content -->
+<div class="w3-container homepage-content w3-mobile" id="main-content">
+<div class="blog w3-content l8 m10 s12 w3-margin-top w3-mobile">
+  <!-- <h2 style="margin-bottom:1em;">{{ page.title }}</h2> -->
+  <!-- <div class="w3-container blog-container"> -->
+    {% for post in site.posts %}
+    <div class="blog-post">
+      <h1 class="blog-title"><a href="{{post.url}}">{{ post.title }}</a></h1>
+      <div class="w3-center l8 m10 s12">
+      <img src="{{ post.photo.link }}" alt="{{ post.photo.caption }}" class="blog-photo"/>
+      </div>
+
+      <p class="blog-subtitle">{{ post.subtitle }}</p>
+      <br>
+      <div class="blog-category"><i class="fas fa-th-list"></i> {{post.category}}</div>
+      <figure class="w3-center blog-figure">
+        <!-- <img src="{{ post.photo.link }}" alt="{{ post.photo.caption }}" class="blog-photo"/> -->
+        <figcaption class="blog-figcaption" style="font-size:90%">{{ post.photo.caption | markdownify }}</figcaption>
+      </figure>
+      <!-- <div class="w3-container" sz>
+      </div> -->
+      <div class="blog-summary" style="text-align:justify" class="">
+        {{post.content | truncatewords: 125 }}
+      </div>
     </div>
-  </div>
 
-{% if post.title != site.posts.last.title %}
-<hr>
-{% endif %}
-{% endfor %}
+  {% if post.title != site.posts.last.title %}
+  <hr>
+  {% endif %}
+  {% endfor %}
+  <!-- </div> -->
+
+
+
 </div>
+
+</div> <!-- End Main Content ==============================================  -->
+
+</div> <!-- End Wrapper ===================================================  -->
+
+<!-- Footer -->
+{% include footer.html %}
+<!-- ======================================================================  -->
+
+
+<!-- Contact -->
+{% include contact.html %}
+<!-- ======================================================================  -->
+
+<!-- Scripts -->
+{% include scripts.html %}
+<!-- ======================================================================  -->
+
+</body>
+
+</html>
