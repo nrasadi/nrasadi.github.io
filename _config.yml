@@ -15,6 +15,7 @@ collections:
   resources:
 
 highlighter: rouge
+future: false
 
 kramdown:
  input: GFM
