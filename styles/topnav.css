@@ -7,8 +7,8 @@
 #index {
   vertical-align: middle;
   margin-top: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+/*   padding-top: 0;
+  padding-bottom: 0; */
 }
 
 .topnav {
@@ -77,9 +77,10 @@
 
 @media screen and (max-width: 650px) {
   .topnav.responsive {position: fixed; flex-direction: column; }
-  .topnav.responsive a:not(:first-child) {line-height: 2rem; margin-right: 50px;}
-  .topnav.responsive a:first-child {margin-bottom: -1em; margin-right: 50px;}
+/*   .topnav.responsive a:not(:first-child) {line-height: 1rem; margin-right: 50px;} */
+  .topnav.responsive a:first-child {margin-bottom: -0.3em;}
   /*.topnav.responsive a {background-color: black;}*/
+  .topnav h3 {  padding-top: 0.2em; padding-bottom: 0.2em}
   .topnav.responsive .burger {
     position: absolute;
     right: 1rem;
@@ -99,16 +100,17 @@
 
 
   #burger{
-    width: 32px;
-    height: 16px;
+    width: 2.1rem;
+    height: 1.1rem;
     position: fixed;;
-    top: 23px;
-    right: 10px;
+    top: 1.5rem;
+    right: 1.5rem;
     float: right;
+    
     /*margin: 50px auto;*/
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
+    -o-transform: rotate(   0deg);
     transform: rotate(0deg);
     -webkit-transition: .5s ease-in-out;
     -moz-transition: .5s ease-in-out;
@@ -198,3 +200,4 @@
     left: calc(50% - 8px);
     top: 10px;
   }
+}
