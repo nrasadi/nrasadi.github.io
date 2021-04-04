@@ -27,7 +27,7 @@
     <!-- <div class="topmenu"> -->
     {% for item in site.data.header %}
 
-      <a href="{{ item.link }}" {% if page.url == item.link %}style="color: white;"{% endif %}
+      <a href="{{ item.link | absolute_url }}" {% if page.url == item.link %}style="color: white;"{% endif %}
         class="w3-bar-item w3-button w3-hover-none w3-hover-text-white" id="{{ item.link}}">
         {{ item.name }}
       </a>
