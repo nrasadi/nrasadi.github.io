@@ -29,6 +29,7 @@
   height: 100%;
   display: block;
   color: #f2f2f2;
+  font-weight: bold;
 }
 .topnav a:not(:first-child){
   padding-top: 1.2em;
@@ -106,7 +107,7 @@
     top: 1.5rem;
     right: 1.5rem;
     float: right;
-    
+
     /*margin: 50px auto;*/
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
