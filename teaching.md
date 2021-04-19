@@ -21,5 +21,5 @@ layout: boxed
 
 
 #### Online Tutor:
-I am a member of [Tac Academy](https://tacacademy.github.io) directed by Professor [Maziar Goudarzi](http://sharif.edu/~goudarzi) and supported by EASY Lab. at the [Sharif University of Technology](http://ce.sharif.edu).   
-The purpose of the Tac Academy to provide universal access to high quality education in Information Technology and Computer Science.
+I am a member of [TAC Academy](https://tacacademy.github.io) directed by Professor [Maziar Goudarzi](http://sharif.edu/~goudarzi) and supported by EASY Lab. at [Sharif University of Technology](http://ce.sharif.edu).   
+The purpose of the TAC Academy is to provide universal access to high quality education in Information Technology and Computer Science.
