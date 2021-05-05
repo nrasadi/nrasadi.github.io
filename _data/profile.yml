@@ -39,7 +39,7 @@ social:
     class: fas fa-2x easy-icon
 
 research_interests:
-  title: "My research interests include but not limited to the following:"
+  title: "Research Interests:"
   items:
     - Pervasive (Edge/Fog/Cloud) Computing
     - Machine Learning
@@ -48,9 +48,9 @@ research_interests:
     - Signal Processing
 
 hobbies:
-  title: "Besides being a computer engineer/scientist, I also follow other hobbies:"
+  title: "Fun?"
   items:
-    - name: Watching and playing basketball
+    - name: Watching and playing Basketball, NBA in particular
       icon: https://github.githubassets.com/images/icons/emoji/unicode/1f3c0.png
       link:
     - name: Reading books and poetries
