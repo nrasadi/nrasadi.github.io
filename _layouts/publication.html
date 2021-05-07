@@ -38,17 +38,20 @@ layout: full_width
 {% when "c" %}
 {% assign count = n_conf %}
 {% assign n_conf = n_conf | minus:1 %}
+{% assign pub_color = "#004c8c" %}
 {% when "j" %}
 {% assign count = n_jour %}
 {% assign n_jour = n_jour | minus:1 %}
+{% assign pub_color = "#8c0032" %}
 {% when "b" %}
 {% assign count = n_book %}
 {% assign n_book = n_book | minus:1 %}
+{% assign pub_color = "#1faa00" %}
 {% when "r" %}
 {% assign count = n_report %}
 {% assign n_report = n_report | minus:1 %}
+{% assign pub_color = "#424242" %}
 {% endcase %}
-
 
 {% case pub.status %}
 {% when "a" %}
@@ -65,10 +68,12 @@ layout: full_width
 {% assign pub_stat = nil %}
 {% endcase %}
 
-<div class="w3-row box" style="">
-  <div class="w3-col l1 m1 s2 type" style="">[{{ pub.type | upcase }}{{count}}] </div>
+<div class="w3-row element" style="border-left: .4em solid {{pub_color}};">
+  <div class="w3-col" style="width:5%">
+    <span style="background-color:{{pub_color}}; padding:.2em; margin-left:.25em;   color: white;">{{ pub.type | upcase }}{{count}}</span>
+  </div>
   <!-- <div class="w3-col" style="width:2%"></div> -->
-  <div class="w3-col w3-left l10 m11 s10" style="">
+  <div class="w3-col w3-left " style="width:95%">
     <a class="pub-title">{{ pub.title }}</a> <br>
     {{pub.authors}}
     <p>

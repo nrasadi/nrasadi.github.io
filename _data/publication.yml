@@ -46,7 +46,7 @@
 - title: "HELO"
   tags: "Instance Segmentation"
   authors: "Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick"
-  type: "c" # conference (c) or journal (j) or books (b) or technical report (t)
+  type: "c" # conference (c) or journal (j) or books (b) or technical report (r)
   name: ICCV
   date: "2020/05"
   status: "r"
@@ -68,7 +68,7 @@
 - title: "Parallelization Techniques for Verifying Neural Networks"
   tags: "Instance Segmentation"
   authors: "Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick"
-  type: "c" # conference (c) or journal (j) or books (b) or technical report (t)
+  type: "b" # conference (c) or journal (j) or books (b) or technical report (r)
   name: FMCAD
   date: "2020/01"
   abstract: "We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without tricks, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code will be made available."
@@ -86,7 +86,7 @@
 - title: "CNN"
   tags: "Instance Segmentation"
   authors: "Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick"
-  type: "j" # conference (c) or journal (j) or books (b) or technical report (t)
+  type: "r" # conference (c) or journal (j) or books (b) or technical report (r)
   name: ICCV
   date: "2019/10"
   abstract: "We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without tricks, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code will be made available."
@@ -102,7 +102,7 @@
 
 - title: hhhh
   authors: #
-  type: # conference (c) or journal (j) or books (b) or technical report (t)
+  type: # conference (c) or journal (j) or books (b) or technical report (r)
   name: # the name of conference/journal/etc
   date: #
   abstract: #
