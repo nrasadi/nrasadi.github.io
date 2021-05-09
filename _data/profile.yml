@@ -6,7 +6,7 @@ name:
 status:
   title: Graduate Student
   place:
-    name: CE dept. Sharif Uni. of Tech. (SUT)
+    name: CE Dept. Sharif Uni. of Tech. (SUT)
     link: http://ce.sharif.edu
   photo: Navid.jpg  # Put your profile picture inside the statics/photos directory (Resize it to 500x500 before)
 
