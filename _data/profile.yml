@@ -6,7 +6,7 @@ name:
 status:
   title: Graduate Student
   place:
-    name: CE dept. Sharif Uni. of Tech. (SUT)
+    name: CE Dept. Sharif Uni. of Tech. (SUT)
     link: http://ce.sharif.edu
   photo: Navid.jpg  # Put your profile picture inside the statics/photos directory (Resize it to 500x500 before)
 
@@ -48,7 +48,7 @@ research_interests:
     - Signal Processing
 
 hobbies:
-  title: "Besides being a computer engineer/scientist, I also follow other hobbies:"
+  title: "Fun?"
   items:
     - name: Watching and playing basketball
       icon: https://github.githubassets.com/images/icons/emoji/unicode/1f3c0.png
