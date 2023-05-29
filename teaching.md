@@ -14,7 +14,7 @@ layout: boxed
 - **Efficient Processing of Deep Neural Networks** (Graduate, *Next Semester*): Will be responsible for devising part of the coursework, final project, and grading them.
 
 #### TA: Lab Instructor:
-- **Computer Networks Lab** [(course page)]({% link _courses/CNLab.md %})
+- **Computer Networks Lab**
    - Instructed in 3 hours/week sessions.
    - Designed and graded lab experiments and final exams.
    - Tools/Devices: Hub, Switch, Router, GNS3, Wireshark, Packet Tracer
