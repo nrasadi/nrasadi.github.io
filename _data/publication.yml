@@ -1,117 +1,158 @@
-- title: "Fast and Reliable Number Recognition on Medical Devices: A Hybrid Edge-Cloud Ensemble Deep Learning Approach Toward Smart Health"
-  tags: "Edge Computing, Ensemble Learning, Data Generation, Deep Learning, Digit Recognition, Smart Health"
+# - title: "Fast and Reliable Number Recognition on Medical Devices: A Hybrid Edge-Cloud Ensemble Deep Learning Approach Toward Smart Health"
+#   tags: "Edge Computing, Ensemble Learning, Data Generation, Deep Learning, Digit Recognition, Smart Health"
+#   authors: "Navidreza Asadi, Maziar Goudarzi"
+#   type: "j"
+#   name: "IEEE Transactions on Services Computing"
+#   IF: "5.8" # Impact Factor
+#   date: "2021/01"
+#   status: "r" # published (p) or accepted (a) or under review (r) or submitted (s) or final stages of submission (f) or in preparation (i)
+#   abstract: "Regular monitoring of health factors such as blood pressure and glucose is essential to manage human health. In many such software applications, the patients have to manually enter the value sensed by medical devices such as glucometers into the app. According to medical specialists, this procedure has several drawbacks: (1) Entering values by patients, several times in a day is bothersome, and makes users leave the app, (2) due to the direct intervention of the patient in the procedure, it is error-prone, and besides, (3) users tend to enter unrealistic values. With edge computing, cloud infrastructures, and mobile phones which are ubiquitous and can capture images, it is now possible to automate this procedure, but there are some problems in the development and implementation of these services: (1) Lack of a related public dataset: learning models, e.g., deep learning algorithms, need a dataset containing different values recorded from various medical devices, but to the best of our knowledge, such a dataset does not exist, (2) the accuracy and reliability of the proposed algorithm are very important; previous methods have high error rates, (3) response time of the proposed algorithm should be low enough to keep patients’ tendency for regular logging and also to save edge-device energy consumption. In this work, we address the mentioned problems; we provide an artificially generated dataset and collect real-world test data from patients; we design an ensemble deep learning number recognition algorithm, and propose a novel hybrid edge/cloud computing service architecture to obtain the best of both worlds: fast and low energy inference on the edge device together with high accuracy inference in the cloud. Based on the results, the proposed system achieved the following objectives: (1) Outperforming previous methods by a huge margin of 40% more accuracy, (2) improving response time by at least 10x compared to the manual method, (3) reducing required bandwidth by 45x while losing only 1% of accuracy, and (4) increasing reliability and availability compared to edge-only and cloud-only service models."
+#   code: https://github.com/nrasadi/glucometer-reading
+
+# - title: "Cooperative Deep Learning on Edge Devices"
+#   tags: "Edge Computing, Deep Learning, Object Detection, Object Recognition, Distributed Systems"
+#   authors: "Navidreza Asadi, Maziar Goudarzi"
+#   type: "c"
+#   date: "2021/02"
+#   status: "i"
+
+- title: "KAPETÁNIOS: Automated Kubernetes Adaptation through a Digital Twin"
+  tags: "Kubernetes, Digital Twin, Machine Learning, Horizontal Pod Autoscaler"
+  authors: "Johannes Zerwas, Patrick Kramer, Razvan-Mihai Ursu, Navidreza Asadi, Phil Rodgers, Leon Wong, Wolfgang Kellerer"
+  date: "2022/10"
+  name: "13th International Conference on Network of the Future (NoF)"
+  abstract: "We present a self-operating Kubernetes (K8s) cluster that uses digital twinning and machine learning to autonomously adapt its Horizontal Pod Autoscaler (HPA) to workload changes. The demo uses a digital twin of a K8s cluster to gather performance statistics and learn a model for the workload. With the model, the cluster autonomously adjusts HPA parameters for better performance. The demo illustrates this process and shows that the requested pod seconds decrease by ∼37 %, while the request latency stays mostly unaffected."
+  link: "https://ieeexplore.ieee.org/abstract/document/9942649"
+  pdf: "https://mediatum.ub.tum.de/doc/1688820/gim5xe6m2sd5ayda00gc07ntw.TUM_paper_nof2022(1).pdf"
+
+
+- title: "Variant Parallelism: Lightweight Deep Convolutional Models for Distributed Inference on IoT Devices"
+  tags: "Edge Computing, Deep Learning, Distributed Systems, Distributed Deep Learning, Efficient Deep Learning, Scalable Deep Learning"
   authors: "Navidreza Asadi, Maziar Goudarzi"
   type: "j"
-  name: "IEEE Transactions on Services Computing"
-  IF: "5.8" # Impact Factor
-  date: "2021/01"
-  status: "r" # published (p) or accepted (a) or under review (r) or submitted (s) or final stages of submission (f) or in preparation (i)
-  abstract: "Regular monitoring of health factors such as blood pressure and glucose is essential to manage human health. In many such software applications, the patients have to manually enter the value sensed by medical devices such as glucometers into the app. According to medical specialists, this procedure has several drawbacks: (1) Entering values by patients, several times in a day is bothersome, and makes users leave the app, (2) due to the direct intervention of the patient in the procedure, it is error-prone, and besides, (3) users tend to enter unrealistic values. With edge computing, cloud infrastructures, and mobile phones which are ubiquitous and can capture images, it is now possible to automate this procedure, but there are some problems in the development and implementation of these services: (1) Lack of a related public dataset: learning models, e.g., deep learning algorithms, need a dataset containing different values recorded from various medical devices, but to the best of our knowledge, such a dataset does not exist, (2) the accuracy and reliability of the proposed algorithm are very important; previous methods have high error rates, (3) response time of the proposed algorithm should be low enough to keep patients’ tendency for regular logging and also to save edge-device energy consumption. In this work, we address the mentioned problems; we provide an artificially generated dataset and collect real-world test data from patients; we design an ensemble deep learning number recognition algorithm, and propose a novel hybrid edge/cloud computing service architecture to obtain the best of both worlds: fast and low energy inference on the edge device together with high accuracy inference in the cloud. Based on the results, the proposed system achieved the following objectives: (1) Outperforming previous methods by a huge margin of 40% more accuracy, (2) improving response time by at least 10x compared to the manual method, (3) reducing required bandwidth by 45x while losing only 1% of accuracy, and (4) increasing reliability and availability compared to edge-only and cloud-only service models."
-  code: https://github.com/nrasadi/glucometer-reading
-
-- title: "Cooperative Deep Learning on Edge Devices"
-  tags: "Edge Computing, Deep Learning, Object Detection, Object Recognition, Distributed Systems"
-  authors: "Navidreza Asadi, Maziar Goudarzi"
-  type: "c"
-  date: "2021/02"
-  status: "i"
-
-- title: "Mask R-CNN"
-  tags: "Instance Segmentation"
-  categories: "Computer Vision, Deep Learning"
-  authors: "Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick"
-  type: "c" # conference (c) or journal (j) or books/book chapters (b) or technical report (r)
-  name: ICCV
-  acceptance_rate: "23%"
-  IF: "12"
-  date: "2017/03"
-  status: "p" # published (p) or accepted (a) or under review (r) or submitted (s) or final stages of submission (f) or in preparation (i)
-  abstract: "We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without tricks, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code will be made available."
-  bibetex: "https://scholar.googleusercontent.com/scholar.bib?q=info:GLlOkqZcB58J:scholar.google.com/&output=citation&scisdr=CgUWlAGpEOjJhQmvr4s:AAGBfm0AAAAAX_aqt4uYYfePivXMJ4LYY9Llip6kXJTZ&scisig=AAGBfm0AAAAAX_aqt_YZHeiMVwXL3QwZa1e3PsLsHhy6&scisf=4&ct=citation&cd=-1&hl=en"
-  link: "https://openaccess.thecvf.com/content_iccv_2017/html/He_Mask_R-CNN_ICCV_2017_paper.html"
-  scholar: "https://scholar.google.com/scholar?cites=11459229647356475672"
-  pdf: "https://openaccess.thecvf.com/content_ICCV_2017/papers/He_Mask_R-CNN_ICCV_2017_paper.pdf"
-  presentation: powerpoint slides
-  video: "https://www.youtube.com/watch?v=g7z4mkfRjI4"
-  poster: dawdkwaodk
-  code: dawdwd
-  supplementary: dawd
-  misc:
-    - title: dawd
-      desc: dawdwa
-    - title: xyz
-      desc: XYZ
-      link: abcd.com
-
-- title: "HELO"
-  tags: "Instance Segmentation"
-  authors: "Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick"
-  type: "c" # conference (c) or journal (j) or books (b) or technical report (r)
-  name: ICCV
-  date: "2020/05"
+  name: "IEEE Internet of Things Journal"
+  date: "2023/04"
   status: "r"
-  award: "Best Paper"
-  acceptance_rate: "23"
-  abstract: "We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without tricks, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code will be made available."
-  bibetex: "https://scholar.googleusercontent.com/scholar.bib?q=info:GLlOkqZcB58J:scholar.google.com/&output=citation&scisdr=CgUWlAGpEOjJhQmvr4s:AAGBfm0AAAAAX_aqt4uYYfePivXMJ4LYY9Llip6kXJTZ&scisig=AAGBfm0AAAAAX_aqt_YZHeiMVwXL3QwZa1e3PsLsHhy6&scisf=4&ct=citation&cd=-1&hl=en"
-  link: "https://openaccess.thecvf.com/content_iccv_2017/html/He_Mask_R-CNN_ICCV_2017_paper.html"
-  scholar: "https://scholar.google.com/scholar?cites=11459229647356475672"
-  pdf: "https://openaccess.thecvf.com/content_ICCV_2017/papers/He_Mask_R-CNN_ICCV_2017_paper.pdf"
-  presentation: "https://www.youtube.com/watch?v=g7z4mkfRjI4"
-  poster: #
-  code: #
-  supplementary: #
-  misc:
-    - title: #
-      desc: #
+  abstract: "Two major techniques are commonly used to meet real-time inference limitations when distributing models across resource-constrained IoT devices: (1) model parallelism (MP) and (2) class parallelism (CP). In MP, transmitting bulky intermediate data (orders of magnitude larger than input) between devices imposes huge communication overhead. Although CP solves this problem, it has limitations on the number of sub-models. In addition, both solutions are fault intolerant, an issue when deployed on edge devices. We propose variant parallelism (VP), an ensemble-based deep learning distribution method where different variants of a main model are generated and can be deployed on separate machines. We design a family of lighter models around the original model, and train them simultaneously to improve accuracy over single models. Our experimental results on six common mid-sized object recognition datasets demonstrate that our models can have 5.8-7.1x fewer parameters, 4.3-31x fewer multiply-accumulations (MACs), and 2.5-13.2x less response time on atomic inputs compared to MobileNetV2 while achieving comparable or higher accuracy. Our technique easily generates several variants of the base architecture. Each variant returns only 2k outputs 1 <= k <= (#classes/2), representing Top-k classes, instead of tons of floating point values required in MP. Since each variant provides a full-class prediction, our approach maintains higher availability compared with MP and CP in presence of failure."
+  pdf: "https://arxiv.org/pdf/2210.08376.pdf"
+  link: "https://arxiv.org/abs/2210.08376"
 
-- title: "Parallelization Techniques for Verifying Neural Networks"
-  tags: "Instance Segmentation"
-  authors: "Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick"
-  type: "b" # conference (c) or journal (j) or books (b) or technical report (r)
-  name: FMCAD
-  date: "2020/01"
-  abstract: "We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without tricks, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code will be made available."
-  bibetex: "https://scholar.googleusercontent.com/scholar.bib?q=info:GLlOkqZcB58J:scholar.google.com/&output=citation&scisdr=CgUWlAGpEOjJhQmvr4s:AAGBfm0AAAAAX_aqt4uYYfePivXMJ4LYY9Llip6kXJTZ&scisig=AAGBfm0AAAAAX_aqt_YZHeiMVwXL3QwZa1e3PsLsHhy6&scisf=4&ct=citation&cd=-1&hl=en"
-  link: "https://openaccess.thecvf.com/content_iccv_2017/html/He_Mask_R-CNN_ICCV_2017_paper.html"
-  scholar: "https://scholar.google.com/scholar?cites=11459229647356475672"
-  pdf: "https://openaccess.thecvf.com/content_ICCV_2017/papers/He_Mask_R-CNN_ICCV_2017_paper.pdf"
-  presentation: "https://www.youtube.com/watch?v=g7z4mkfRjI4"
-  poster: #
-  code: #
-  supplementary: #
-  misc: #
+- title: "FullPack: Full Vector Utilization for Sub-Byte Quantized Inference on General Purpose CPUs"
+  tags: "Edge Computing, Deep Learning, Efficient Deep Learning, Quantization, Vector Processing"
+  authors: "Hossein Katebi, Navidreza Asadi, Maziar Goudarzi"
+  type: "r"
+  date: "2023/03"
+  abstract: "Although prior art has demonstrated negligible accuracy drop in sub-byte quantization --where weights and/or activations are represented by less than 8 bits-- popular SIMD instructions of CPUs do not natively support these datatypes. While recent methods, such as ULPPACK, are already using sub-byte quantization on general-purpose CPUs with vector units, they leave out several empty bits between the sub-byte values in memory and in vector registers to avoid overflow to the neighbours during the operations. This results in memory footprint and bandwidth-usage inefficiencies and suboptimal performance. In this paper, we present memory layouts for storing, and mechanisms for processing sub-byte (4-, 2-, or 1-bit) models that utilize all the bits in the memory as well as in the vector registers for the actual data. We provide compute kernels for the proposed layout for the GEMV (GEneral Matrix-Vector multiplication) operations between weights and activations of different datatypes (e.g., 8-bit activations and 4-bit weights). For evaluation, we extended the TFLite package and added our methods to it, then ran the models on the cycle-accurate gem5 simulator to compare detailed memory and CPU cycles of each method. We compare against nine other methods that are actively used in production including GEMLOWP, Ruy, XNNPack, and ULPPACK. Furthermore, we explore the effect of different input and output sizes of deep learning layers on the performance of our proposed method. Experimental results show 0.96-2.1x speedup for small sizes and 1.2-6.7x speedup for mid to large sizes. Applying our proposal to a real-world speech recognition model, Mozilla DeepSpeech, we proved that our method achieves 1.56-2.11x end-to-end speedup compared to the state-of-the-art, depending on the bit-width employed."
+  pdf: "https://arxiv.org/pdf/2211.06982.pdf"
+  link: "https://arxiv.org/abs/2211.06982"
+
+- title: "An Ensemble Mobile-Cloud Computing Method for Affordable and Accurate Glucometer Readout"
+  tags: "Edge Computing, Deep Learning, Distributed Systems, Distributed Deep Learning, Efficient Deep Learning, Scalable Deep Learning, Smart Health"
+  authors: "Navidreza Asadi, Maziar Goudarzi"
+  type: "r"
+  date: "2022/01"
+  status: #"a"
+  abstract: "Despite essential efforts towards advanced wireless medical devices for regular monitoring of blood properties, many such devices are not available or not affordable for everyone in many countries. Alternatively using ordinary devices, patients ought to log data into a mobile health-monitoring manually. It causes several issues: (1) clients reportedly tend to enter unrealistic data; (2) typing values several times a day is bothersome and causes clients to leave the mobile app. Thus, there is a strong need to use now-ubiquitous smartphones, reducing error by capturing images from the screen of medical devices and extracting useful information automatically. Nevertheless, there are a few challenges in its development: (1) data scarcity has led to impractical methods with very low accuracy: to our knowledge, only small datasets are available in this case; (2) accuracy-availability tradeoff: one can execute a less accurate algorithm on a mobile phone to maintain higher availability, or alternatively deploy a more accurate and more compute-intensive algorithm on the cloud, however, at the cost of lower availability in poor/no connectivity situations. We present an ensemble learning algorithm, a mobile-cloud computing service architecture, and a simple compression technique to achieve higher availability and faster response time while providing higher accuracy by integrating cloud- and mobile-side predictions. Additionally, we propose an algorithm to generate synthetic training data which facilitates utilizing deep learning models to improve accuracy. Our proposed method achieves three main objectives: (1) 92.1% and 97.7% accuracy on two different datasets, improving previous methods by 40%, (2) reducing required bandwidth by 45x with 1% drop in accuracy, (3) and providing better availability compared to mobile-only, cloud-only, split computing, and early exit service models."
+  code: "https://github.com/nrasadi/glucometer-reading"
+  pdf: "https://arxiv.org/pdf/2301.01758.pdf"
+  link: "https://arxiv.org/abs/2301.01758"
+
+# - title: "Mask R-CNN"
+#   tags: "Instance Segmentation"
+#   categories: "Computer Vision, Deep Learning"
+#   authors: "Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick"
+#   type: "c" # conference (c) or journal (j) or books/book chapters (b) or technical report (r)
+#   name: ICCV
+#   acceptance_rate: "23%"
+#   IF: "12"
+#   date: "2017/03"
+#   status: "p" # published (p) or accepted (a) or under review (r) or submitted (s) or final stages of submission (f) or in preparation (i)
+#   abstract: "We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without tricks, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code will be made available."
+#   bibetex: "https://scholar.googleusercontent.com/scholar.bib?q=info:GLlOkqZcB58J:scholar.google.com/&output=citation&scisdr=CgUWlAGpEOjJhQmvr4s:AAGBfm0AAAAAX_aqt4uYYfePivXMJ4LYY9Llip6kXJTZ&scisig=AAGBfm0AAAAAX_aqt_YZHeiMVwXL3QwZa1e3PsLsHhy6&scisf=4&ct=citation&cd=-1&hl=en"
+#   link: "https://openaccess.thecvf.com/content_iccv_2017/html/He_Mask_R-CNN_ICCV_2017_paper.html"
+#   scholar: "https://scholar.google.com/scholar?cites=11459229647356475672"
+#   pdf: "https://openaccess.thecvf.com/content_ICCV_2017/papers/He_Mask_R-CNN_ICCV_2017_paper.pdf"
+#   presentation: powerpoint slides
+#   video: "https://www.youtube.com/watch?v=g7z4mkfRjI4"
+#   poster: dawdkwaodk
+#   code: dawdwd
+#   supplementary: dawd
+#   misc:
+#     - title: dawd
+#       desc: dawdwa
+#     - title: xyz
+#       desc: XYZ
+#       link: abcd.com
+
+# - title: "HELO"
+#   tags: "Instance Segmentation"
+#   authors: "Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick"
+#   type: "c" # conference (c) or journal (j) or books (b) or technical report (r)
+#   name: ICCV
+#   date: "2020/05"
+#   status: "r"
+#   award: "Best Paper"
+#   acceptance_rate: "23"
+#   abstract: "We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without tricks, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code will be made available."
+#   bibetex: "https://scholar.googleusercontent.com/scholar.bib?q=info:GLlOkqZcB58J:scholar.google.com/&output=citation&scisdr=CgUWlAGpEOjJhQmvr4s:AAGBfm0AAAAAX_aqt4uYYfePivXMJ4LYY9Llip6kXJTZ&scisig=AAGBfm0AAAAAX_aqt_YZHeiMVwXL3QwZa1e3PsLsHhy6&scisf=4&ct=citation&cd=-1&hl=en"
+#   link: "https://openaccess.thecvf.com/content_iccv_2017/html/He_Mask_R-CNN_ICCV_2017_paper.html"
+#   scholar: "https://scholar.google.com/scholar?cites=11459229647356475672"
+#   pdf: "https://openaccess.thecvf.com/content_ICCV_2017/papers/He_Mask_R-CNN_ICCV_2017_paper.pdf"
+#   presentation: "https://www.youtube.com/watch?v=g7z4mkfRjI4"
+#   poster: #
+#   code: #
+#   supplementary: #
+#   misc:
+#     - title: #
+#       desc: #
+
+# - title: "Parallelization Techniques for Verifying Neural Networks"
+#   tags: "Instance Segmentation"
+#   authors: "Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick"
+#   type: "b" # conference (c) or journal (j) or books (b) or technical report (r)
+#   name: FMCAD
+#   date: "2020/01"
+#   abstract: "We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without tricks, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code will be made available."
+#   bibetex: "https://scholar.googleusercontent.com/scholar.bib?q=info:GLlOkqZcB58J:scholar.google.com/&output=citation&scisdr=CgUWlAGpEOjJhQmvr4s:AAGBfm0AAAAAX_aqt4uYYfePivXMJ4LYY9Llip6kXJTZ&scisig=AAGBfm0AAAAAX_aqt_YZHeiMVwXL3QwZa1e3PsLsHhy6&scisf=4&ct=citation&cd=-1&hl=en"
+#   link: "https://openaccess.thecvf.com/content_iccv_2017/html/He_Mask_R-CNN_ICCV_2017_paper.html"
+#   scholar: "https://scholar.google.com/scholar?cites=11459229647356475672"
+#   pdf: "https://openaccess.thecvf.com/content_ICCV_2017/papers/He_Mask_R-CNN_ICCV_2017_paper.pdf"
+#   presentation: "https://www.youtube.com/watch?v=g7z4mkfRjI4"
+#   poster: #
+#   code: #
+#   supplementary: #
+#   misc: #
 
 
-- title: "CNN"
-  tags: "Instance Segmentation"
-  authors: "Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick"
-  type: "r" # conference (c) or journal (j) or books (b) or technical report (r)
-  name: ICCV
-  date: "2019/10"
-  abstract: "We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without tricks, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code will be made available."
-  bibetex: "https://scholar.googleusercontent.com/scholar.bib?q=info:GLlOkqZcB58J:scholar.google.com/&output=citation&scisdr=CgUWlAGpEOjJhQmvr4s:AAGBfm0AAAAAX_aqt4uYYfePivXMJ4LYY9Llip6kXJTZ&scisig=AAGBfm0AAAAAX_aqt_YZHeiMVwXL3QwZa1e3PsLsHhy6&scisf=4&ct=citation&cd=-1&hl=en"
-  link: "https://openaccess.thecvf.com/content_iccv_2017/html/He_Mask_R-CNN_ICCV_2017_paper.html"
-  scholar: "https://scholar.google.com/scholar?cites=11459229647356475672"
-  pdf: "https://openaccess.thecvf.com/content_ICCV_2017/papers/He_Mask_R-CNN_ICCV_2017_paper.pdf"
-  presentation: "https://www.youtube.com/watch?v=g7z4mkfRjI4"
-  poster: #
-  code: #
-  supplementary: #
-  misc: #
+# - title: "CNN"
+#   tags: "Instance Segmentation"
+#   authors: "Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick"
+#   type: "r" # conference (c) or journal (j) or books (b) or technical report (r)
+#   name: ICCV
+#   date: "2019/10"
+#   abstract: "We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without tricks, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code will be made available."
+#   bibetex: "https://scholar.googleusercontent.com/scholar.bib?q=info:GLlOkqZcB58J:scholar.google.com/&output=citation&scisdr=CgUWlAGpEOjJhQmvr4s:AAGBfm0AAAAAX_aqt4uYYfePivXMJ4LYY9Llip6kXJTZ&scisig=AAGBfm0AAAAAX_aqt_YZHeiMVwXL3QwZa1e3PsLsHhy6&scisf=4&ct=citation&cd=-1&hl=en"
+#   link: "https://openaccess.thecvf.com/content_iccv_2017/html/He_Mask_R-CNN_ICCV_2017_paper.html"
+#   scholar: "https://scholar.google.com/scholar?cites=11459229647356475672"
+#   pdf: "https://openaccess.thecvf.com/content_ICCV_2017/papers/He_Mask_R-CNN_ICCV_2017_paper.pdf"
+#   presentation: "https://www.youtube.com/watch?v=g7z4mkfRjI4"
+#   poster: #
+#   code: #
+#   supplementary: #
+#   misc: #
 
-- title: hhhh
-  authors: #
-  type: # conference (c) or journal (j) or books (b) or technical report (r)
-  name: # the name of conference/journal/etc
-  date: #
-  abstract: #
-  link: #
-  pdf: #
-  slides: #
-  poster: #
-  code: #
-  supplementary: #
-  misc:
-    - title: #
-      desc: #
+# - title: hhhh
+#   authors: #
+#   type: # conference (c) or journal (j) or books (b) or technical report (r)
+#   name: # the name of conference/journal/etc
+#   date: #
+#   abstract: #
+#   link: #
+#   pdf: #
+#   slides: #
+#   poster: #
+#   code: #
+#   supplementary: #
+#   misc:
+#     - title: #
+#       desc: #
