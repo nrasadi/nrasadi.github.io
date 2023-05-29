@@ -216,8 +216,15 @@ i.fa-telegram:hover{color: #006db3;}
 
 .wrapper {
   min-height: 100%;
+  margin: auto;
   /*margin-bottom: -5em;*/
   /*margin-bottom: -00px;*/
+}
+
+@media screen and (min-height:1000px){
+  .wrapper{
+    width: 67%;
+  }
 }
 
 /*.wrapper:after{
