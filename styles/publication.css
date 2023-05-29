@@ -70,7 +70,7 @@
 }
 
 .pub-abstract{
-  background-color: #eee;
+  background-color: #fdfdfd;
   color: black;
   font-weight: bold;
 }
@@ -82,9 +82,15 @@
 
 
 .pub-misc{
-  border: 1px solid #999;
+  border: 1px solid #999999;
   border-radius: 3px;
   padding: 2px;
   margin-top: 1em;
   color: #222;
+}
+
+.pub-name{
+  background-color:rgb(245, 245, 245);
+  font-weight: 600;
+  border-radius: 2px;
 }
