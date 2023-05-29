@@ -6,15 +6,15 @@ name:
 status:
   title: Graduate Student
   place:
-    name: CE Dept. Sharif Uni. of Tech. (SUT)
+    name: CE Deptartment </br> Technical University of Munich (TUM)
     link: http://ce.sharif.edu
   photo: Navid.jpg  # Put your profile picture inside the statics/photos directory (Resize it to 500x500 before)
 
 contact:
   email: #info@gmail.com
   phone: #+001 55 33 11
-  address: EASY Lab, Room 507, CE Department, Sharif University of Technology, Tehran, Iran.
-  googlemap: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1020.5272096014382!2d51.35066905502277!3d35.70230391530531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQyJzA5LjMiTiA1McKwMjEnMDMuOSJF!5e0!3m2!1sen!2s!4v1609704470210!5m2!1sen!2s
+  address: Room 1912, Chair of Communication Networks, CE Department, Technical University of Munich, Munich, Germany.
+  googlemap: https://goo.gl/maps/h9dED25UFjPy7qCE7?coh=178573&entry=tt
   calendly: https://calendly.com/nrasadi/15min
   formspree: https://formspree.io/f/mrgoybop
 
@@ -32,7 +32,8 @@ social:
     link: https://github.com/nrasadi
     class: fab fa-github fa-2x
   - name: Gitlab
-    link: https://hamgit.ir/nrasadi
+    link: https://gitlab.lrz.de/asadi
+    # link: https://hamgit.ir/nrasadi
     class: fab fa-gitlab fa-2x
   - name: Tac Academy
     link: https://tacacademy.github.io/
@@ -41,11 +42,9 @@ social:
 research_interests:
   title: "Research Interests:"
   items:
-    - Pervasive (Edge/Fog/Cloud) Computing
+    - Pervasive Computing
     - Machine Learning
     - Computer Vision
-    - Smart Health
-    - Signal Processing
 
 hobbies:
   title: "Fun?"
