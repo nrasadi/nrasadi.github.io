@@ -11,11 +11,12 @@ layout: default
 
 {% assign confs = pubs | where: "type", "c" %}
 {% assign jours = pubs | where: "type", "j" %}
-{% assign reprts = pubs | where: "type", "r" %}
+{% assign reprts = pubs | where_exp: "item", "item.type == 'r' or item.type == nil" %}
 {% assign books = pubs | where: "type", "b" %}
+{% assign posters = pubs | where: "type", "p" %}
 
 {% assign n_conf = confs.size %} {% assign n_jour = jours.size %}
-{% assign n_book = books.size %} {% assign n_report = reprts.size %}
+{% assign n_book = books.size %} {% assign n_report = reprts.size %} {% assign n_posters = posters.size %}
 
 {% assign current_year = pubs.first.date | date: "%Y" | plus: 0 %}
 
@@ -31,21 +32,35 @@ layout: default
 
   {% case pub.type %}
     {% when "c" %}
+      {% assign pub_type = "c" %}
       {% assign count = n_conf %}
       {% assign n_conf = n_conf | minus:1 %}
       {% assign pub_color = "#004c8c" %}
     {% when "j" %}
+      {% assign pub_type = "j" %}
       {% assign count = n_jour %}
       {% assign n_jour = n_jour | minus:1 %}
       {% assign pub_color = "#8c0032" %}
     {% when "b" %}
+      {% assign pub_type = "b" %}
       {% assign count = n_book %}
       {% assign n_book = n_book | minus:1 %}
       {% assign pub_color = "#1faa00" %}
     {% when "r" %}
+      {% assign pub_type = "r" %}
       {% assign count = n_report %}
       {% assign n_report = n_report | minus:1 %}
-      {% assign pub_color = "#424242" %}
+      {% assign pub_color = "#009688" %}
+    {% when "p" %}
+        {% assign pub_type = "p" %}
+        {% assign count = n_posters %}
+        {% assign n_posters = n_posters | minus:1 %}
+        {% assign pub_color = "#424242" %}
+    {% else %}
+      {% assign pub_type = "r" %}
+      {% assign count = n_report %}
+      {% assign n_report = n_report | minus:1 %}
+      {% assign pub_color = "#009688" %}
   {% endcase %}
 
   {% case pub.status %}
@@ -65,7 +80,7 @@ layout: default
 
   <div class="w3-row element" style="border-left: .4em solid {{pub_color}};">
     <div class="w3-col" style="width:5%">
-      <span style="background-color:{{pub_color}}; padding:.2em; margin-left:.25em; color: white;">{{ pub.type | upcase }}{{count}}</span>
+      <span style="background-color:{{pub_color}}; padding:.2em; margin-left:.25em; color: white;">{{ pub_type | upcase }}{{count}}</span>
     </div>
     <!-- <div class="w3-col" style="width:2%"></div> -->
     <div class="w3-col w3-left " style="width:95%">
@@ -139,8 +154,8 @@ layout: default
         {% endif %}
 
         {% if pub.content %}
-          <a class="pub pub-abstract unselectable" onclick="toggleAbstract('{{ pub.type | upcase }}{{count}}')">Abstract <i class="fas fa-2x fa-sort-down"></i></a>
-          <div id="{{ pub.type | upcase }}{{count}}" class="w3-hide w3-animate-zoom" style="text-align:justify; margin-top:.5em;">
+          <a class="pub pub-abstract unselectable" onclick="toggleAbstract('{{ pub_type | upcase }}{{count}}')">Abstract <i class="fas fa-2x fa-sort-down"></i></a>
+          <div id="{{ pub_type | upcase }}{{count}}" class="w3-hide w3-animate-zoom" style="text-align:justify; margin-top:.5em;">
             <p>{{pub.content}}</p>
           </div>
         {% endif %}
@@ -156,7 +171,7 @@ layout: default
   </div>
   <!-- <p>
     <ul class="pub-row">
-      <li style="">[{{ pub.type | upcase }}{{count}}] <a href="{{pub.link}}">{{ pub.title }}</a></li>
+      <li style="">[{{ pub_type | upcase }}{{count}}] <a href="{{pub.link}}">{{ pub.title }}</a></li>
     </ul>
   </p> -->
 
