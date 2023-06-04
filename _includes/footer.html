@@ -22,3 +22,21 @@
  </div>
 </div>
 <!-- <div id="footerDiv" style="margin-bottom:-20em; "><object type="text/html" data="pages/footer.html" style="width: 100%; margin-bottom:-100px"></object></div> -->
+
+
+<!-- SCRIPTS -->
+
+<!-- Parse the Latex divs with Katex-->
+<script type="text/javascript">
+  $("script[type='math/tex']").replaceWith(
+    function(){
+      var tex = $(this).text();
+      return katex.renderToString(tex, {displayMode: false});
+  });
+  
+  $("script[type='math/tex; mode=display']").replaceWith(
+    function(){
+      var tex = $(this).text();
+      return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
+  });
+</script>
