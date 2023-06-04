@@ -5,19 +5,7 @@ layout: default
 
 {{ content }}
 
-<!-- {% for ppub in site.publications | sort: "date" | reverse %}
-    <li>
-      <a href="{{ ppub.title }}">{{ ppub.title }}</a>
-    </li>
-  {% endfor %} -->
-
-{% assign pubs = site.publications | sort: "date" | reverse %}
-
-
-<!-- {% for pb in pubs %}
-{{pb.date | inspect }}
-{% endfor %} -->
-
+{% assign pubs = site.publications | where_exp: "item", "item.visible == true or item.visible == nil" | sort: "date" | reverse %}
 
 {% assign n_pubs = pubs.size %}
 
@@ -34,143 +22,143 @@ layout: default
 <h6><b>{{ current_year }}</b></h6>
 
 {% for pub in pubs %}
-{% assign year = pub.date | date: "%Y" | plus:0 %}
+  {% assign year = pub.date | date: "%Y" | plus:0 %}
 
-{% if year != current_year %}
-{% assign current_year = year %}
-<h6><b>{{ current_year }}</b></h6>
-{% endif %}
+  {% if year != current_year %}
+    {% assign current_year = year %}
+    <h6><b>{{ current_year }}</b></h6>
+  {% endif %}
 
-{% case pub.type %}
-{% when "c" %}
-{% assign count = n_conf %}
-{% assign n_conf = n_conf | minus:1 %}
-{% assign pub_color = "#004c8c" %}
-{% when "j" %}
-{% assign count = n_jour %}
-{% assign n_jour = n_jour | minus:1 %}
-{% assign pub_color = "#8c0032" %}
-{% when "b" %}
-{% assign count = n_book %}
-{% assign n_book = n_book | minus:1 %}
-{% assign pub_color = "#1faa00" %}
-{% when "r" %}
-{% assign count = n_report %}
-{% assign n_report = n_report | minus:1 %}
-{% assign pub_color = "#424242" %}
-{% endcase %}
+  {% case pub.type %}
+    {% when "c" %}
+      {% assign count = n_conf %}
+      {% assign n_conf = n_conf | minus:1 %}
+      {% assign pub_color = "#004c8c" %}
+    {% when "j" %}
+      {% assign count = n_jour %}
+      {% assign n_jour = n_jour | minus:1 %}
+      {% assign pub_color = "#8c0032" %}
+    {% when "b" %}
+      {% assign count = n_book %}
+      {% assign n_book = n_book | minus:1 %}
+      {% assign pub_color = "#1faa00" %}
+    {% when "r" %}
+      {% assign count = n_report %}
+      {% assign n_report = n_report | minus:1 %}
+      {% assign pub_color = "#424242" %}
+  {% endcase %}
 
-{% case pub.status %}
-{% when "a" %}
-{% assign pub_stat = "accepted" %}
-{% when "r" %}
-{% assign pub_stat = "under review" %}
-{% when "s" %}
-{% assign pub_stat = "submitted" %}
-{% when "f" %}
-{% assign pub_stat = "final stages of submission" %}
-{% when "i" %}
-{% assign pub_stat = "in preparation" %}
-{% else %}
-{% assign pub_stat = nil %}
-{% endcase %}
+  {% case pub.status %}
+    {% when "a" %}
+      {% assign pub_stat = "accepted" %}
+    {% when "r" %}
+      {% assign pub_stat = "under review" %}
+    {% when "s" %}
+      {% assign pub_stat = "submitted" %}
+    {% when "f" %}
+      {% assign pub_stat = "final stages of submission" %}
+    {% when "i" %}
+      {% assign pub_stat = "in preparation" %}
+    {% else %}
+      {% assign pub_stat = nil %}
+  {% endcase %}
 
-<div class="w3-row element" style="border-left: .4em solid {{pub_color}};">
-  <div class="w3-col" style="width:5%">
-    <span style="background-color:{{pub_color}}; padding:.2em; margin-left:.25em; color: white;">{{ pub.type | upcase }}{{count}}</span>
-  </div>
-  <!-- <div class="w3-col" style="width:2%"></div> -->
-  <div class="w3-col w3-left " style="width:95%">
-    <a class="pub-title">{{ pub.title }}</a> <br>
-    {{pub.authors}}
-    <p>
-      {% if pub.place %} <span class="pub pub-name">{{pub.place}} </span> {% endif %}
-      {% if pub.IF %}
-      <span class="pub pub-goodness">
-      Impact Factor: {{pub.IF}}
-      {% elsif pub.acceptance_rate %}
-      <span class="pub pub-goodness">
-      Acceptance Rate: {{ pub.acceptance_rate }}%
-      {% endif %}
-      </span>
-      {% if pub_stat %}
-      <span class="pub pub-stat">({{pub_stat}})</span>
-      {% endif %}
-      {% if pub.award %}
-      <span class="pub pub-award">
-        <i class="fas fa-award"></i>{{ pub.award }}
-      </span>
-      {% endif %}
-    </p>
-    <p class="pub-icons">
-      {% if pub.pdf %}
-      <a href="{{pub.pdf}}" target="_blank" title="PDF file"><i class="fas fa-file-alt icon"></i></a>
-      {% endif %}
-      {% if pub.presentation %}
-      <a href="{{pub.presentation}}" target="_blank" title="Presentation"><i class="fas fa-file-powerpoint icon"></i></a>
-      {% endif %}
-      {% if pub.video %}
-      <a href="{{pub.video}}" target="_blank" title="Video"><i class="fas fa-file-video icon"></i></a>
-      {% endif %}
-      {% if pub.poster %}
-      <a href="{{pub.poster}}" target="_blank" title="Poster"><i class="fas fa-file-image icon"></i></a>
-      {% endif %}
-      {% if pub.code %}
-      <a href="{{pub.code}}" target="_blank" title="Source Code"><i class="fas fa-file-code icon"></i></a>
-      {% endif %}
-      {% if pub.supplementary %}
-      <a href="{{pub.supplementary}}" target="_blank" title="Supplementary"><i class="fas fa-file-archive icon"></i></a>
-      {% endif %}
-      {% if pub.link %}
-      <a href="{{pub.link}}" target="_blank" title="Link"><i class="fas fa-external-link-alt icon"></i></a>
-      {% endif %}
-      {% if pub.bibetex %}
-      <a href="{{pub.bibetex}}" target="_blank" title="Cite (Bibetex)"><i class="fas fa-quote-right icon"></i></a>
-      {% endif %}
-      {% if pub.scholar %}
-      <a href="{{pub.scholar}}" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square icon"></i></a>
-      {% endif %}
-
-      {% if pub.misc.size > 0 %}
-      {% for misc in pub.misc %}
-        {% if misc.link and misc.title %}
-        <span class="pub pub-misc">
-        <a href="{{misc.link}}">{{misc.title}}
-        {{misc.desc}}
-        </a>
+  <div class="w3-row element" style="border-left: .4em solid {{pub_color}};">
+    <div class="w3-col" style="width:5%">
+      <span style="background-color:{{pub_color}}; padding:.2em; margin-left:.25em; color: white;">{{ pub.type | upcase }}{{count}}</span>
+    </div>
+    <!-- <div class="w3-col" style="width:2%"></div> -->
+    <div class="w3-col w3-left " style="width:95%">
+      <a class="pub-title">{{ pub.title }}</a> <br>
+      {{pub.authors}}
+      <p>
+        {% if pub.place %} <span class="pub pub-name">{{pub.place}} </span> {% endif %}
+        {% if pub.IF %}
+        <span class="pub pub-goodness">
+        Impact Factor: {{pub.IF}}
+        {% elsif pub.acceptance_rate %}
+        <span class="pub pub-goodness">
+        Acceptance Rate: {{ pub.acceptance_rate }}%
+        {% endif %}
         </span>
-        {% elsif misc.title  %}
-        <span class="pub pub-misc">
-        {{misc.title}}
-        {{misc.desc}}
+        {% if pub_stat %}
+        <span class="pub pub-stat">({{pub_stat}})</span>
+        {% endif %}
+        {% if pub.award %}
+        <span class="pub pub-award">
+          <i class="fas fa-award"></i>{{ pub.award }}
         </span>
         {% endif %}
+      </p>
+      <p class="pub-icons">
+        {% if pub.pdf %}
+        <a href="{{pub.pdf}}" target="_blank" title="PDF file"><i class="fas fa-file-alt icon"></i></a>
+        {% endif %}
+        {% if pub.presentation %}
+        <a href="{{pub.presentation}}" target="_blank" title="Presentation"><i class="fas fa-file-powerpoint icon"></i></a>
+        {% endif %}
+        {% if pub.video %}
+        <a href="{{pub.video}}" target="_blank" title="Video"><i class="fas fa-file-video icon"></i></a>
+        {% endif %}
+        {% if pub.poster %}
+        <a href="{{pub.poster}}" target="_blank" title="Poster"><i class="fas fa-file-image icon"></i></a>
+        {% endif %}
+        {% if pub.code %}
+        <a href="{{pub.code}}" target="_blank" title="Source Code"><i class="fas fa-file-code icon"></i></a>
+        {% endif %}
+        {% if pub.supplementary %}
+        <a href="{{pub.supplementary}}" target="_blank" title="Supplementary"><i class="fas fa-file-archive icon"></i></a>
+        {% endif %}
+        {% if pub.link %}
+        <a href="{{pub.link}}" target="_blank" title="Link"><i class="fas fa-external-link-alt icon"></i></a>
+        {% endif %}
+        {% if pub.bibetex %}
+        <a href="{{pub.bibetex}}" target="_blank" title="Cite (Bibetex)"><i class="fas fa-quote-right icon"></i></a>
+        {% endif %}
+        {% if pub.scholar %}
+        <a href="{{pub.scholar}}" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square icon"></i></a>
+        {% endif %}
 
-        &#160;  <!-- space -->
-      {% endfor %}
-      {% endif %}
+        {% if pub.misc.size > 0 %}
+        {% for misc in pub.misc %}
+          {% if misc.link and misc.title %}
+          <span class="pub pub-misc">
+          <a href="{{misc.link}}">{{misc.title}}
+          {{misc.desc}}
+          </a>
+          </span>
+          {% elsif misc.title  %}
+          <span class="pub pub-misc">
+          {{misc.title}}
+          {{misc.desc}}
+          </span>
+          {% endif %}
 
-      {% if pub.content %}
-        <a class="pub pub-abstract unselectable" onclick="toggleAbstract('{{ pub.type | upcase }}{{count}}')">Abstract <i class="fas fa-2x fa-sort-down"></i></a>
-        <div id="{{ pub.type | upcase }}{{count}}" class="w3-hide w3-animate-zoom" style="text-align:justify; margin-top:.5em;">
-          <p>{{pub.content}}</p>
-        </div>
-      {% endif %}
+          &#160;  <!-- space -->
+        {% endfor %}
+        {% endif %}
 
-    </p>
+        {% if pub.content %}
+          <a class="pub pub-abstract unselectable" onclick="toggleAbstract('{{ pub.type | upcase }}{{count}}')">Abstract <i class="fas fa-2x fa-sort-down"></i></a>
+          <div id="{{ pub.type | upcase }}{{count}}" class="w3-hide w3-animate-zoom" style="text-align:justify; margin-top:.5em;">
+            <p>{{pub.content}}</p>
+          </div>
+        {% endif %}
+
+      </p>
+    </div>
+    <!-- <div class="w3-col w3-left l3 m4"> -->
+      <!-- {% if pub.pdf %}
+      <a href="#" title=""><i class="feather-file-text"></i></a>
+
+      {% endif %} -->
+    <!-- </div> -->
   </div>
-  <!-- <div class="w3-col w3-left l3 m4"> -->
-    <!-- {% if pub.pdf %}
-    <a href="#" title=""><i class="feather-file-text"></i></a>
-
-    {% endif %} -->
-  <!-- </div> -->
-</div>
-<!-- <p>
-  <ul class="pub-row">
-    <li style="">[{{ pub.type | upcase }}{{count}}] <a href="{{pub.link}}">{{ pub.title }}</a></li>
-  </ul>
-</p> -->
+  <!-- <p>
+    <ul class="pub-row">
+      <li style="">[{{ pub.type | upcase }}{{count}}] <a href="{{pub.link}}">{{ pub.title }}</a></li>
+    </ul>
+  </p> -->
 
 {% endfor %}
 </ul>
