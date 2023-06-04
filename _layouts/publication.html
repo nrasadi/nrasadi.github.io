@@ -5,7 +5,7 @@ layout: default
 
 {{ content }}
 
-{% assign pubs = site.publications | where_exp: "item", "item.visible == true or item.visible == nil" | sort: "date" | reverse %}
+{% assign pubs = site.publications | where_exp: "item", "item.visible != false" | sort: "date" | reverse %}
 
 {% assign n_pubs = pubs.size %}
 
