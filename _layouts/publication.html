@@ -11,9 +11,10 @@ layout: default
 
 {% assign confs = pubs | where: "type", "c" %}
 {% assign jours = pubs | where: "type", "j" %}
-{% assign reprts = pubs | where_exp: "item", "item.type == 'r' or item.type == nil" %}
 {% assign books = pubs | where: "type", "b" %}
 {% assign posters = pubs | where: "type", "p" %}
+{% assign reprts = "" | split:"" %}
+{% for pub in pubs %}{% if pub.type == 'r' or pub.type == nil %}{% assign reprts = reprts | push: pub %}{% endif %}{% endfor %}
 
 {% assign n_conf = confs.size %} {% assign n_jour = jours.size %}
 {% assign n_book = books.size %} {% assign n_report = reprts.size %} {% assign n_posters = posters.size %}
