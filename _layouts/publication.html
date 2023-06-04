@@ -5,7 +5,13 @@ layout: default
 
 {{ content }}
 
-{% assign pubs = site.data.publication | sort: "date" | reverse %}
+<!-- {% for ppub in site.publications | sort: "date" | reverse %}
+    <li>
+      <a href="{{ ppub.title }}">{{ ppub.title }}</a>
+    </li>
+  {% endfor %} -->
+
+{% assign pubs = site.publications | sort: "date" | reverse %}
 
 
 <!-- {% for pb in pubs %}
@@ -78,7 +84,7 @@ layout: default
     <a class="pub-title">{{ pub.title }}</a> <br>
     {{pub.authors}}
     <p>
-      {% if pub.name %} <span class="pub pub-name">{{pub.name}} </span> {% endif %}
+      {% if pub.place %} <span class="pub pub-name">{{pub.place}} </span> {% endif %}
       {% if pub.IF %}
       <span class="pub pub-goodness">
       Impact Factor: {{pub.IF}}
@@ -144,10 +150,10 @@ layout: default
       {% endfor %}
       {% endif %}
 
-      {% if pub.abstract %}
+      {% if pub.content %}
         <a class="pub pub-abstract unselectable" onclick="toggleAbstract('{{ pub.type | upcase }}{{count}}')">Abstract <i class="fas fa-2x fa-sort-down"></i></a>
         <div id="{{ pub.type | upcase }}{{count}}" class="w3-hide w3-animate-zoom" style="text-align:justify; margin-top:.5em;">
-          <p>{{pub.abstract}}</p>
+          <p>{{pub.content}}</p>
         </div>
       {% endif %}
 

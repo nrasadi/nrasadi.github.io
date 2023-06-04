@@ -15,6 +15,9 @@ collections:
   courses:
     output: true
   resources:
+    output: true
+  publications:
+    output: false
 
 highlighter: rouge
 future: false
