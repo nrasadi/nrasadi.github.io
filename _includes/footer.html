@@ -27,7 +27,7 @@
 <!-- SCRIPTS -->
 
 <!-- Parse the Latex divs with Katex-->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $("script[type='math/tex']").replaceWith(
     function(){
       var tex = $(this).text();
@@ -39,4 +39,79 @@
       var tex = $(this).text();
       return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
   });
+</script> -->
+
+<!-- <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  MathJax.Hub.Config({
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      scale: 40,
+      mathvariant: "small"
+    },
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+  });
+</script> -->
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      autoload: {
+        color: [],
+        colorv2: ['color']
+      },
+      packages: {'[+]': ['ams', 'newcommand']}
+    },
+    options: {
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    },
+    loader: {
+      load: ['input/tex', 'output/chtml']
+    },
+    chtml: {
+      scale: .9,                      // global scaling factor for all expressions
+      minScale: .5,                  // smallest scaling factor to use
+      mtextInheritFont: true,       // true to make mtext elements use surrounding font
+      merrorInheritFont: true,       // true to make merror text use surrounding font
+      mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
+      skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
+      exFactor: .5,                  // default size of ex in em units
+      displayAlign: 'center',        // default for indentalign when set to 'auto'
+      displayIndent: '0',            // default for indentshift when set to 'auto'
+      matchFontHeight: true,         // true to match ex-height of surrounding font
+      fontURL: '[mathjax]/components/output/chtml/fonts/woff-v2',   // The URL where the fonts are found
+      adaptiveCSS: true              // true means only produce CSS that is used in the processed equations
+    },
+    svg: {
+      scale: .85,                      // global scaling factor for all expressions
+      minScale: .5,                  // smallest scaling factor to use
+      mtextInheritFont: true,       // true to make mtext elements use surrounding font
+      merrorInheritFont: true,       // true to make merror text use surrounding font
+      mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
+      skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
+      exFactor: .5,                  // default size of ex in em units
+      displayAlign: 'center',        // default for indentalign when set to 'auto'
+      displayIndent: '0',            // default for indentshift when set to 'auto'
+      matchFontHeight: true,         // true to match ex-height of surrounding font
+      fontURL: '[mathjax]/components/output/chtml/fonts/woff-v2',   // The URL where the fonts are found
+      adaptiveCSS: true              // true means only produce CSS that is used in the processed equations
+    },
+    menuOptions: {
+      showMathMenu: true
+    }
+  };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
