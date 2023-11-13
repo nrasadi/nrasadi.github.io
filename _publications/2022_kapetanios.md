@@ -1,7 +1,7 @@
 ---
 title: "KAPETÁNIOS: Automated Kubernetes Adaptation through a Digital Twin"
 tags: "Kubernetes, Digital Twin, Machine Learning, Horizontal Pod Autoscaler"
-authors: "Johannes Zerwas, Patrick Kramer, Razvan-Mihai Ursu, Navidreza Asadi, Phil Rodgers, Leon Wong, Wolfgang Kellerer"
+authors: "Johannes Zerwas, Patrick Krämer, Răzvan-Mihai Ursu, Navidreza Asadi, Phil Rodgers, Leon Wong, Wolfgang Kellerer"
 date: "2022/10"
 type: "c"
 place: "13th International Conference on Network of the Future (NoF)"
