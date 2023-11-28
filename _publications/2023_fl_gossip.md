@@ -5,7 +5,7 @@ authors: "Lars Wulfert, Navidreza Asadi, Wen-Yu Chung, Christian Wiede, Anton Gr
 type: "c"
 place: "The 19th International Conference on emerging Networking EXperiments and Technologies (CoNEXT '23), <br> 4th International
 Workshop on Distributed Machine Learning (DistributedML '23)"
-date: "2023/12"
+date: "2023/12/02"
 # status: "a"
 # pdf: "https://mediatum.ub.tum.de/doc/1722633/document.pdf"
 # link: "https://ieeexplore.ieee.org/abstract/document/10175422"
