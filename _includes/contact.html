@@ -78,7 +78,7 @@
   {% if contact_vars.address or contact_vars.googlemap %}
   <div id="Address" class="w3-container contactTab">
    <!-- <h1>Paris</h1> -->
-   <p class="w3-margin-bottom"> {{ contact_vars.address }} </p>
+   <p class="w3-margin-bottom w3-margin-top"> {{ contact_vars.address }} </p>
    {% if contact_vars.googlemap %}
    <div class="w3-center map-container">
    <iframe src="{{contact_vars.googlemap}}"
