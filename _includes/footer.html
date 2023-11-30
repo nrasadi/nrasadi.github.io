@@ -2,9 +2,6 @@
 {% assign lastname = site.data.profile.name.lastname %}
 <div class="w3-container w3-black footer">
  <div class="w3-container w3-row">
-   <!-- <div class="w3-col w3-left">
-
-   </div> -->
    <div class="w3-col m7 w3-left" style="text-align:left;">
      Copyright and all rights of the content are retained by authors or by other copyright holders;
      &copy; <span id="footer-year">{{"now" | date: "%Y"}}</span> {{firstname}} {{lastname | rstip}}.
@@ -19,44 +16,6 @@
 
  </div>
 </div>
-<!-- <div id="footerDiv" style="margin-bottom:-20em; "><object type="text/html" data="pages/footer.html" style="width: 100%; margin-bottom:-100px"></object></div> -->
-
-
-<!-- SCRIPTS -->
-
-<!-- Parse the Latex divs with Katex-->
-<!-- <script type="text/javascript">
-  $("script[type='math/tex']").replaceWith(
-    function(){
-      var tex = $(this).text();
-      return katex.renderToString(tex, {displayMode: false});
-  });
-  
-  $("script[type='math/tex; mode=display']").replaceWith(
-    function(){
-      var tex = $(this).text();
-      return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
-  });
-</script> -->
-
-<!-- <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-  MathJax.Hub.Config({
-    jax: ["input/TeX", "output/HTML-CSS"],
-    "HTML-CSS": {
-      scale: 40,
-      mathvariant: "small"
-    },
-    extensions: ["tex2jax.js"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-      processEscapes: true
-    },
-    "HTML-CSS": { linebreaks: { automatic: true } },
-        SVG: { linebreaks: { automatic: true } }
-  });
-</script> -->
 
 <script>
   window.MathJax = {
