@@ -80,11 +80,12 @@ layout: default
   {% endcase %}
 
   <div class="w3-row element" style="border-left: .4em solid {{pub_color}};">
-    <div class="w3-col" style="width:5%">
-      <span style="background-color:{{pub_color}}; padding:.2em; margin-left:.25em; color: white;">{{ pub_type | upcase }}{{count}}</span>
+    <div class="w3-col" style="width:1em; ">
+      <span style="background-color:{{pub_color}}; padding:.2em; margin-left:.25em; color: white; font-weight: bold;">{{ pub_type | upcase }}{{count}}</span>
     </div>
     <!-- <div class="w3-col" style="width:2%"></div> -->
-    <div class="w3-col w3-left " style="width:95%">
+    
+    <div class="w3-col w3-left " style="width:95%; padding-left: 1.5em;">
       <a class="pub-title">{{ pub.title }}</a> <br>
       {{pub.authors}}
       <p>
