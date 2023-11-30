@@ -1,11 +1,3 @@
-let url = "file:///D:/RELATED2UNI/CV/GithubWebsite/myWebsite/"
-
-function gotopage(elem) {
-  var link = document.getElementById(elem);
-  alert(url+elem+'.html');
-  link.setAttribute('href', url+elem+'.html');
-}
-
 function burgerTopNav() {
   var x = document.getElementById("main-topnav");
   if (x.className === "topnav") {
@@ -18,7 +10,6 @@ function burgerTopNav() {
 function burgermenu() {
   var x = document.getElementById("main-topnav");
   var mainContent = document.getElementById("main-content");
-  // var mainContent = document.getElementsByClassName('homepage-content');
   if (x.className === "topnav") {
    x.className += " responsive";
    mainContent.style.marginTop = '280px';
@@ -29,7 +20,6 @@ function burgermenu() {
 }
 
 function windowSizeChanged() {
-  // alert(window.innerWidth);
   var mainContent = document.getElementById("main-content");
   var mainnav = document.getElementById("main-topnav");
   var burger = document.getElementById("burger");
@@ -44,7 +34,7 @@ function windowSizeChanged() {
 
 function toTop() {
 
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
@@ -62,46 +52,23 @@ $(document).ready(function(){
 	});
 });
 
-
-// document.getElementsByClassName("tablink")[0].click();
-
 function openContactTab(evt, tabName) {
   var i, x, tablinks;
   x = document.getElementsByClassName("contactTab");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
-  // tablinks = document.getElementsByClassName("tablink");
-  // console.log(tablinks);
-  // for (i = 0; i < x.length; i++) {
-  //   tablinks[i].classList.remove("w3-green");
-  // }
   document.getElementById(tabName).style.display = "block";
-  // evt.currentTarget.classList.add("w3-green");
 }
-
-// var modal = document.getElementById('contact-modal');
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   var kevent = event.target
-//   console.log(event.target);
-//   // console.log("SALAM");
-//   if (event.target == modal) {
-//     alert("HEY")
-//     modal.style.display = "none";
-//   }
-// }
 
 window.addEventListener("DOMContentLoaded", function() {
 
   // get the form elements defined in your form HTML above
-
   var form = document.getElementById("my-form");
   var button = document.getElementById("my-form-button");
   var status = document.getElementById("my-form-status");
 
   // Success and Error functions for after the form is submitted
-
   function success() {
     form.reset();
     button.style = "display: none ";
@@ -113,7 +80,6 @@ window.addEventListener("DOMContentLoaded", function() {
   }
 
   // handle the form submission event
-
   form.addEventListener("submit", function(ev) {
     ev.preventDefault();
     var data = new FormData(form);
@@ -122,7 +88,6 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 // helper function for sending an AJAX request
-
 function ajax(method, url, data, success, error) {
   var xhr = new XMLHttpRequest();
   xhr.open(method, url);
@@ -137,7 +102,6 @@ function ajax(method, url, data, success, error) {
   };
   xhr.send(data);
 }
-
 
 function toggleAbstract(id) {
   var x = document.getElementById(id);
