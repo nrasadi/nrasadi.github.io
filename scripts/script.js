@@ -103,8 +103,14 @@ function ajax(method, url, data, success, error) {
   xhr.send(data);
 }
 
-function toggleAbstract(id) {
+function toggleAbstract(id, btn_id) {
   var x = document.getElementById(id);
+  var btn = document.getElementById(btn_id);
+  if (btn.className.indexOf("fa-caret-square-up") == -1) {
+    btn.className = btn.className.replace("fa-caret-square-down", "fa-caret-square-up");
+  } else {
+    btn.className = btn.className.replace("fa-caret-square-up", "fa-caret-square-down");
+  }
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
   } else {

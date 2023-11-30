@@ -156,8 +156,8 @@ layout: default
         {% endif %}
 
         {% if pub.content %}
-          <a class="pub pub-abstract unselectable" onclick="toggleAbstract('{{ pub_type | upcase }}{{count}}')">Abstract <i class="fas fa-2x fa-sort-down"></i></a>
-          <div id="{{ pub_type | upcase }}{{count}}" class="w3-hide w3-animate-zoom" style="text-align:justify; margin-top:.5em;">
+          <a class="pub pub-abstract-btn unselectable" onclick="toggleAbstract('{{ pub_type | upcase }}{{count}}', 'pub-abstract-btn{{ pub_type | upcase }}{{count}}')">Abstract <i class="fas fa-caret-square-down pub-abstract-btn-icon" id="pub-abstract-btn{{ pub_type | upcase }}{{count}}"></i></a>
+          <div id="{{ pub_type | upcase }}{{count}}" class="w3-animate-fading w3-animate-bottom abstract" style="text-align:justify; margin-top:.5em;display: none;">
             <p>{{pub.content}}</p>
           </div>
         {% endif %}
