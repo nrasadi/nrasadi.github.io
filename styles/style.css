@@ -265,3 +265,15 @@ i.fa-telegram:hover{color: #006db3;}
     -ms-user-select: none;
     user-select: none;
 }
+
+.notification {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  border-radius: 5px;
+  z-index: 9999;
+
+}

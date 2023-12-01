@@ -117,3 +117,20 @@ function toggleAbstract(id, btn_id) {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+
+function copyData(data) {navigator.clipboard.writeText(data);}
+
+function notification(msg) {
+  // Create notification element
+  var notificationElement = document.createElement("div");
+  notificationElement.classList.add("notification");
+  notificationElement.textContent = msg;
+
+  // Add notification element to the body
+  document.body.appendChild(notificationElement);
+
+  // Remove notification after 3 seconds
+  setTimeout(function() {
+    notificationElement.remove();
+  }, 3000);
+}

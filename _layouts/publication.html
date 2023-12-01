@@ -109,7 +109,7 @@ layout: default
       </p>
       <p class="pub-icons">
         {% if pub.pdf %}
-        <a href="{{pub.pdf}}" target="_blank" title="PDF file"><i class="fas fa-file-alt icon"></i></a>
+        <a href="{{pub.pdf}}" target="_blank" title="PDF file"><i class="fas fa-file-pdf icon"></i></a>
         {% endif %}
         {% if pub.presentation %}
         <a href="{{pub.presentation}}" target="_blank" title="Presentation"><i class="fas fa-file-powerpoint icon"></i></a>
@@ -130,7 +130,7 @@ layout: default
         <a href="{{pub.link}}" target="_blank" title="Link"><i class="fas fa-external-link-alt icon"></i></a>
         {% endif %}
         {% if pub.bibetex %}
-        <a href="{{pub.bibetex}}" target="_blank" title="Cite (Bibetex)"><i class="fas fa-quote-right icon"></i></a>
+        <span href="" onclick="copyData('{{pub.bibetex}}'); notification('BibTeX copied to the clipboard.')" title="Cite (Bibetex)"><i class="fas fa-quote-right icon"></i></span>
         {% endif %}
         {% if pub.scholar %}
         <a href="{{pub.scholar}}" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square icon"></i></a>
