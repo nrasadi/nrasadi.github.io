@@ -9,7 +9,7 @@ IF: 10.6
 status: "a"
 pdf: "https://arxiv.org/pdf/2210.08376.pdf"
 link: "https://ieeexplore.ieee.org/abstract/document/10153399"
-bibetex: "
+bibtex: "
 @article{asadi2023variant,   
   title={Variant Parallelism: Lightweight Deep Convolutional Models for Distributed Inference on IoT Devices},   
   author={Asadi, Navidreza and Goudarzi, Maziar},    

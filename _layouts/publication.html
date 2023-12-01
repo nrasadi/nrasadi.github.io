@@ -129,8 +129,8 @@ layout: default
         {% if pub.link %}
         <a href="{{pub.link}}" target="_blank" title="Link"><i class="fas fa-external-link-alt icon"></i></a>
         {% endif %}
-        {% if pub.bibetex %}
-        <span href="" onclick="copyData('{{pub.bibetex}}'); notification('BibTeX copied to the clipboard.')" title="Cite (Bibetex)"><i class="fas fa-quote-right icon"></i></span>
+        {% if pub.bibtex %}
+        <span href="" onclick="copyData('{{pub.bibtex}}'); notification('BibTeX copied to the clipboard.')" title="Cite (Bibtex)"><i class="fas fa-quote-right icon"></i></span>
         {% endif %}
         {% if pub.scholar %}
         <a href="{{pub.scholar}}" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square icon"></i></a>
