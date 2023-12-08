@@ -42,9 +42,8 @@ social:
 research_interests:
   title: "Research Interests:"
   items:
-    - Pervasive Computing
-    - Machine Learning
-    - Computer Vision
+    - Distributed Machine Learning and Edge AI
+    - Application-Aware System Design and Optimization
 
 hobbies:
   title: "Fun?"
