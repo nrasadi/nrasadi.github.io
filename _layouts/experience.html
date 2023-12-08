@@ -11,11 +11,30 @@ layout: boxed
 <div class="w3-row-padding">
   <div class="w3-col l9 m8 s9 w3-mobile w3-left w3-padding-right">
       <h4>{{exp.title}}</h4>
-      <p>{{exp.desc}}</p>
-      <span>{{exp.tags}}</span>
+      <p>
+        {% if exp.desc.size > 1 %}
+          <ul  style="padding-left: 1.5em;">
+            {% for desc in exp.desc %}
+              <li style="margin-left: 0;">{{desc}}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          {{exp.desc}}
+        {% endif %}
+      </p>
+      <p style="padding-left: 1em;">
+        {% if exp.tags.size >= 1 %}
+          {% for tag in exp.tags %}
+            <span class="w3-tag w3-round w3-light-grey w3-small">{{tag}}</span>
+          {% endfor %}
+        {% endif %}
+      </p>
   </div>
   <div class="w3-col w3-right l3 m4 s3 w3-mobile w3-padding-left" style="text-align:right">
-      <a href="{{exp.place.link}}">{{exp.place.name}}</a> <br> {{exp.begin | date: "%b %Y" }} - {{exp.end | date: "%b %Y" }}
+      <a href="{{exp.place.link}}">{{exp.place.name}}</a> <br> {{exp.begin | date: Y }} {% if exp.end != nil and exp.end != "" and exp.begin != exp.end %}
+       - {{exp.end | date: Y }} {% endif %}
+       {% if exp.model != nil and exp.model != "" %} <br> {{exp.model}} {% endif %}
+  
   </div>
 </div>
 <hr>
