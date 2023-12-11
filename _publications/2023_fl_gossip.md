@@ -7,7 +7,7 @@ place: "The 19th International Conference on emerging Networking EXperiments and
 Workshop on Distributed Machine Learning (DistributedML '23)"
 date: "2023/12/02"
 # status: "a"
-# pdf: "https://mediatum.ub.tum.de/doc/1722633/document.pdf"
+pdf: https://dl.acm.org/doi/pdf/10.1145/3630048.3630181
 link: "https://dl.acm.org/doi/10.1145/3630048.3630181"
 bibtex: "
 @inproceedings{10.1145/3630048.3630181,
