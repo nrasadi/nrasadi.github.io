@@ -29,7 +29,8 @@
  a.pub-title{
    color: #222;
    /*text-decoration: */
-   font-weight: bold;
+   /* font-weight: bold; */
+   font-weight: 660;
  }
 
 .icon.quote{
@@ -90,7 +91,9 @@
 }
 
 .pub-name{
-  background-color:rgb(245, 245, 245);
-  font-weight: 600;
-  border-radius: 2px;
+  background-color:rgb(240, 240, 240);
+  font-weight: 550;
+  border-radius: 0;
+  padding: 5px 5px 5px 2px;
+  /* padding: 1em; */
 }
