@@ -1,0 +1,21 @@
+.article-icon:before {
+    color: #870000;
+}
+
+.article-title {
+    padding: 0.5em 5% 0.5em 5%;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.article-body {
+    padding: 2em 5% 2em 5%;
+}
+
+.article-body p, li, ul, ol, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1em;
+}
+
+.article-image {
+    text-align: center;
+
+}
