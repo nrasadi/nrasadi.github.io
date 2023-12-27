@@ -21,14 +21,14 @@ layout: default
 
 {% assign current_year = pubs.first.date | date: "%Y" | plus: 0 %}
 
-<h6><b>{{ current_year }}</b></h6>
+<h5><b>{{ current_year }}</b></h5>
 
 {% for pub in pubs %}
   {% assign year = pub.date | date: "%Y" | plus:0 %}
 
   {% if year != current_year %}
     {% assign current_year = year %}
-    <h6><b>{{ current_year }}</b></h6>
+    <h5><b>{{ current_year }}</b></h5>
   {% endif %}
 
   {% case pub.type %}

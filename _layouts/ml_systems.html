@@ -1,0 +1,81 @@
+---
+<!-- layout: full_width -->
+layout: boxed
+---
+
+<!-- <div>
+    <h1>Tags: {{site.documents | group_by: 'tags'}}</h1>
+</div> -->
+
+{% assign tags = site.ml_systems | map: 'tags' | join: ',' | split: ',' | uniq %}
+
+<div>
+    Tags: 
+    {% for tag in tags %}
+        <h3>{{ tag }}</h3>
+        <ul>
+            {% for collection in site.ml_systems %}
+            {% if collection.tags contains tag %}
+                <li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        {% endfor %}
+</div>
+
+<!-- <div>
+    {% assign docs_by_tags = site.documents | group_by: 'tags' %}
+{% for tag in docs_by_tags %}
+<h2>{{ tag.name }}</h2>
+<ul>
+    {% for item in tag.items %}
+    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endfor %}
+</div> -->
+
+
+{% if page.photo.link != nil %}
+    {% assign photo_available = true %}
+{% else %}
+    {% assign photo_available = false %}
+{% endif %}
+
+<div class="w3-row-padding w3-padding w3-cell-row w3-leftbar w3-light-grey w3-round w3-container" style="text-align:justify">
+    {% if photo_available %}
+        <div class="m8 l6 s10 w3-cell-middle w3-cell w3-margin w3-padding w3-mobile">
+    {% else %}
+        <div class="m10 l11s10">
+    {% endif %}
+            <i class="fas fa-cut fa-lg w3-xlarge"></i>
+            {{ content }}
+        </div>
+    {% if photo_available %}
+        <div class="w3-cell m4 l4 w3-cell-middle w3-margin w3-padding w3-mobile">
+            <img src="{{page.photo.link}}" class="w3-round w3-image w3-card-3" alt="{{page.photo.caption}}" style="border-radius: 5%;">
+        </div>
+    {% endif %}
+</div>
+
+<h2>Latest Articles</h2>
+
+{% assign posts = site.posts | where_exp: item, "item.visible != true" | sort: "date" | reverse %}
+{% assign n_posts = posts.size %}
+
+{% assign current_year = posts.first.date | date: "%Y" | plus: 0 %}
+
+<hr>
+
+<div style="text-align:justify" class="w3-margin w3-container">
+    <ul>
+    {% for post in site.ml_systems %}
+        <!-- {% if post.visible != false %} -->
+        <h3><i class="fas fa-sticky-note fa-rotate-180 fa-sm fa-fw article-icon"></i> <a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <p class="w3-text-grey">{{ post.date | date: "%B %d, %Y %H:%M" }}</p>
+            {{ post.excerpt | markdownify }}
+            
+        <!-- {% endif %} -->
+    {% endfor %}
+    </ul>
+</div>

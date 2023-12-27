@@ -10,7 +10,7 @@ layout: boxed
 
 <div class="w3-row-padding">
   <div class="w3-col l9 m8 s9 w3-mobile w3-left w3-padding-right">
-      <h4>{{exp.title}}</h4>
+      <h4 style="margin-top: 0%;">{{exp.title}}</h4>
       <p>
         {% if exp.desc.size > 1 %}
           <ul  style="padding-left: 1.5em;">
@@ -31,10 +31,13 @@ layout: boxed
       </p>
   </div>
   <div class="w3-col w3-right l3 m4 s3 w3-mobile w3-padding-left" style="text-align:right">
-      <a href="{{exp.place.link}}">{{exp.place.name}}</a> <br> {{exp.begin | date: Y }} {% if exp.end != nil and exp.end != "" and exp.begin != exp.end %}
+      <a href="{{exp.place.link}}">{{exp.place.name}}</a> 
+      <br> 
+      {{exp.begin | date: Y }} {% if exp.end != nil and exp.end != "" and exp.begin != exp.end %}
        - {{exp.end | date: Y }} {% endif %}
-       {% if exp.model != nil and exp.model != "" %} <br> {{exp.model}} {% endif %}
-  
+       {% if exp.model != nil and exp.model != "" %} 
+       <br> 
+       {{exp.model}} {% endif %}
   </div>
 </div>
 <hr>

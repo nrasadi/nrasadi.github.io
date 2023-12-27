@@ -83,16 +83,21 @@
 
 * {
   margin: 0;
-
 }
 
 html, body {
   height: 100%;
 }
 
-html, body{
+html, body, h1, h2, h3, h4, h5, h6 {
    font-family: "Raleway" !important;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 450;
+}
+
+h1{font-size:28px} h2{font-size:22px} h3{font-size:20px} h4{font-size:18px} h5{font-size:16px} h6{font-size:14px} 
 
 .fa, .fas, .fab, .far, .feather-*, .ai{
   font-family: inherit;
@@ -181,10 +186,11 @@ a {
 /* Social Icons */
 i.fab, i.fa, i.fas {color: #222; padding-right: 5px;}
 i.fa-gitlab:hover{color: #E65100;}
-i.fa-github:hover{color: #333388;}
+i.fa-github:hover{color: #3a3a6d;}
 i.fa-envelope:hover{color: #1E88E5;}
 i.fa-youtube:hover{color: #ab000d;}
 i.fa-telegram:hover{color: #006db3;}
+i.fa-twitter:hover{color: #1da1f2;}
 
 .wrapper {
   min-height: 100%;
@@ -225,8 +231,18 @@ i.fa-telegram:hover{color: #006db3;}
   background-color: white;
   border-radius: .7vw;
   border: solid 1px #ddd;
-  padding: .2em .8em .8em .8em;
+  padding: 1.2em .8em .8em .8em;
   margin-bottom: 2em;
+}
+
+@media only screen and (min-width: 600px) {
+  .box-narrow {
+    width: 75%;
+  }
+}
+
+.box-narrow {
+  background-color: #ffffffe0;
 }
 
 #toTopBtn, #toTopBtn:hover{
