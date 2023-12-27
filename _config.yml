@@ -18,6 +18,19 @@ collections:
     output: true
   publications:
     output: false
+  ml_systems:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "ml_systems"
+    values:
+      layout: "ml_systems_post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
 
 highlighter: rouge
 future: false
