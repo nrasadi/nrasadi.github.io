@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+
+<!-- Top Navigation Bar -->
+{% include header.html %}
+<!-- ======================================================================  -->
+
+<!-- Main Content -->
+<div class="wrapper">
+<div class="w3-container homepage-content w3-mobile" id="main-content">
+  <h1 style="margin-bottom:1em;" class="w3-content l10 m10 s10">{{ page.title }}</h1>
+  <div class="box box-narrow w3-margin article-body" style="text-align: justify;text-justify: inter-word;">
+
+    {{content}}
+  </div>
+
+</div> <!-- End Main Content ==============================================  -->
+
+</div> <!-- End Wrapper ===================================================  -->
+
+<!-- Footer -->
+{% include footer.html %}
+<!-- ======================================================================  -->
+
+
+<!-- Contact -->
+{% include contact.html %}
+<!-- ======================================================================  -->
+
+<!-- Scripts -->
+{% include scripts.html %}
+<!-- ======================================================================  -->
+
+</body>
+
+</html>
