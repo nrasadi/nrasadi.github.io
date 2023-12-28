@@ -15,7 +15,41 @@
     margin-bottom: 1em;
 }
 
-.article-image {
+.article-caption p {
+    margin-bottom: 1em;
     text-align: center;
-
+    font-size: 90%;
 }
+
+/* images inside the article body */
+.mlsys-article img {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.mlsys-article img + em {
+    display: block;
+    text-align: center;
+    font-size: 90%;
+    margin-top: -1.5em;
+    margin-bottom: 1.5em;
+}
+
+.mlsys-article iframe {
+    max-width: 100%;
+    display: block;
+    margin: 1.5em auto 1.5em auto;
+    object-fit: contain;
+}
+
+
+.mlsys-article .caption {
+    margin-top: -1.5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+    font-size: 90%;
+}
+

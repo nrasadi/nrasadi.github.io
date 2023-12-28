@@ -10,20 +10,22 @@ layout: boxed_narrow
         <div>
             <img src="{{image_path}}" alt="{{page.photo.caption}}" class="w3-image" style="width: 100%;">
             {% if page.photo.caption != nil %}
-                <p class="article-image">{{ page.photo.caption | markdownify }}</p>
+                <div class="article-caption">{{ page.photo.caption | markdownify }}</div>
             {% endif %}
         </div>
     {% endif %}
 {% endif %}
 <p><i class="far fa-calendar-alt"></i> {{ page.date | date_to_string }}{% if page.author != nil %} - <i class="fas fa-user"></i> {{ page.author }} {%endif%}</p>
 <hr>
+<div class="mlsys-article">
 {{ content }}
+</div>
 <!-- <br><br><br><br><br><br> -->
 <p style="padding-left: 1em; margin-top: 1em; text-align: right;">
     {% assign tags = page.tags %}
     <!-- {% if tags.size >= 1 %} -->
         {% for tag in tags %}
-        <span class="w3-tag w3-round w3-light-grey w3-small">{{tag}}</span>
-      {% endfor %}
+            <span class="w3-tag w3-round w3-light-grey w3-small">{{tag}}</span>
+        {% endfor %}
     <!-- {% endif %} -->
-  </p>
+</p>
