@@ -15,7 +15,12 @@ layout: boxed_narrow
         </div>
     {% endif %}
 {% endif %}
-<p><i class="far fa-calendar-alt"></i> {{ page.date | date_to_string }}{% if page.author != nil %} - <i class="fas fa-user"></i> {{ page.author }} {%endif%}</p>
+<div><i class="far fa-calendar-alt article-icon"></i> {{ page.date | date_to_string }}{% if page.author != nil %} - <i class="fas fa-user"></i> {{ page.author }} {%endif%}</div>
+<div>
+{%for category in page.categories%}
+<i class="fas fa-folder-open article-icon"></i><span class="w3-tag w3-round w3-light-grey w3-small">{{category}}</span>
+{%endfor%}
+</div>
 <hr>
 <div class="mlsys-article">
 {{ content }}
