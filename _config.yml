@@ -3,6 +3,9 @@ name: Navid's personal website
 # url: http://localhost:4000
 # url: https://nrasadi.github.io
 
+constants:
+  max_related_posts: 5
+
 dir_addrs:
   statics: /statics/
   photos: /statics/photos/
