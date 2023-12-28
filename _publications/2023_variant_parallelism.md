@@ -6,7 +6,7 @@ type: "j"
 place: "IEEE Internet of Things Journal"
 date: "2023/12/01"
 IF: 10.6
-status: "a"
+# status: "a"
 pdf: "https://arxiv.org/pdf/2210.08376.pdf"
 link: "https://ieeexplore.ieee.org/abstract/document/10153399"
 bibtex: "
