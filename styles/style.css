@@ -97,7 +97,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 450;
 }
 
-h1{font-size:28px} h2{font-size:22px} h3{font-size:20px} h4{font-size:18px} h5{font-size:16px} h6{font-size:14px} 
+
+h1{font-size:1.75em} h2{font-size:1.375em} h3{font-size:1.25em} h4{font-size:1.125em} h5{font-size:1em} h6{font-size:.875em} 
 
 .fa, .fas, .fab, .far, .feather-*, .ai{
   font-family: inherit;
