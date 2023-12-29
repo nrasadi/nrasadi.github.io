@@ -6,7 +6,7 @@ photo:
   # caption: 
 categories: 
   - Paper 
-tags: [Machine Learning for Network, Generative Adversarial Networks (GANs), Adversarial Benchmarking]
+tags: [Machine Learning for Network, LSTM, Cloud Computing, Time Series Forecasting]
 visible: true
 ---
 
