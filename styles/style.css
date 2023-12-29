@@ -237,7 +237,7 @@ i.fa-twitter:hover{color: #1da1f2;}
 }
 
 @media only screen and (min-width: 600px) {
-  .box-narrow {
+  .box-narrow, .article-title {
     width: 75%;
   }
 }
@@ -346,4 +346,40 @@ i.fa-twitter:hover{color: #1da1f2;}
   background-color: hsla(261, 46%, 84%, 0.5);
   border-radius: 1em;
   border-left: 1em solid hsla(261, 46%, 84%, 1.0);
+}
+
+.download::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.download {
+  margin-top: 1.5em auto 1.5em auto;
+  padding: 1em;
+  background-color: hsla(120, 46%, 75%, 0.5);
+  border-radius: 1em;
+  border-left: 1em solid forestgreen;
+}
+
+.download a {
+  color: rgb(85, 85, 85);
+  font-weight: 525;
+}
+
+.download a:hover {
+  color: forestgreen;
+  font-weight: 525;
+}
+
+.download::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  color: forestgreen;
+  content: "\f019"; /* Font Awesome download icon */
+  font-family: "Font Awesome 5 Free"; /* Font Awesome font family */
+  font-weight: 900; /* Font Awesome font weight */
+  margin-right: 0.5em; /* Adjust the spacing between the icon and text */
+  left: 0;
 }
