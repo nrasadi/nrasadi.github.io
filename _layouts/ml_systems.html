@@ -33,21 +33,28 @@ layout: boxed
 
 
 <div class="w3-container">
-    <h2 class="mlsys-latest-articles">Latest Articles</h2>
+    <h2 class="mlsys-latest-articles">Latest</h2>
     <hr>
     {% assign all_posts = site.ml_systems | where_exp: item, "item.visible != true" | sort: "date" | reverse %}
     <div style="text-align:justify" class="w3-margin w3-container">
         <div id="article-list">
-        {% for post in all_posts limit:{{site.constants.max_latest_posts}} %}
-            <!-- {% if post.visible != false %} -->
-            <h3><i class="fas fa-sticky-note fa-rotate-180 fa-sm fa-fw article-icon"></i> <a href="{{ post.url }}">{{ post.title }}</a></h3>
-                <div class="w3-text-grey mlsys-dates">{{ post.date | date: "%B %d, %Y" }}</div>
-                {{ post.excerpt | markdownify }}
-                
-            <!-- {% endif %} -->
-        {% endfor %}
+            <ul class="fa-ul">
+                {% for post in all_posts limit:{{site.constants.max_latest_posts}} %}
+                    {% if post.visible != false %}
+                        <li class="article-item">
+                            <span class="fa-li"><i class="fas fa-chevron-right"></i></span>
+                            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                            <br>
+                            <div class="w3-text-grey mlsys-dates">{{ post.date | date: "%B %d, %Y" }}</div>
+                            <div>{{ post.excerpt | markdownify }}</div>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         </div>
-        <button id="more-button" style="display: none;">More</button>
+        <div style="display: flex; justify-content: center;">
+            <button id="more-button" class="w3-center">More<br><i class="fas fa-chevron-down"></i></button>
+        </div>
     </div>
 </div>
 
@@ -64,6 +71,7 @@ layout: boxed
     {% endfor %}
 
     var articleList = document.getElementById("article-list");
+    var ulElement = articleList.querySelector("ul");
     var moreButton = document.getElementById("more-button");
     var articleCount = {{ site.constants.max_latest_posts }};
     var totalArticles = posts.length;
@@ -78,20 +86,16 @@ layout: boxed
         if (articleCount < totalArticles) {
             for (var i = articleCount; i < Math.min(articleCount + {{ site.constants.load_new_posts }}, totalArticles); i++) {
                 var post = posts[i];
+
+                var listItem = document.createElement("li");
+                listItem.classList.add("article-item");
+                listItem.innerHTML = "<span class='fa-li'><i class='fas fa-chevron-right'></i></span>" +
+                                     "<h3><a href='" + post.url + "'>" + post.title + "</a></h3>" +
+                                     "<br>" +
+                                     "<div class='w3-text-grey mlsys-dates'>" + post.date + "</div>" +
+                                     "<div>" + post.excerpt + "</div>";
                 
-                // var listItem = document.createElement("li");
-                var title = document.createElement("h3");
-                var link = document.createElement("a");
-                var date = document.createElement("div");
-                date.classList.add("w3-text-grey", "mlsys-dates");
-                var excerpt = document.createElement("div");
-                title.innerHTML = "<i class='fas fa-sticky-note fa-rotate-180 fa-sm fa-fw article-icon'></i> <a href='" + post.url + "'>" + post.title + "</a>";
-                date.innerHTML = post.date;
-                excerpt.innerHTML = post.excerpt;
-                
-                articleList.appendChild(title);
-                articleList.appendChild(date);
-                articleList.appendChild(excerpt);
+                ulElement.appendChild(listItem);
             }
             
             articleCount += {{ site.constants.load_new_posts }};
