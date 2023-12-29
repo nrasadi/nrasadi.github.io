@@ -70,7 +70,7 @@ Watch the full talk on ACM CoNEXT's YouTube Channel.
 
 ##### Win from data-driven linkage of app and network ties:
 
-- up to 61 percent faster page loads without any slowdown.
+  - Up to 61% faster page loads without any slowdown.
 
 ---
 
