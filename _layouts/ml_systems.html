@@ -9,21 +9,6 @@ layout: boxed
 
 {% assign tags = site.ml_systems | map: 'tags' | join: ',' | split: ',' | uniq %}
 
-<div>
-    Tags: 
-    {% for tag in tags %}
-        <h3>{{ tag }}</h3>
-        <ul>
-            {% for post in site.ml_systems %}
-            {% if post.tags contains tag %}
-                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-            {% endif %}
-            {% endfor %}
-        </ul>
-        {% endfor %}
-</div>
-
-
 {% if page.photo.link != nil %}
     {% assign photo_available = true %}
 {% else %}
@@ -50,10 +35,10 @@ layout: boxed
 <div class="w3-container">
     <h2 class="mlsys-latest-articles">Latest Articles</h2>
     <hr>
-    {% assign posts = site.ml_systems | where_exp: item, "item.visible != true" | sort: "date" | reverse %}
+    {% assign all_posts = site.ml_systems | where_exp: item, "item.visible != true" | sort: "date" | reverse %}
     <div style="text-align:justify" class="w3-margin w3-container">
-        <ul>
-        {% for post in posts %}
+        <div id="article-list">
+        {% for post in all_posts limit:{{site.constants.max_latest_posts}} %}
             <!-- {% if post.visible != false %} -->
             <h3><i class="fas fa-sticky-note fa-rotate-180 fa-sm fa-fw article-icon"></i> <a href="{{ post.url }}">{{ post.title }}</a></h3>
                 <div class="w3-text-grey mlsys-dates">{{ post.date | date: "%B %d, %Y" }}</div>
@@ -61,6 +46,61 @@ layout: boxed
                 
             <!-- {% endif %} -->
         {% endfor %}
-        </ul>
+        </div>
+        <button id="more-button" style="display: none;">More</button>
     </div>
+</div>
+
+<script>
+    var posts = [];
+    {% for post in all_posts %}
+        var postObj = {
+            "title": "{{ post.title }}",
+            "url": "{{ post.url }}",
+            "date": "{{ post.date | date: '%B %d, %Y' }}",
+            "excerpt": "{{ post.excerpt | replace: '\n', ' ' | replace: '\r', ' ' | strip_newlines }}"
+        };
+        posts.push(postObj);
+    {% endfor %}
+
+    var articleList = document.getElementById("article-list");
+    var moreButton = document.getElementById("more-button");
+    var articleCount = {{ site.constants.max_latest_posts }};
+    var totalArticles = posts.length;
+
+    if (articleCount >= totalArticles) {
+        moreButton.style.display = "none";
+    } else {
+        moreButton.style.display = "block";
+    }
+    
+    moreButton.addEventListener("click", function() {
+        if (articleCount < totalArticles) {
+            for (var i = articleCount; i < Math.min(articleCount + {{ site.constants.load_new_posts }}, totalArticles); i++) {
+                var post = posts[i];
+                
+                // var listItem = document.createElement("li");
+                var title = document.createElement("h3");
+                var link = document.createElement("a");
+                var date = document.createElement("div");
+                date.classList.add("w3-text-grey", "mlsys-dates");
+                var excerpt = document.createElement("div");
+                title.innerHTML = "<i class='fas fa-sticky-note fa-rotate-180 fa-sm fa-fw article-icon'></i> <a href='" + post.url + "'>" + post.title + "</a>";
+                date.innerHTML = post.date;
+                excerpt.innerHTML = post.excerpt;
+                
+                articleList.appendChild(title);
+                articleList.appendChild(date);
+                articleList.appendChild(excerpt);
+            }
+            
+            articleCount += {{ site.constants.load_new_posts }};
+            
+            if (articleCount >= totalArticles) {
+                moreButton.style.display = "none";
+            }
+        }
+    });
+</script>
+    
 </div>
