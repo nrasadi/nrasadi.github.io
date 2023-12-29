@@ -5,8 +5,8 @@ name: Navid's personal website
 
 constants:
   max_related_posts: 5
-  max_latest_posts: 1
-  load_new_posts: 2
+  max_latest_posts: 5
+  load_new_posts: 5
 
 permalink: /:categories/:title:output_ext
 
