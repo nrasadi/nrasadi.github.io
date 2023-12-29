@@ -3,21 +3,44 @@
 
 }
 
-.icon::before {
-  color: #555;
-  font-size: 1.3em;
-  margin-right: 5px;
+.pub-abstract {
+  color: #ededed;
+  font-size: 1em;
+  padding: 0px 2px 0px 2px;
   vertical-align: bottom;
-
-  /*width: 1.1em;
-  height: 1.1em;*/
+  border: 1px solid #222;
+  background-color: #555;
+  border-radius: 3px;
+}
+.pub-abstract:hover {
+  background-color: #870000; 
 }
 
-.icon{
-  margin-top: 1em;
+.pub-abstract-text {
+  font-size: 0.8em;
+  vertical-align: text-top;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: inline-block;
 }
- .icon:hover::before{
-   color: #870000;
+
+.pub-abstract-icon::before {
+  color: #ededed;
+  font-size: 1em;
+}
+
+.icon::before {
+  color: #ededed;
+  font-size: 1em;
+  padding: 1px;
+  vertical-align: bottom;
+  border: 1px solid #222;
+  background-color: #555;
+  border-radius: 3px;
+}
+
+ .icon:hover::before {
+  background-color: #870000;
  }
 
  .ai-google-scholar-square.icon {
@@ -78,7 +101,6 @@
 
 .pub-icons{
   margin-top: 0.7sem;
-  color: red;
 }
 
 

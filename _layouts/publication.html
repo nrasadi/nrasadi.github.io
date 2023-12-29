@@ -109,54 +109,47 @@ layout: default
       </p>
       <p class="pub-icons">
         {% if pub.pdf %}
-        <a href="{{pub.pdf}}" target="_blank" title="PDF file"><i class="fas fa-file-pdf icon"></i></a>
+          <a href="{{pub.pdf}}" target="_blank" title="PDF file"><i class="fas fa-file-pdf icon"></i></a>
         {% endif %}
         {% if pub.presentation %}
-        <a href="{{pub.presentation}}" target="_blank" title="Presentation"><i class="fas fa-file-powerpoint icon"></i></a>
+          <a href="{{pub.presentation}}" target="_blank" title="Presentation"><i class="fas fa-file-powerpoint icon"></i></a>
         {% endif %}
         {% if pub.video %}
-        <a href="{{pub.video}}" target="_blank" title="Video"><i class="fas fa-file-video icon"></i></a>
+          <a href="{{pub.video}}" target="_blank" title="Video"><i class="fas fa-file-video icon"></i></a>
         {% endif %}
         {% if pub.poster %}
-        <a href="{{pub.poster}}" target="_blank" title="Poster"><i class="fas fa-file-image icon"></i></a>
+          <a href="{{pub.poster}}" target="_blank" title="Poster"><i class="fas fa-file-image icon"></i></a>
         {% endif %}
         {% if pub.code %}
-        <a href="{{pub.code}}" target="_blank" title="Source Code"><i class="fas fa-file-code icon"></i></a>
+          <a href="{{pub.code}}" target="_blank" title="Source Code"><i class="fas fa-file-code icon"></i></a>
         {% endif %}
         {% if pub.supplementary %}
-        <a href="{{pub.supplementary}}" target="_blank" title="Supplementary"><i class="fas fa-file-archive icon"></i></a>
+          <a href="{{pub.supplementary}}" target="_blank" title="Supplementary"><i class="fas fa-file-archive icon"></i></a>
         {% endif %}
         {% if pub.link %}
-        <a href="{{pub.link}}" target="_blank" title="Link"><i class="fas fa-external-link-alt icon"></i></a>
+          <a href="{{pub.link}}" target="_blank" title="Link"><i class="fas fa-external-link-alt icon"></i></a>
         {% endif %}
         {% if pub.bibtex %}
-        <span href="" onclick="copyData('{{pub.bibtex}}'); notification('BibTeX copied to the clipboard.')" title="Cite (Bibtex)"><i class="fas fa-quote-right icon"></i></span>
+          <span href="" onclick="copyData('{{pub.bibtex}}'); notification('BibTeX copied to the clipboard.')" title="Cite (Bibtex)"><i class="fas fa-quote-right icon"></i></span>
         {% endif %}
         {% if pub.scholar %}
-        <a href="{{pub.scholar}}" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square icon"></i></a>
+          <a href="{{pub.scholar}}" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square icon"></i></a>
         {% endif %}
 
         {% if pub.misc.size > 0 %}
-        {% for misc in pub.misc %}
-          {% if misc.link and misc.title %}
-          <span class="pub pub-misc">
-          <a href="{{misc.link}}">{{misc.title}}
-          {{misc.desc}}
-          </a>
-          </span>
-          {% elsif misc.title  %}
-          <span class="pub pub-misc">
-          {{misc.title}}
-          {{misc.desc}}
-          </span>
-          {% endif %}
-
-          &#160;  <!-- space -->
-        {% endfor %}
+          {% for misc in pub.misc %}
+            {% if misc.link and misc.title %}
+              <span class="pub pub-misc">
+              <a href="{{misc.link}}">{{misc.title}}{{misc.desc}}</a>
+            </span>
+            {% elsif misc.title  %}
+              <span class="pub pub-misc">{{misc.title}}{{misc.desc}}</span>
+            {% endif %}
+          {% endfor %}
         {% endif %}
 
         {% if pub.content %}
-          <a class="pub pub-abstract-btn unselectable" onclick="toggleAbstract('{{ pub_type | upcase }}{{count}}', 'pub-abstract-btn{{ pub_type | upcase }}{{count}}')">Abstract <i class="fas fa-caret-square-down pub-abstract-btn-icon" id="pub-abstract-btn{{ pub_type | upcase }}{{count}}"></i></a>
+          <span onclick="toggleAbstract('{{ pub_type | upcase }}{{count}}', 'pub-abstract-btn{{ pub_type | upcase }}{{count}}')" class="pub-abstract unselectable"><i class="fas fa-caret-square-down pub-abstract-icon" id="pub-abstract-btn{{ pub_type | upcase }}{{count}}"></i><span class="pub-abstract-text">Abstract</span></span>
           <div id="{{ pub_type | upcase }}{{count}}" class="w3-animate-fading w3-animate-bottom abstract" style="text-align:justify; margin-top:.5em;display: none;">
             <p>{{pub.content}}</p>
           </div>
