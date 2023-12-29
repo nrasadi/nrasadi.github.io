@@ -6,7 +6,7 @@ photo:
   # caption: Image from [unsplash](https://images.unsplash.com/photo-1610598887446-a54d73b517f9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixlib=rb-1.2.1&q=80&w=120)
 categories: 
   - Talk 
-tags: [Tech Giants, Large Language Models (LLM), ML as a Service (MLaaS), AI System Scalability, AI Adversarial Behaviors]
+tags: [Application, ML as a Service (MLaaS), System Scalability, Video Analytics, Application-Aware System Design]
 visible: true
 ---
 
@@ -61,7 +61,8 @@ Watch the full talk on ACM CoNEXT's YouTube Channel.
     - Phase 1: Offline static templates
     - Phase 2: Online dynamic patches
     - Phase 3: Applying patches
-- Problem 2: Inefficient page load: serialization in load process leads to resource underutilization (root cause: object evaluation --)
+- Problem 2: Inefficient page load: serialization in load process leads to resource underutilization.
+    - Root Cause: Object Evaluation ➡️ Object Discovery
     - Approach: Decouple evaluation and discovery of objects
 - Problem 3: Lack of generalization
 - Proposal: Alohamora (NSDI 2021): Dynamically adapt dependency hints for a given page, network, etc.
