@@ -208,6 +208,7 @@ i.fab, i.fa, i.fas {
   border-radius: .7vw;
   padding: 1.2em .8em .8em .8em;
   margin-bottom: 2em;
+  padding: 2em 2em 2em 2em;
 }
 
 @media only screen and (min-width: 600px) {
@@ -340,3 +341,13 @@ i.fab, i.fa, i.fas {
   z-index: 9999;
 }
 
+.hobby {
+  list-style-type: none;
+  padding: 0;
+}
+
+.hobby li::before {
+  content: attr(data-emoji); /* Use the value of the data-emoji attribute as content */
+  margin-right: 0.5em;
+  display: inline-block; /* Ensure emojis are displayed inline with text */
+}

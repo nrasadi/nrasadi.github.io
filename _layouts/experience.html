@@ -9,20 +9,20 @@ layout: boxed
 {% for exp in experiences %}
 
 <div class="w3-row-padding">
-  <div class="w3-col l9 m8 s9 w3-mobile w3-left w3-padding-right">
+  <div class="w3-col l9 m8 s9 w3-mobile w3-left">
       <h4 style="margin-top: 0%;">{{exp.title}}</h4>
       <p>
         {% if exp.desc.size > 1 %}
-          <ul  style="padding-left: 1.5em;">
+          <ul  style="">
             {% for desc in exp.desc %}
-              <li style="margin-left: 0;">{{desc}}</li>
+              <li style="margin-left: -1em;">{{desc}}</li>
             {% endfor %}
           </ul>
         {% else %}
           {{exp.desc}}
         {% endif %}
       </p>
-      <p style="padding-left: 1em;">
+      <p style="">
         {% if exp.tags.size >= 1 %}
           {% for tag in exp.tags %}
             <span class="w3-tag w3-round w3-small">{{tag}}</span>
@@ -30,7 +30,7 @@ layout: boxed
         {% endif %}
       </p>
   </div>
-  <div class="w3-col w3-right l3 m4 s3 w3-mobile w3-padding-left" style="text-align:right">
+  <div class="w3-col w3-right l3 m4 s3 w3-mobile" style="text-align:right">
       <a href="{{exp.place.link}}">{{exp.place.name}}</a> 
       <br> 
       {{exp.begin | date: Y }} {% if exp.end != nil and exp.end != "" and exp.begin != exp.end %}

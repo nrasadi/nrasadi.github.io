@@ -1,7 +1,7 @@
 name:
   firstname: Navidreza
   lastname: Asadi
-  nickname: Navid
+  nickname: N/A
 
 status:
   title: Graduate Student
@@ -49,15 +49,15 @@ hobbies:
   title: "Fun?"
   items:
     - name: Watching and playing Basketball, NBA in particular
-      icon: https://github.githubassets.com/images/icons/emoji/unicode/1f3c0.png
+      icon: 🏀
       link:
     - name: Reading books and poetries
-      icon: https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png
+      icon: 📚
       link:
       desc: (Parsi (Persian) and English literatures)
     - name: Listening to music
-      icon: https://github.githubassets.com/images/icons/emoji/unicode/1f3b5.png
+      icon: 🎶
       link:
     - name: And surely, dreaming!
-      icon: https://github.githubassets.com/images/icons/emoji/unicode/270c.png
+      icon: 💭
       link:
