@@ -33,7 +33,7 @@ Immediate expectation is to see a flood of papers on vision tasks in the near fu
 - C3: Comparing their performance on other metrics, as previously mentioned; that is not new but might draw even more attention than before.
 - C4: Possibility of applying very large CNNs on other tasks; although pure CNN architectures are unlikely to achieve comparable results on other tasks.
 
-Researchers in other communities, and Networked Systems in particular, are _rationally_ a few years behind as they are more concerned with more mature applications of such models and are still mainly working on developing networks for CNN-based architectures and designing architectures based on CNNs and RNNs.
+Researchers in other communities, and Networked Systems in particular, are _rationally_ a few years behind as they are more concerned with more mature applications of such models and are still mainly focusing on developing networks for CNN-based architectures and designing architectures based on CNNs and RNNs.
 
 Since the last couple of years we are observing more and more papers around developing systems and networks for training, fine-tuning and serving foundation models to an extent that some were anticipating a complete shift in these domains so that in a few years from now, any optimizations over CNN models draw little to no attention. Results like the one above or similar ones in the future might lead to new investigations around developing systems for _very large_ CNNs.
 
