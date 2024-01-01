@@ -10,7 +10,7 @@ tags: [Application, ML as a Service (MLaaS), System Scalability, Video Analytics
 visible: true
 ---
 
-Ravi Netravali, an Assistant Professor at Princeton University won this year's ACM SIGCOMM Rising Star Award. In this keynote talk which was given at ACM CoNEXT '23 Conference, he discusses the importance of application-centric networking. He argues that the networking community has neglected the impact of the application and it corresponding layer in the networking stack, and gives his insights through several projects that he has done in the past few years.
+Ravi Netravali, an Assistant Professor at Princeton University won this year's ACM SIGCOMM Rising Star Award. In this keynote talk which was given at ACM CoNEXT '23 Conference, he discusses the importance of application-centric networking. He argues that the networking community has neglected the impact of the application and its corresponding layer in the networking stack, and gives his insights through several projects that he has done in the past few years.
 
 Below, are the notes I have taken during the talk, that might be helpful if you do not have time to watch the whole talk[^1].
 
