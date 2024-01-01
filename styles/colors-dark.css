@@ -1,0 +1,226 @@
+/* ml_systems */
+.mlsys-dates {  color: #999;}
+
+#mlsys-info-icon::before {  color: #ddd;}
+
+.article-icon:before {  color: #870000;}
+
+#more-button {
+background-color: #870000;
+color: white;
+}
+
+#more-button *{  background-color: #870000;  color: white;
+}
+
+#more-button:hover {  box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);}
+
+#more-button:hover * {  box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);}
+
+/* publication */
+.pub-abstract {
+color: #ccc;
+border: 1px solid #222;
+background-color: #333;
+}
+.pub-abstract:hover {  background-color: #870000; }
+
+.pub-abstract-icon::before {  color: #ededed;}
+
+.pub-typecount {color: white;}
+
+.icon::before {
+color: #ccc;
+border: 1px solid #222;
+background-color: #333;
+}
+
+.icon:hover::before {background-color: #870000;}
+
+a.pub-title {color: white;}
+
+.pub-goodness{
+background-color: #555;
+color: white;
+}
+
+.pub-award{
+background-color: rgb(240,210,75);
+color: black;
+}
+
+.pub-abstract-btn{
+background-color: #fdfdfd;
+color: black;
+}
+
+.pub-misc{
+border: 1px solid #444;
+color: #ccc;
+}
+
+.pub-name{  background-color: #222; color: #ccc;}
+
+/* style */
+a .social-icon{  color: blue;}
+
+body {  
+  background-image: url("../statics/bg1-dark.png");
+  color: #ddd;
+}
+
+.easy-icon{  background: url("../statics/icons/easy-white.png") no-repeat;}
+.easy-icon:hover{  background: url("../statics/icons/easy.png") no-repeat;}
+
+a {  color: #c10000;}
+/* a {  color: #60b5ff;} */
+/* a {color: rgb(250, 250, 150);} */
+
+/* Social Icons */
+i.fab, i.fa, i.fas {color: #ccc; }
+i.fa-gitlab:hover{color: #E65100;}
+i.fa-github:hover{color: #4f4f98;}
+i.fa-envelope:hover{color: #1E88E5;}
+i.fa-youtube:hover{color: #ab000d;}
+i.fa-telegram:hover{color: #006db3;}
+i.fa-twitter:hover{color: #1da1f2;}
+
+.footer *{  color: #cdcccc;}
+
+.footer a{  color: red;}
+
+.box{
+background-color: #111;
+border: solid 1px #000;
+}
+
+.box-narrow {  background-color: #111;}
+
+#toTopBtn, #toTopBtn:hover{
+background-color:#870000;
+color: red;
+}
+
+#toTopBtnTxt{  color: white;}
+
+#toTopBtnTxt:hover{  color: black;}
+
+.notification {
+background-color: rgba(0, 0, 0, 0.9);
+color: white;
+}
+
+/* BOXES inside style */
+.note {
+background-color: rgba(179, 229, 252, 1.0);
+border-left: 1em solid rgb(85, 201, 255);
+}
+
+.alert {
+background-color: hsla(339, 81%, 85%, 1.0);
+border-left: 1em solid rgb(252, 128, 169);
+}
+
+.info {
+background-color:#cdcccc83;
+border-left: 1em solid #cdcccc;
+}
+
+.info-dark {
+  background-color:#333;
+  border-left: 1em solid #666;
+}
+
+.caution {
+background-color: hsla(354, 100%, 90%, 1.0);
+border-left: 1em solid rgb(255, 129, 141);
+}
+
+.warning {
+background-color: hsla(36, 100%, 85%, 1.0);
+border-left: 1em solid rgb(255, 184, 79);
+}
+
+.important {
+background-color: hsla(261, 46%, 84%, 1.0);
+border-left: 1em solid rgb(158, 122, 219);
+}
+
+.download {
+background-color: hsla(120, 46%, 75%, 1.0);
+border-left: 1em solid forestgreen;
+color: #333;
+}
+
+.download, .note, .alert, .warning, .caution, .important {  color: #333;}
+.download a, .note a, .alert a, .warning a, .caution a, .important a {  color: #222;}
+.info a {  color: #eee;}
+/* .info {  color: #333;} */
+
+.download a:hover {  color: forestgreen;}
+
+.download::before {  color: forestgreen;}
+
+/* topnav */
+.topnav {background-color: #870000;}
+
+.topnav a {  color: #f2f2f2;}
+
+#burger span {  background: white;}
+
+/* contact */
+#my-form-button {
+  background-color: #870000;
+  color: white;
+}
+
+#contact-title {background-color: #111;}
+
+#contact-bar {
+  background-color: #222;
+  color: #ddd;
+}
+
+#close-btn {  color: green;}
+
+#scheduleBtn{  color: white;}
+
+.tablink{color:white; background-color: #222;}
+.tablink:hover{  background-color: #870000;}
+
+.contact-content {  background-color: #222; color: #ddd;}
+
+.contact-icons::before { color: #ddd;}
+
+.contact-input {
+  background-color: #111;
+  color: #ddd;
+}
+
+#contact-bottom-bar {
+  background-color: #111;
+  color: #ddd;
+}
+
+#contact-bottom-bar button {
+  background-color: #222;
+  color: #ddd;
+}
+
+.w3-tag {
+  background-color: #232323;
+  color: #ccc;
+}
+
+.highlighter-rouge { 
+  background-color: #000;
+  border-left: 1em solid #333;
+  color: #fffedc;
+}
+
+code.highlighter-rouge {
+  background-color: #444;
+  color: white;
+}
+
+#icon-dark::before {  color: #fff; }

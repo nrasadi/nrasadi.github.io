@@ -1,11 +1,6 @@
 ---
-<!-- layout: full_width -->
 layout: boxed
 ---
-
-<!-- <div>
-    <h1>Tags: {{site.documents | group_by: 'tags'}}</h1>
-</div> -->
 
 {% assign tags = site.ml_systems | map: 'tags' | join: ',' | split: ',' | uniq %}
 
@@ -15,13 +10,13 @@ layout: boxed
     {% assign photo_available = false %}
 {% endif %}
 
-<div class="w3-row-padding w3-padding w3-cell-row w3-leftbar w3-light-grey w3-round w3-container" style="text-align:justify">
+<div class="w3-row-padding w3-padding w3-cell-row w3-round w3-container info-dark" style="text-align:justify">
     {% if photo_available %}
         <div class="m8 l6 s10 w3-cell-middle w3-cell w3-margin w3-padding w3-mobile">
     {% else %}
         <div class="m10 l11s10">
     {% endif %}
-            <i class="fas fa-cut fa-lg w3-xlarge"></i>
+            <i class="fas fa-cut fa-lg w3-xlarge" id="mlsys-info-icon"></i>
             {{ content }}
         </div>
     {% if photo_available %}
@@ -45,7 +40,7 @@ layout: boxed
                             <span class="fa-li"><i class="fas fa-chevron-right"></i></span>
                             <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
                             <br>
-                            <div class="w3-text-grey mlsys-dates">{{ post.date | date: "%B %d, %Y" }}</div>
+                            <div class="mlsys-dates">{{ post.date | date: "%B %d, %Y" }}</div>
                             <div>{{ post.excerpt | markdownify }}</div>
                         </li>
                     {% endif %}
@@ -92,7 +87,7 @@ layout: boxed
                 listItem.innerHTML = "<span class='fa-li'><i class='fas fa-chevron-right'></i></span>" +
                                      "<h3><a href='" + post.url + "'>" + post.title + "</a></h3>" +
                                      "<br>" +
-                                     "<div class='w3-text-grey mlsys-dates'>" + post.date + "</div>" +
+                                     "<div class='mlsys-dates'>" + post.date + "</div>" +
                                      "<div>" + post.excerpt + "</div>";
                 
                 ulElement.appendChild(listItem);

@@ -104,15 +104,6 @@ h1{font-size:1.75em} h2{font-size:1.375em} h3{font-size:1.25em} h4{font-size:1.1
   font-family: inherit;
 }
 
-body {
-  background-image: url("../statics/bg1.png");
-}
-
-
-a .social-icon{
-  color: blue;
-}
-
 .emoji
 {
   width: 1.1em;
@@ -121,7 +112,6 @@ a .social-icon{
 }
 
 .easy-icon{
-  background: url("../statics/icons/easy-black.png") no-repeat;
   width: 32px;
   height: 32px;
   background-size:contain;;
@@ -130,7 +120,6 @@ a .social-icon{
 }
 
 .easy-icon:hover{
-  background: url("../statics/icons/easy.png") no-repeat;
   width: 32px;
   height: 32px;
   background-size:contain;;
@@ -181,17 +170,12 @@ a .social-icon{
 
 a {
   text-decoration: none;
-  color: #9b0000;
 }
 
 /* Social Icons */
-i.fab, i.fa, i.fas {color: #222; padding-right: 5px;}
-i.fa-gitlab:hover{color: #E65100;}
-i.fa-github:hover{color: #3a3a6d;}
-i.fa-envelope:hover{color: #1E88E5;}
-i.fa-youtube:hover{color: #ab000d;}
-i.fa-telegram:hover{color: #006db3;}
-i.fa-twitter:hover{color: #1da1f2;}
+i.fab, i.fa, i.fas {
+  padding-right: 5px;
+}
 
 .wrapper {
   min-height: 100%;
@@ -213,14 +197,6 @@ i.fa-twitter:hover{color: #1da1f2;}
   left: 0;
 }
 
-.footer *{
-  color: #cdcccc;
-}
-
-.footer a{
-  color: red;
-}
-
 @media only screen and (max-width: 650px){
   .footer, .wrapper:after {
     height: 200px;
@@ -229,9 +205,7 @@ i.fa-twitter:hover{color: #1da1f2;}
 }
 
 .box{
-  background-color: white;
   border-radius: .7vw;
-  border: solid 1px #ddd;
   padding: 1.2em .8em .8em .8em;
   margin-bottom: 2em;
 }
@@ -242,13 +216,8 @@ i.fa-twitter:hover{color: #1da1f2;}
   }
 }
 
-.box-narrow {
-  background-color: #ffffffe0;
-}
-
 #toTopBtn, #toTopBtn:hover{
   display: none;
-  background-color:#870000;
   bottom: 5px;
   right: 16px;
   position: fixed;
@@ -257,17 +226,8 @@ i.fa-twitter:hover{color: #1da1f2;}
   height:2em;
   font-size: 1em;
   border-radius: 10%;
-  color: red;
   padding: 0 0 0 5px;
   border: none;
-}
-
-#toTopBtnTxt{
-  color: white;
-}
-
-#toTopBtnTxt:hover{
-  color: black;
 }
 
 #main-content{
@@ -283,69 +243,43 @@ i.fa-twitter:hover{color: #1da1f2;}
     user-select: none;
 }
 
-.notification {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: white;
-  border-radius: 5px;
-  z-index: 9999;
-
-}
-
 /* BOXES */
 
 .note {
   margin-top: 1.5em auto 1.5em auto;
   padding: 1em;
-  /* background-color: #fff9c4; */
-  background-color: rgba(179, 229, 252, 0.5);
   border-radius: 1em;
-  border-left: 1em solid rgba(179, 229, 252, 1.0);
 }
 
 .alert {
   content: "XX";
   margin-top: 1.5em auto 1.5em auto;
   padding: 2em;
-  /* background-color:rgba(240, 128, 128, 0.5); */
-  background-color: hsla(339, 81%, 85%, 0.5);
   border-radius: 1em;
-  border-left: 1em solid hsla(339, 81%, 85%, 1);
 }
 
 .info {
   margin-top: 1.5em auto 1.5em auto;
   padding: 1em;
-  background-color:#cdcccc83;
   border-radius: 1em;
-  border-left: 1em solid #cdcccc;
 }
 
 .caution {
   margin-top: 1.5em auto 1.5em auto;
   padding: 1em 2em 1em 2em;
-  background-color: hsla(354, 100%, 90%, 0.5);
   border-radius: 1em;
-  border-left: 1em solid hsla(354, 100%, 90%, 1.0);
 }
 
 .warning {
   margin-top: 1.5em auto 1.5em auto;
   padding: 1em;
-  background-color: hsla(36, 100%, 85%, 0.5);
   border-radius: 1em;
-  border-left: 1em solid hsla(36, 100%, 85%, 1.0);
 }
 
 .important {
   margin-top: 1.5em auto 1.5em auto;
   padding: 1em;
-  background-color: hsla(261, 46%, 84%, 0.5);
   border-radius: 1em;
-  border-left: 1em solid hsla(261, 46%, 84%, 1.0);
 }
 
 .download::before {
@@ -357,29 +291,42 @@ i.fa-twitter:hover{color: #1da1f2;}
 .download {
   margin-top: 1.5em auto 1.5em auto;
   padding: 1em;
-  background-color: hsla(120, 46%, 75%, 0.5);
   border-radius: 1em;
-  border-left: 1em solid forestgreen;
 }
 
 .download a {
-  color: rgb(85, 85, 85);
   font-weight: 525;
 }
 
 .download a:hover {
-  color: forestgreen;
   font-weight: 525;
 }
+
+.download a, .info a, .note a, .alert a, .warning a, .caution a, .important a {  font-weight: 525;}
 
 .download::before {
   display: inline-block;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-  color: forestgreen;
   content: "\f019"; /* Font Awesome download icon */
   font-family: "Font Awesome 5 Free"; /* Font Awesome font family */
   font-weight: 900; /* Font Awesome font weight */
   margin-right: 0.5em; /* Adjust the spacing between the icon and text */
   left: 0;
+}
+
+#dark-mode-button {
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+@media screen and (max-width: 700px) {
+  #dark-mode-button {
+    padding-right: 1em;
+    padding-left: 1em;
+    position: absolute;
+    display: block;
+    right: 3em;
+    font-size: larger;
+  }
 }

@@ -1,21 +1,12 @@
-function burgerTopNav() {
-  var x = document.getElementById("main-topnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
 function burgermenu() {
   var x = document.getElementById("main-topnav");
   var mainContent = document.getElementById("main-content");
   if (x.className === "topnav") {
    x.className += " responsive";
-   mainContent.style.marginTop = '280px';
+  //  mainContent.style.marginTop = '280px';
   } else {
    x.className = "topnav";
-   mainContent.style.marginTop = '100px';
+  //  mainContent.style.marginTop = '100px';
   }
 }
 
@@ -53,7 +44,7 @@ $(document).ready(function(){
 });
 
 function openContactTab(evt, tabName) {
-  var i, x, tablinks;
+  var i, x;
   x = document.getElementsByClassName("contactTab");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";

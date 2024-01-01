@@ -4,16 +4,10 @@
 }
 
 .pub-abstract {
-  color: #ededed;
   font-size: 1em;
   padding: 0px 2px 0px 2px;
   vertical-align: bottom;
-  border: 1px solid #222;
-  background-color: #555;
   border-radius: 3px;
-}
-.pub-abstract:hover {
-  background-color: #870000; 
 }
 
 .pub-abstract-text {
@@ -30,18 +24,11 @@
 }
 
 .icon::before {
-  color: #ededed;
   font-size: 1em;
   padding: 1px;
   vertical-align: bottom;
-  border: 1px solid #222;
-  background-color: #555;
   border-radius: 3px;
 }
-
- .icon:hover::before {
-  background-color: #870000;
- }
 
  .ai-google-scholar-square.icon {
    font-size: 1.2em;
@@ -49,19 +36,11 @@
    margin-bottom: 2px;
  }
 
- a.pub-title{
-   color: #222;
-   /*text-decoration: */
-   /* font-weight: bold; */
+ a.pub-title {
    font-weight: 660;
  }
 
 .icon.quote{
-  /*color: white;
-  background-color: #333;*/
-  /*padding: 1px;*/
-  /*font-size: 1.4em;*/
-  /*vertical-align: baseline;*/
 }
 
 .ai{
@@ -80,42 +59,27 @@
   margin-right: 0;
 }
 
-.pub-goodness{
-  background-color: #555;
-  color: white;
-
-}
-
 .pub-award{
-  background-color: rgb(240,210,75);
-  /*background-image: radial-gradient(circle, rgba(218,165,32,1), rgba(218,165,32,0));*/
   font-weight: bold;
-  color: black;
 }
 
 .pub-abstract-btn{
-  background-color: #fdfdfd;
-  color: black;
   font-weight: bold;
 }
 
 .pub-icons{
-  margin-top: 0.7sem;
+  margin-top: .4em;
 }
 
 
 .pub-misc{
-  border: 1px solid #999999;
   border-radius: 3px;
   padding: 2px;
   margin-top: 1em;
-  color: #222;
 }
 
 .pub-name{
-  background-color:rgb(240, 240, 240);
   font-weight: 550;
   border-radius: 0;
   padding: 5px 5px 5px 2px;
-  /* padding: 1em; */
 }

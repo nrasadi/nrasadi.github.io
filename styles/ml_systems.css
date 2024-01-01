@@ -1,6 +1,5 @@
 .mlsys-dates {
     font-size: 90%;
-    color: #870000;
     margin-bottom: .5em;
     margin-top: -1.1em;
 }
@@ -8,10 +7,6 @@
 .mlsys-latest-articles {
     margin-top: 2em;
     margin-bottom: -.5em;
-}
-
-.article-icon:before {
-    color: #870000;
 }
 
 .article-title {
@@ -76,8 +71,6 @@
 }
 
 #more-button {
-    background-color: #870000;
-    color: white;
     padding: 0em 1.5em;
     font-size: 1em;
     border: none;
@@ -91,14 +84,4 @@
 #more-button *{
     padding: 0;
     margin: 0;
-    background-color: #870000;
-    color: white;
-}
-
-#more-button:hover {
-    box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
-}
-
-#more-button:hover * {
-    box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
 }

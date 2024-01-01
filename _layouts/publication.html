@@ -81,9 +81,8 @@ layout: default
 
   <div class="w3-row element" style="border-left: .4em solid {{pub_color}};">
     <div class="w3-col" style="width:1em; ">
-      <span style="background-color:{{pub_color}}; padding:.2em; margin-left:.25em; color: white; font-weight: bold;">{{ pub_type | upcase }}{{count}}</span>
+      <span class="pub-typecount" style="background-color:{{pub_color}}; padding:.2em; margin-left:.25em; font-weight: bold;">{{ pub_type | upcase }}{{count}}</span>
     </div>
-    <!-- <div class="w3-col" style="width:2%"></div> -->
     
     <div class="w3-col w3-left " style="width:95%; padding-left: 1.5em;">
       <a class="pub-title">{{ pub.title }}</a> <br>
@@ -109,7 +108,7 @@ layout: default
       </p>
       <p class="pub-icons">
         {% if pub.pdf %}
-          <a href="{{pub.pdf}}" target="_blank" title="PDF file"><i class="fas fa-file-pdf icon"></i></a>
+          <a href="{{pub.pdf}}" target="_blank" title="PDF File"><i class="fas fa-file-pdf icon"></i></a>
         {% endif %}
         {% if pub.presentation %}
           <a href="{{pub.presentation}}" target="_blank" title="Presentation"><i class="fas fa-file-powerpoint icon"></i></a>
@@ -157,18 +156,8 @@ layout: default
 
       </p>
     </div>
-    <!-- <div class="w3-col w3-left l3 m4"> -->
-      <!-- {% if pub.pdf %}
-      <a href="#" title=""><i class="feather-file-text"></i></a>
 
-      {% endif %} -->
-    <!-- </div> -->
   </div>
-  <!-- <p>
-    <ul class="pub-row">
-      <li style="">[{{ pub_type | upcase }}{{count}}] <a href="{{pub.link}}">{{ pub.title }}</a></li>
-    </ul>
-  </p> -->
 
 {% endfor %}
 </ul>
