@@ -1,20 +1,11 @@
 {% assign hobbies = site.data.profile.hobbies %}
 <div class="w3-container box w3-mobile">
-  <h5>{{hobbies.title}}</h5>
+  <h3>{{hobbies.title}}</h3>
   <ul class="hobby">
   {% for hobby in hobbies.items %}
-    <li data-emoji="{{hobby.icon}}">
-      {% if hobby.link %}
-        {% if hobby.link contains 'emoji' %}
-          <a href="{{hobby.link}}" style="decoration:none;">
-            {{ hobby.link | remove: 'emoji' }}
-          </a>
-        {% else %}
-          {{hobby.name}}
-        {% endif %}
-      {% else %}
-        {{hobby.name}}
-      {% endif %}
+    <li data-emoji={% if hobby.icon %}"{{hobby.icon}}"{% else %}"🌟"{% endif %}>
+      {% if hobby.link %} <a href="{{hobby.link}}" style="decoration:none;">{{hobby.name}}</a>
+      {% else %}{{hobby.name}}{% endif %}
     </li>
   {% endfor %}
   </ul>

@@ -41,9 +41,18 @@ social:
 
 research_interests:
   title: "Research Interests:"
+  desc: "I am interested in the intersection of Machine Learning and Networked Systems, especially in the context of Edge Intelligence and Edge Computing. As long as I can take a small step forward in this direction, I will be happy.   
+  <br>
+  Below, you can find a fairly generic list of topics that I am currently working on or I am interested in.   
+  <br><br>
+  If you are interested in any of them, please feel free to contact me."
   items:
-    - Distributed Machine Learning and Edge AI
-    - Application-Aware System Design and Optimization
+    - title: Distributed Machine Learning and Edge AI
+      desc: #
+    - title: Federated Learning and Edge Intelligence
+      desc: #
+    - title: Application-Aware System Design and Optimization
+      desc: #
 
 hobbies:
   title: "Fun?"
@@ -59,5 +68,5 @@ hobbies:
       icon: 🎶
       link:
     - name: And surely, dreaming!
-      icon: 💭
+      icon: #💭
       link:

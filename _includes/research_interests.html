@@ -1,9 +1,14 @@
 {% assign interests = site.data.profile.research_interests %}
 <div class="w3-container box w3-mobile">
-  <h5>{{interests.title}}</h5>
+  <h3>{{interests.title}}</h3>
+  {% if interests.desc %}<p>{{interests.desc}}</p><br>{% endif %}
   <ul>
   {% for interest in interests.items %}
-  <li>{{interest}}</li>
+    {% if interest.title %}
+      <li>
+        <b>{{interest.title}}</b>{% if interest.desc %}: <span class="interest-desc">{{interest.desc | markdownify }}</span>{% endif %}
+      </li>
+    {% endif %}
   {% endfor %}
   </ul>
 </div>
