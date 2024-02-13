@@ -4,7 +4,7 @@ tags: "Edge Computing, Deep Learning, Distributed Systems, Distributed Deep Lear
 authors: "Navidreza Asadi, Maziar Goudarzi"
 type: "j"
 place: "IEEE Internet of Things Journal"
-date: "2023/12/01"
+date: "2024/01/01"
 IF: 10.6
 # status: "a"
 pdf: "https://arxiv.org/pdf/2210.08376.pdf"
