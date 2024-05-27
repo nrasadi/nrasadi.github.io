@@ -19,7 +19,7 @@ Before the emergence of Transformers, recurrent neural networks (RNNs), based on
 
 There exist a number of papers **claiming** that RNNs not only do well but also can forecast accurately on data points that they have not observed.
 
-This paper simply questions this claim and tries find to an explanation for _why they perform reasonably?_ and _whether there is a simpler alternative for them?_
+This paper simply questions this claim and tries to find to an explanation for _why they perform reasonably?_ and _whether there is a simpler alternative for them?_
 {: .info}
 
 They utilize resource usage time series of traces available from large-scale cloud providers, and their short answer _based on the data that they investigated on_ is that data is usually temporally highly correlated. In other words, LSTMs are likely learning how to produce a shifted version of data from the past.

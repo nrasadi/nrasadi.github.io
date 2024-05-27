@@ -18,6 +18,7 @@ There are a plethora of interconnected devices such as IoT gadgets, and their nu
 Therefore, there is a need for a tool that can automatically detect such implications, potentially only based on the input-output pairs, meaning that, the knowledge about the data fed to the system (i.e., a device or an application running on a device) and the responses of the system are the only given information.
 
 As the paper mentions, potential use cases are:
+
   1. Reverse-engineering protocol formats; 
   2. Evaluating interoperability between devices and protocols; 
   3. Identifying devices based on the input-output pairs; and 
@@ -48,7 +49,7 @@ They try to find an answer for this question by employing the ideas behind gener
     - Field length (inter-field dependency; 85% accuracy)
     - TCP Checksum (inter-field dependency; 90% accuracy)
     - CRC-15 (inter-field dependency; 0% accuracy)
-    For the latter sub-task (CRC-15), they change their GANs architecture, so that the input goes to all the layers (it is only possible because all the layers have the same dimension), and reach to an accuracy of 39%.
+- For the last sub-task (CRC-15), they change their GANs architecture, so that the input goes to all the layers (it is only possible because all the layers have the same dimension), and reach to an accuracy of 39%.
 - In the second task, they leverage conditional GANs (CGANs) to generate packets that cause DNS Amplification. The condition is a binary input which is set on whether a sample is positive or not, meaning that the size of response is at least 10 times higher than the size of the corresponding request.
 - Out of 100k training samples, 778 (0.78%) of them are positive.
 - They assume the packets are UDP and provide some candidates for some fields. Therefore, their approach is gray-box.
