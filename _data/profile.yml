@@ -45,10 +45,9 @@ social:
 research_interests:
   title: "Research Interests:"
   desc: |
-    I am interested in the intersection of Machine Learning and Networked Systems, especially in the context of Edge Intelligence and Edge Computing. As long as I can take a small step forward in this direction, I would be happy.   
+    I am interested in the intersection of Machine Learning and Networked Systems, especially in the context of Edge Intelligence. As long as I can take a small step forward in this direction, I would be happy.   
     <br>
-    Below, you can find a fairly generic list of topics that I am currently working on or I am interested in.   
-    <br><br>
+    Below, you can find a fairly generic list of topics that I am currently working on or I am interested in.
     If you find any of the following buzzwords interesting, feel free to reach out to me for a chat or collaboration.
   items:
     - title: Distributed Machine Learning and Edge AI
