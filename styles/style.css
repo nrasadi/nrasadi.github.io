@@ -164,8 +164,9 @@ h1{font-size:1.75em} h2{font-size:1.375em} h3{font-size:1.25em} h4{font-size:1.1
 }
 
 #index{
-  vertical-align: middle;
-  margin-top: -.26em;
+  font-weight: 700;
+  /* vertical-align: middle; */
+  /* margin-top: -.26em; */
 }
 
 a {
@@ -305,6 +306,8 @@ i.fab, i.fa, i.fas {
 
 .download a, .info a, .note a, .alert a, .warning a, .caution a, .important a {  font-weight: 525;}
 
+ul.info, ul.note, ul.alert, ul.warning, ul.caution, ul.important, ul.download {list-style-position: inside;}
+
 .download::before {
   display: inline-block;
   text-rendering: auto;
@@ -351,3 +354,10 @@ i.fab, i.fa, i.fas {
   margin-right: 0.5em;
   display: inline-block; /* Ensure emojis are displayed inline with text */
 }
+
+table{border-collapse:collapse;border-spacing:0;width:100%;display:table}
+table{border: 1px solid}
+table tr{border-bottom:1px solid}
+tr th, tr td{text-align:center}
+table td,table th{padding:8px 8px;display:table-cell;text-align:left;vertical-align:top}
+table th:first-child,table td:first-child{padding-left:16px}

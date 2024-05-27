@@ -224,3 +224,9 @@ code.highlighter-rouge {
 }
 
 #icon-dark::before {  color: #fff; }
+
+/* Table */
+tbody tr:nth-child(odd){background-color:#1a1a1a}
+table tr:nth-child(even){background-color:#1f1f1f}
+table th{background-color:#1f1f1f}
+table th, table td{border: 1px solid #444;}
