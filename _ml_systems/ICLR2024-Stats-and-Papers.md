@@ -6,7 +6,7 @@ photo:
   # caption: 
 categories: 
   - Paper 
-tags: [Machine Learning, Conference Summary, Efficient ML, Attacks and Mitigation, LLM, Federated Learning, Data Manipulation, Spiking Neural Network, Scalable ML, Knowledge Distillation, Continuous Learning]
+tags: [Machine Learning, Conference Summary, Efficient ML, Attacks and Mitigation, LLM, Federated Learning, Data Manipulation, Spiking Neural Network, Scalable ML, Knowledge Distillation, Continuous Learning, Ensemble]
 visible: true
 ---
 
@@ -86,3 +86,7 @@ Here are the papers that initially caught my interest, selected based on their t
 | FedHyper: A Universal and Robust Learning Rate Scheduler for Federated Learning with Hypergradient Descent | Federated Learning, Efficient ML | [PDF](https://openreview.net/pdf?id=Kl9CqKf7h6) |
 | FedCompass: Efficient Cross-Silo Federated Learning on Heterogeneous Client Devices Using a Computing Power-Aware Scheduler | Federated Learning, Efficient ML | [PDF](https://openreview.net/pdf?id=msXxrttLOi) |
 | Adversarial Feature Map Pruning for Backdoor | Attacks and Mitigation | [PDF](https://openreview.net/pdf?id=IOEEDkla96) |
+| Divide and not forget: Ensemble of selectively trained experts in Continual Learning | Ensemble, Continuous Learning | [PDF](https://arxiv.org/pdf/2401.10191) |
+| The Curse of Diversity in Ensemble-Based Exploration | Reinforcement Learning, Ensemble | [PDF](https://openreview.net/pdf?id=M3QXCOTTk4) |
+| Reward Model Ensembles Help Mitigate Overoptimization | Reinforcement Learning, Ensemble | [PDF](https://openreview.net/pdf?id=dcjtMYkpXx) |
+| Fast Ensembling with Diffusion Schrödinger Bridge | Ensemble | [PDF](https://arxiv.org/pdf/2404.15814) |
