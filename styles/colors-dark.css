@@ -230,3 +230,30 @@ tbody tr:nth-child(odd){background-color:#1a1a1a}
 table tr:nth-child(even){background-color:#1f1f1f}
 table th{background-color:#1f1f1f}
 table th, table td{border: 1px solid #444;}
+
+/* #evaluationForm .w3-btn {
+  background-color: #870000;
+  color: white;
+}
+
+#evaluationForm .w3-btn:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+  color: white;
+} */
+
+#evaluationForm  {
+  input, textarea, input[type="date"], input[type="radio"] {
+    background-color: #111;
+    color: #ddd;
+  }
+  .w3-btn {
+    background-color: #870000;
+    color: white;
+  }
+  .w3-btn:hover {
+    background-color: rgba(123, 123, 123, 0.272);
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+    color: white;
+}
+}

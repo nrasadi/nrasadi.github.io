@@ -1,0 +1,67 @@
+.compact-radio label { margin-right: 10px; }
+#motivationSection { display: block; }
+textarea {
+    resize: none;
+    overflow: hidden;
+}
+textarea:focus {
+    height: auto;
+}
+.item-margin-top {
+    margin-top: .5em;
+}
+.evalItem {
+    width: 1.7em;
+    text-align: center;
+    padding: 0px;
+}
+@media (max-width: 720px) {
+    .compact-radio label { margin-right: 5px; }
+}
+input[type="radio"] {
+    display: none; /* Hide the default radio button */
+}
+.custom-radio {
+    width: 1em;
+    height: 1em;
+    border: 2px solid black;
+    background-color: white;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+input[type="radio"]:checked + .custom-radio {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><rect x="1" y="1" width="8" height="8" fill="black"/></svg>');
+    background-size: cover;
+}
+
+button {
+    margin-top: .5em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.w3-btn {
+    /* background-color: #870000; */
+    color: white;
+}
+
+
+.error-border {
+    border: 2px solid red !important;
+}
+
+#notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #870000;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 9999;
+}

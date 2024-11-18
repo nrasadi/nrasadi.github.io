@@ -1,0 +1,415 @@
+---
+layout: full_width
+title: ""
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="thesis_evaluation_sheet.css">
+</head>
+<body class="w3-container w3-padding">
+
+<form id="evaluationForm" class="w3-container w3-card-4 w3-padding w3-mobile" style="max-width: 800px; margin: auto;">
+    <div class="w3-row">
+        <div class="w3-col s2 m1 w3-right" style="display: flex; justify-content: center; align-items: center;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Logo_of_the_Technical_University_of_Munich.svg" alt="TUM Logo" style="max-width: 4em; height: auto;" class="w3-margin-top" id="tumLogo" crossorigin="anonymous">
+        </div>
+    </div>
+    <div class="w3-row">
+        <div class="w3-col s12 m12 w3-center" style="display: flex; justify-content: center; align-items: center;">
+            <h1>Student Thesis Evaluation Form</h1>
+        </div>
+    </div>
+    
+    <!-- Compact Row for Thesis Type, Begin, and End Dates -->
+    <div class="w3-row-padding w3-margin-bottom w3-mobile" style="display: flex; flex-wrap: wrap; align-items: center;">
+        <div class="w3-col s12 m6 w3-left" style="display: flex; flex-direction: column; justify-content: center; margin-bottom: 8px;">
+            <label>Thesis Type:</label>
+            <div class="compact-radio w3-bar">
+                <label><input type="radio" name="thesisType" value="B.Sc." id="bsc" class="w3-radio" required><span class="custom-radio"></span> B.Sc.</label>
+                <label><input type="radio" name="thesisType" value="M.Sc." id="msc" class="w3-radio"><span class="custom-radio"></span> M.Sc.</label>
+                <label><input type="radio" name="thesisType" value="IDP" id="idp" class="w3-radio"><span class="custom-radio"></span> IDP</label>
+            </div>
+        </div>
+        <div class="w3-col s6 m3 w3-left" style="margin-bottom: 8px;">
+            <label>Begin:</label>
+            <input type="date" id="beginDate" name="beginDate" required class="w3-input w3-border w3-mobile">
+        </div>
+        <div class="w3-col s6 m3 w3-left" style="margin-bottom: 8px;">
+            <label>End:</label>
+            <input type="date" name="endDate" required class="w3-input w3-border w3-mobile">
+        </div>
+    </div>
+
+    <!-- Compact Row for Student and Supervisor Names -->
+    <div class="w3-row-padding">
+        
+        <div class="w3-col s12 m6">
+            <label>Student:</label>
+            <textarea name="studentName" required class="w3-input w3-border" rows="1"></textarea>
+        </div>
+        <div class="w3-col s12 m6">
+            <label>Supervisor(s)</label>
+            <textarea name="supervisor" required class="w3-input w3-border" rows="1" placeholder="List each on a new line"></textarea>
+        </div>
+    </div>
+
+    <!-- Title, Summary, and Publication Sections -->
+    <div class="w3-padding">
+        <label>Title:</label>
+        <input type="text" name="title" required class="w3-input w3-border">
+    </div>
+
+    <div class="w3-padding">
+        <label>Summary of the thesis and scientific contribution:</label>
+        <textarea name="summary" class="w3-input w3-border" rows="3" required></textarea>
+    </div>
+    <!-- Possible Publication Section -->
+    <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-col s12 m4">
+            <label>Publication possible?</label>
+            <div class="compact-radio w3-bar">
+                <label><input type="radio" name="publication" value="Yes" id="publicationYes" onclick="toggleSection('publicationSection', true)" class="w3-radio"><span class="custom-radio" required></span> Yes</label>
+                <label><input type="radio" name="publication" value="No" id="publicationNo" onclick="toggleSection('publicationSection', false)" class="w3-radio" checked><span class="custom-radio"></span> No</label>
+            </div>
+        </div>
+        <div id="publicationSection" class="w3-col s12 m8", style="display: none;">
+            <label>Where?</label>
+            <textarea name="publicationVenue" rows="1" class="w3-input w3-border"></textarea>
+        </div>
+    </div>
+
+    <!-- Recommend for Award Section -->
+    <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-col s12 m4">
+            <label>Recommend for an award?</label>
+            <div class="compact-radio w3-bar">
+                <label><input type="radio" name="award" value="Yes" id="awardYes" onclick="toggleSection('motivationSection', true)" class="w3-radio"  checked><span class="custom-radio" required></span> Yes</label>
+                <label><input type="radio" name="award" value="No" id="awardNo" onclick="toggleSection('motivationSection', false)" class="w3-radio"><span class="custom-radio"></span> No</label>
+            </div>
+        </div>
+        <div id="motivationSection" class="w3-col s12 m8">
+            <label>What is the motivation for recommendation?</label>
+            <textarea name="awardMotivation" rows="1" class="w3-input w3-border"></textarea>
+        </div>
+    </div>
+    
+    <!-- Evaluation Criteria Section -->
+    <div class="w3-margin-bottom">
+        <h3 id="evaluation">Evaluation</h3>
+        <hr style="margin-top: 0;">
+        
+        <div class="eval-item"> <!-- 1. Performed Work -->
+            <label><h6>1. Performed Work (<input type="text" name="performedWorkGrade" value="40" class="evalItem w3-border-0 w3-border-light-gray w3-round">%)</h6></label>
+            <!-- 1.a Getting into topic, overview on related work -->
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m8 subitem-title">
+                    <label>a) Getting into topic, overview on related work</label>
+                </div>
+                <div class="w3-col m4 compact-radio w3-bar subitem-grade">
+                    <label><input type="radio" name="performedWork1a" value="-" id="minus1a" class="w3-radio" required><span class="custom-radio"></span> <i class="fas fa-minus fa-xs"></i></label>
+                    <label><input type="radio" name="performedWork1a" value="+" id="plus1a" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i></label>
+                    <label><input type="radio" name="performedWork1a" value="++" id="plusplus1a" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i><i class="fas fa-plus fa-xs"></i></label>
+                </div>
+                <div class="w3-col s12 m12 item-margin-top subitem-description">
+                    <textarea name="performedWork1aText" rows="1" class="w3-input w3-border w3-round"  required></textarea>
+                </div>
+            </div>
+            <!-- 1.b Work spirit, self organization, cooperation -->
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m8 subitem-title">
+                <label>b) Work spirit, self organization, cooperation</label>
+                </div>
+                <div class="w3-col m4 compact-radio w3-bar subitem-grade">
+                    <label><input type="radio" name="performedWork1b" value="-" id="minus1b" class="w3-radio" required><span class="custom-radio"></span> <i class="fas fa-minus fa-xs"></i></label>
+                    <label><input type="radio" name="performedWork1b" value="+" id="plus1b" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i></label>
+                    <label><input type="radio" name="performedWork1b" value="++" id="plusplus1b" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i><i class="fas fa-plus fa-xs"></i></label>
+                </div>
+                <div class="w3-col s12 m12 item-margin-top subitem-description">
+                    <textarea name="performedWork1bText" rows="1" class="w3-input w3-border w3-round" required></textarea>
+                </div>
+            </div>
+            <!-- </div> -->
+            <!-- 1.c problem solving, creativity, communication -->
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m8 subitem-title">
+                <label>c) Problem solving, creativity, communication</label>
+                </div>
+                <div class="w3-col m4 compact-radio w3-bar subitem-grade">
+                    <label><input type="radio" name="performedWork1c" value="-" id="minus1c" class="w3-radio" required><span class="custom-radio"></span> <i class="fas fa-minus fa-xs"></i></label>
+                    <label><input type="radio" name="performedWork1c" value="+" id="plus1c" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i></label>
+                    <label><input type="radio" name="performedWork1c" value="++" id="plusplus1c" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i><i class="fas fa-plus fa-xs"></i></label>
+                </div>
+                <div class="w3-col s12 m12 item-margin-top subitem-description">
+                    <textarea name="performedWork1cText" rows="1" class="w3-input w3-border w3-round" required></textarea>
+                </div>
+            </div>
+            <!-- 1.d engagement, duration -->
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m8 subitem-title">
+                <label>d) Engagement, duration</label>
+                </div>
+                <div class="w3-col m4 compact-radio w3-bar w3-right subitem-grade">
+                    <label><input type="radio" name="performedWork1d" value="-" id="minus1d" class="w3-radio" required><span class="custom-radio"></span> <i class="fas fa-minus fa-xs"></i></label>
+                    <label><input type="radio" name="performedWork1d" value="+" id="plus1d" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i></label>
+                    <label><input type="radio" name="performedWork1d" value="++" id="plusplus1d" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i><i class="fas fa-plus fa-xs"></i></label>
+                </div>
+                <div class="w3-col s12 m12 item-margin-top subitem-description">
+                    <textarea name="performedWork1dText" rows="1" class="w3-input w3-border w3-round" required></textarea>
+                </div>
+            </div>
+        </div> <!-- End of 1. Performed Work -->
+        <div class="eval-item"> <!-- 2. Results -->
+            <label><h6>2. Results (<input type="text" name="resultsGrade" value="30" class="evalItem w3-border-0 w3-border-light-gray w3-round">%)</h6></label>
+            <!-- 2.a Completion of thesis goal(s) -->
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m8 subitem-title">
+                    <label>a) Completion of thesis goal(s)</label>
+                </div>
+                <div class="w3-col m4 compact-radio w3-bar subitem-grade">
+                    <label><input type="radio" name="resultsGrade1a" value="-" id="minus1a" class="w3-radio" required><span class="custom-radio"></span> <i class="fas fa-minus fa-xs"></i></label>
+                    <label><input type="radio" name="resultsGrade1a" value="+" id="plus1a" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i></label>
+                    <label><input type="radio" name="resultsGrade1a" value="++" id="plusplus1a" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i><i class="fas fa-plus fa-xs"></i></label>
+                </div>
+                <div class="w3-col s12 m12 item-margin-top subitem-description">
+                    <textarea name="resultsGrade1aText" rows="1" class="w3-input w3-border w3-round" required></textarea>
+                </div>
+            </div>
+            <!-- 2.b Scientific contribution*type of Thesis (consider type of Thesis) -->
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m8 subitem-title">
+                    <label>b) Scientific contribution (consider type of Thesis)</label>
+                </div>
+                <div class="w3-col m4 compact-radio w3-bar subitem-grade">
+                    <label><input type="radio" name="resultsGrade1b" value="-" id="minus1b" class="w3-radio" required><span class="custom-radio"></span> <i class="fas fa-minus fa-xs"></i></label>
+                    <label><input type="radio" name="resultsGrade1b" value="+" id="plus1b" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i></label>
+                    <label><input type="radio" name="resultsGrade1b" value="++" id="plusplus1b" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i><i class="fas fa-plus fa-xs"></i></label>
+                </div>
+                <div class="w3-col s12 m12 item-margin-top subitem-description">
+                    <textarea name="resultsGrade1bText" rows="1" class="w3-input w3-border w3-round" required></textarea>
+                </div>
+            </div>
+            <!-- 2.c Quality (stability, level of detail, extendability,…) -->
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m8 subitem-title">
+                    <label>c) Quality (stability, level of detail, extendability,…)</label>
+                </div>
+                <div class="w3-col m4 compact-radio w3-bar subitem-grade">
+                    <label><input type="radio" name="resultsGrade1c" value="-" id="minus1c" class="w3-radio" required><span class="custom-radio"></span> <i class="fas fa-minus fa-xs"></i></label>
+                    <label><input type="radio" name="resultsGrade1c" value="+" id="plus1c" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i></label>
+                    <label><input type="radio" name="resultsGrade1c" value="++" id="plusplus1c" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i><i class="fas fa-plus fa-xs"></i></label>
+                </div>
+                <div class="w3-col s12 m12 item-margin-top subitem-description">
+                    <textarea name="resultsGrade1cText" rows="1" class="w3-input w3-border w3-round" required></textarea>
+                </div>
+            </div>
+        </div> <!-- End of 2. Results -->
+        <div class="eval-item"> <!-- 3. Documentation -->
+            <label><h6>3. Documentation (<input type="text" name="docuemantationGrade" value="30" class="evalItem w3-border-0 w3-border-light-gray w3-round">%)</h6></label>
+            <!-- 3.a struture, language, writing style, format -->
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m8 subitem-title">
+                    <label>a) Struture, language, writing style, format</label>
+                </div>
+                <div class="w3-col m4 compact-radio w3-bar subitem-grade">
+                    <label><input type="radio" name="docuemantationGrade1a" value="-" id="minus1a" class="w3-radio" required><span class="custom-radio"></span> <i class="fas fa-minus fa-xs"></i></label>
+                    <label><input type="radio" name="docuemantationGrade1a" value="+" id="plus1a" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i></label>
+                    <label><input type="radio" name="docuemantationGrade1a" value="++" id="plusplus1a" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i><i class="fas fa-plus fa-xs"></i></label>
+                </div>
+                <div class="w3-col s12 m12 item-margin-top subitem-description">
+                    <textarea name="docuemantationGrade1aText" rows="1" class="w3-input w3-border w3-round" required></textarea>
+                </div>
+            </div>
+            <!-- 3.b Differentiation of own contribution and prior work -->
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m8 subitem-title">
+                    <label>b) Differentiation of own contribution and prior work</label>
+                </div>
+                <div class="w3-col m4 compact-radio w3-bar subitem-grade">
+                    <label><input type="radio" name="docuemantationGrade1b" value="-" id="minus1b" class="w3-radio" required><span class="custom-radio"></span> <i class="fas fa-minus fa-xs"></i></label>
+                    <label><input type="radio" name="docuemantationGrade1b" value="+" id="plus1b" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i></label>
+                    <label><input type="radio" name="docuemantationGrade1b" value="++" id="plusplus1b" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i><i class="fas fa-plus fa-xs"></i></label>
+                </div>
+                <div class="w3-col s12 m12 item-margin-top subitem-description">
+                    <textarea name="docuemantationGrade1bText" rows="1" class="w3-input w3-border w3-round" required></textarea>
+                </div>
+            </div>
+            <!-- 3.c Completeness, correctness and precision of text, tables, figures and graphs -->
+            <div class="w3-row-padding w3-margin-bottom">
+                <div class="w3-col m8 subitem-title">
+                    <label>c) Completeness, correctness and precision of text, tables, figures and graphs</label>
+                </div>
+                <div class="w3-col m4 compact-radio w3-bar subitem-grade">
+                    <label><input type="radio" name="docuemantationGrade1c" value="-" id="minus1c" class="w3-radio" required><span class="custom-radio"></span> <i class="fas fa-minus fa-xs"></i></label>
+                    <label><input type="radio" name="docuemantationGrade1c" value="+" id="plus1c" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i></label>
+                    <label><input type="radio" name="docuemantationGrade1c" value="++" id="plusplus1c" class="w3-radio"><span class="custom-radio"></span> <i class="fas fa-plus fa-xs"></i><i class="fas fa-plus fa-xs"></i></label>
+                </div>
+                <div class="w3-col s12 m12 item-margin-top subitem-description">
+                    <textarea name="docuemantationGrade1cText" rows="1" class="w3-input w3-border w3-round" required></textarea>
+                </div>
+            </div>
+
+        </div> <!-- End of 3. Documentation -->
+
+    </div>
+
+    <!-- Proposed Grade and Action Buttons in One Row -->
+    <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-col s6 m3">
+            <label>Proposed Grade:</label>
+            <input type="text" name="proposedGrade" class="w3-input w3-border w3-round" required>
+        </div>
+        <div class="w3-col s12 m9 w3-left" style="margin-top: 16px;">
+            <div class="w3-row-padding w3-responsive">
+            <div class="w3-col s12 m4 w3-margin-bottom"><button type="button" onclick="if (validateForm()) pdfForm()" class="w3-btn"><i class="fas fa-print"></i>Export to PDF</button></div>
+            <div class="w3-col s12 m4 w3-margin-bottom"><button type="button" onclick="saveAsJSON()" class="w3-btn"><i class="fas fa-save"></i>Save Data</button></div>
+            <div class="w3-col s12 m4 w3-margin-bottom"><button type="button" onclick="document.getElementById('importJSON').click()" class="w3-btn"><i class="fas fa-upload"></i>Import Data</button></div>
+            <input type="file" id="importJSON" style="display:none" onchange="loadFromJSON(event)">
+            </div>
+        </div>
+        </div>
+    <!-- </div> -->
+    <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-col s12 m12">
+            <label>Comments:</label>
+            <textarea name="comments" class="w3-input w3-border" rows="3"></textarea>
+        </div>
+    </div>
+</form>
+<div id="notification" class="" style="display:none;"></div>
+
+<script>
+    let isValid = true;
+    document.getElementById('evaluationForm').addEventListener('change', function() {
+        if (!isValid) {
+            document.addEventListener('DOMContentLoaded', function() {
+                validateForm();
+            });
+        }
+    });
+</script>
+<script src="thesis_evaluation_sheet.js"></script>
+<script> // Add 6 months to the begin date and set it as the end date
+    document.addEventListener('DOMContentLoaded', function() {
+        const beginDateInput = document.querySelector('input[name="beginDate"]');
+        const endDateInput = document.querySelector('input[name="endDate"]');
+
+        beginDateInput.addEventListener('change', function() {
+            const beginDate = new Date(this.value);
+            const endDate = new Date(beginDate.setMonth(beginDate.getMonth() + 6));
+            endDateInput.value = endDate.toISOString().split('T')[0];
+        });
+    });
+</script>
+<script> // Toggling sections based on radio button selection
+    function toggleSection(sectionId, show) {document.getElementById(sectionId).style.display = show ? 'block' : 'none'; document.dispatchEvent(new Event('DOMContentLoaded'));}
+</script>
+<!-- <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script> -->
+<script src="jspdf.umd.min.js"></script>
+<script>
+    function saveAsJSON() {
+        const form = document.getElementById('evaluationForm');
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => data[key] = value);
+
+        const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'evaluation.json';
+        link.click();
+    }
+    // Adjust textarea height based on content
+    function adjustTextarea() {
+        const textareas = document.querySelectorAll('textarea');
+        textareas.forEach(textarea => {
+            textarea.style.height = 'auto'; // Reset height
+            textarea.style.height = (textarea.scrollHeight) + 'px'; // Set new height based on scrollHeight
+            textarea.addEventListener('input', function() {
+                this.style.height = 'auto'; // Reset height
+                this.style.height = (this.scrollHeight) + 'px'; // Set new height based on scrollHeight
+            });
+        });
+    }
+    // Load data from JSON file
+    function loadFromJSON(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const data = JSON.parse(e.target.result);
+                const form = document.getElementById('evaluationForm');
+                Object.keys(data).forEach(key => {
+                    const field = form.elements[key];
+                    if (field) {
+                        if (field.type === 'radio') {
+                            const radioToCheck = Array.from(form.elements[key]).find(radio => radio.value === data[key]);
+                            if (radioToCheck) radioToCheck.checked = true;
+                        } else {
+                            field.value = data[key];
+                        }
+                    }
+                });
+                toggleSection('publicationSection', data.publication === 'Yes');
+                toggleSection('motivationSection', data.award === 'Yes');
+                document.dispatchEvent(new Event('DOMContentLoaded'));
+            };
+            reader.readAsText(file);
+        }
+        document.addEventListener('DOMContentLoaded', adjustTextarea);
+        // validateForm();
+    }
+    document.addEventListener('DOMContentLoaded', adjustTextarea);
+    // validateForm();
+
+    
+    function showNotification(message) {
+        const notification = document.getElementById("notification");
+        notification.innerText = message;
+        notification.style.display = "block";
+        setTimeout(() => {
+            notification.style.display = "none";
+        }, 3000);
+    }
+
+    function validateForm() {
+        const form = document.getElementById("evaluationForm");
+        isValid = true;
+        // Iterate through each form element
+        Array.from(form.elements).forEach(element => {
+            // Check if the element is required           
+            if (element.hasAttribute("required")) {
+                if (element.type === "radio") {
+                    // Handle radio button groups
+                    const radioGroup = form.querySelectorAll(`input[name="${element.name}"]`);
+                    const isAnyRadioChecked = Array.from(radioGroup).some(radio => radio.checked);
+                    
+                    if (!isAnyRadioChecked) {
+                        radioGroup.forEach(radio => radio.nextElementSibling.classList.add("error-border"));
+                        isValid = false;
+                    } else {
+                        radioGroup.forEach(radio => radio.nextElementSibling.classList.remove("error-border"));
+                    }
+                } else if (!element.value.trim()) {
+                    // Handle other required fields
+                    element.classList.add("error-border");
+                    isValid = false;
+                } else {
+                    element.classList.remove("error-border");
+                }
+            }
+        });
+
+        if (!isValid) {
+            showNotification("Please fill all required fields.");
+        }
+
+        return isValid;
+    }
+
+</script>
+</body>
+</html>

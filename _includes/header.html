@@ -24,7 +24,6 @@
       Home
       {% endif %}
     </b></a></h3>
-    <!-- <div class="topmenu"> -->
     {% for item in site.data.header %}
 
       <a href="{{ item.link | absolute_url }}" {% if page.url == item.link %}style="color: white;"{% endif %}

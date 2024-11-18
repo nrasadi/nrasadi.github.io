@@ -229,3 +229,17 @@ tbody tr:nth-child(odd){background-color:#fff}
 table tr:nth-child(even){background-color:#efefef}
 table th{background-color:#efefef}
 table th, table td{border: 1px solid #bbb;}
+
+#evaluationForm {
+  background-color: initial;
+  color: initial;
+  .w3-btn {
+    background-color: #870000;
+    color: white;
+  }
+  .w3-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
+    color: white;
+}
+}
