@@ -146,7 +146,7 @@ async function pdfForm() {
     doc.setFontSize(fontSize.normal);
     currentY += lineHeight / 2;
     doc.setDrawColor(128, 128, 128);   doc.line(margin, currentY, pageWidth - margin, currentY, 'S'); doc.setDrawColor(0);
-    currentY += lineHeight;
+    currentY += lineHeight * 1.5;
     const evalItems = document.querySelectorAll('div.eval-item');
     evalItems.forEach(evalItem => {
         const subItemsTitles = evalItem.querySelectorAll('div.subitem-title');
@@ -225,7 +225,15 @@ async function pdfForm() {
     // Add page number to the last page
     addPageNumber(doc, pageNumber);
     // Save the PDF
-    doc.save("x.pdf");
+    // create date in yyyy-mm-dd format
+    const dateObj = new Date();
+    const month = dateObj.getUTCMonth() + 1; //months from 1-12
+    const day = dateObj.getUTCDate();
+    const year = dateObj.getUTCFullYear();
+    const newdate = year + (month < 10 ? '0' + month : month.toString().padStart(2, '0')) + (day < 10 ? '0' + day : day.toString().padStart(2, '0'));
+    let fileName = `${formData.get('studentName').replace(' ', '_')}-${formData.get('thesisType').replace(/[\s.]/g, '')}-${supervisors.join('__').replace(' ', '_')}-${newdate}`;
+    fileName = fileName.replace(/[^a-zA-Z0-9-_]/g, '_');
+    doc.save(fileName);
 }
 
 function addText(doc, text, x, y, options) {

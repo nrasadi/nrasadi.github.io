@@ -65,3 +65,7 @@ button {
     display: none;
     z-index: 9999;
 }
+
+.evaluationForm-btn-icon {
+    color: white;
+}
