@@ -152,9 +152,9 @@ async function pdfForm() {
         const subItemsTitles = evalItem.querySelectorAll('div.subitem-title');
         const subItemsGrades = evalItem.querySelectorAll('div.subitem-grade');
         const subItemsTexts = evalItem.querySelectorAll('div.subitem-description');
-        const h6Element = evalItem.querySelector('h6');
-        const inputElement = h6Element.querySelector('input[type="text"]');
-        const title = h6Element ? h6Element.textContent.replace('(%)','(' + inputElement.value + '%)') : '';
+        const h4Element = evalItem.querySelector('h4');
+        const inputElement = h4Element.querySelector('input[type="text"]');
+        const title = h4Element ? h4Element.textContent.replace('(%)','(' + inputElement.value + '%)') : '';
         if ((currentY + lineHeight * 4) <= maxPageHeight) {
             doc.setFont(undefined, 'bold');
             doc.setFontSize(fontSize.subitem);
