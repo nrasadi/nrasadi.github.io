@@ -8,7 +8,7 @@ title: ""
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="thesis_evaluation_sheet.css">
+    <link rel="stylesheet" href="{{ '/resources/thesis_evaluation_sheet/thesis_evaluation_sheet.css' | relative_url }}">
 </head>
 <body class="w3-container w3-padding">
 
@@ -291,7 +291,7 @@ title: ""
         }
     });
 </script>
-<script src="thesis_evaluation_sheet.js"></script>
+<script src="{{ '/resources/thesis_evaluation_sheet/thesis_evaluation_sheet.js' | relative_url }}"></script>
 <script> // Add 6 months to the begin date and set it as the end date
     document.addEventListener('DOMContentLoaded', function() {
         const beginDateInput = document.querySelector('input[name="beginDate"]');
