@@ -1,5 +1,4 @@
 async function pdfForm() {
-    // await import("https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js");
     const { jsPDF } = window.jspdf;
     window.margin = 20;
     window.fontSize = {
