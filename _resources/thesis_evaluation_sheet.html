@@ -308,7 +308,8 @@ title: ""
     function toggleSection(sectionId, show) {document.getElementById(sectionId).style.display = show ? 'block' : 'none'; document.dispatchEvent(new Event('DOMContentLoaded'));}
 </script>
 <!-- <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script> -->
-<script src="jspdf.umd.min.js"></script>
+<script src="{{ '/resources/thesis_evaluation_sheet/jspdf.umd.min.js' | relative_url }}"></script>
+
 <script>
     function saveAsJSON() {
         const form = document.getElementById('evaluationForm');
