@@ -269,4 +269,8 @@ table th, table td{border: 1px solid #444;}
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><rect x="1" y="1" width="8" height="8" fill="white"/></svg>');
       background-size: cover;
   }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(90deg) brightness(100%) contrast(100%);
+  }
 }
