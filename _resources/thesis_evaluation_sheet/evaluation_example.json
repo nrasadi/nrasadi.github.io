@@ -2,7 +2,7 @@
   "thesisType": "M.Sc.",
   "beginDate": "2024-11-18",
   "endDate": "2025-05-17",
-  "studentName": "Master Mind",
+  "studentName": "Măster Mind",
   "supervisor": "Navidreza Asadi\nSatoshi Nakamoto",
   "title": "Mastering Networked Systems: A Computing Engineer's Quest",
   "summary": "This thesis presents a novel approach to optimizing network traffic in distributed systems. By leveraging machine learning algorithms, we demonstrate significant improvements in latency reduction and resource utilization. Our work contributes to the field by providing a scalable solution for real-time data processing. The proposed framework is evaluated through extensive simulations and experiments. Key findings are presented in a comprehensive analysis.",
