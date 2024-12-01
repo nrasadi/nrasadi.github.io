@@ -195,7 +195,7 @@ title: ""
             <!-- 2.c Quality (stability, level of detail, extendability,…) -->
             <div class="w3-row-padding w3-margin-bottom">
                 <div class="w3-col m8 subitem-title">
-                    <label>c) Quality (stability, level of detail, extendability,…)</label>
+                    <label>c) Quality (stability, level of detail, extendability, …)</label>
                 </div>
                 <div class="w3-col m4 compact-radio w3-bar subitem-grade">
                     <label><input type="radio" name="resultsGrade1c" value="-" id="minus1c" class="w3-radio" required><span class="custom-radio"></span> <i class="fas fa-minus fa-xs"></i></label>
@@ -292,6 +292,9 @@ title: ""
     });
 </script>
 <script src="{{ '/resources/thesis_evaluation_sheet/thesis_evaluation_sheet.js' | relative_url }}"></script>
+<script src="{{ '/resources/thesis_evaluation_sheet/jspdf.umd.min.js' | relative_url }}"></script>
+<!-- <script src="jspdf.umd.min.js"></script> -->
+<!-- <script src="thesis_evaluation_sheet.js"></script> -->
 <script> // Add 6 months to the begin date and set it as the end date
     document.addEventListener('DOMContentLoaded', function() {
         const beginDateInput = document.querySelector('input[name="beginDate"]');
@@ -307,9 +310,6 @@ title: ""
 <script> // Toggling sections based on radio button selection
     function toggleSection(sectionId, show) {document.getElementById(sectionId).style.display = show ? 'block' : 'none'; document.dispatchEvent(new Event('DOMContentLoaded'));}
 </script>
-<!-- <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script> -->
-<script src="{{ '/resources/thesis_evaluation_sheet/jspdf.umd.min.js' | relative_url }}"></script>
-
 <script>
     function saveAsJSON() {
         const form = document.getElementById('evaluationForm');
