@@ -3,7 +3,7 @@ title: Resources
 layout: full_width
 ---
 
-### I will add useful resources here!
+### I add useful resources here! 🤗
 
 - [Thesis Evaluation Sheet]({{ '/resources/thesis_evaluation_sheet' | relative_url }})
   - An example evaluation sheet for evaluating a thesis: It includes the evaluation criteria and the scoring system, and exports it to a PDF file.
