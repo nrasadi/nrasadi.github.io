@@ -85,8 +85,13 @@ i.fa-youtube:hover{color: #ab000d;}
 i.fa-telegram:hover{color: #006db3;}
 i.fa-twitter:hover{color: #1da1f2;}
 
-.footer *{  color: #cdcccc;}
+/* award/trophy color */
+.pub-award i.fas.fa-trophy {
+  color: black;
+}
 
+
+.footer *{  color: #cdcccc;}
 .footer a{  color: red;}
 
 .box{
