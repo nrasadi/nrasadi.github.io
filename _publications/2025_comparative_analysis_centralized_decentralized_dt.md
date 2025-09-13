@@ -5,7 +5,7 @@ authors: "Răzvan-Mihai Ursu, Navidreza Asadi, Johannes Zerwas, Leon Wong, Wolfg
 type: "c"
 place: "11th IEEE International Conference on Network Softwarization (NetSoft 2025)"
 date: "2025/05"
-status: "a"
+# status: "a"
 # pdf: ""
 # link: ""
 bibtex: "@inproceedings{centralized_decentralized_dt2025,

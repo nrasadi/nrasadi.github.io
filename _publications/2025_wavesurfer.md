@@ -7,12 +7,12 @@ place: "ACM SIGCOMM 2025 Posters and Demos"
 date: "2025/09/10"
 # status: "a"
 # award: "Best Poster Award"
-pdf: https://dl.acm.org/doi/pdf/10.1145/3744969.3748419
-link: https://dl.acm.org/doi/10.1145/3744969.3748419
+pdf: "https://dl.acm.org/doi/pdf/10.1145/3744969.3748419"
+link: "https://dl.acm.org/doi/10.1145/3744969.3748419"
 bibtex: "
 @inproceedings{asadi2025wavesurfer,
   title={WaveSurfer - Scheduling Irregular Pulsing Attacks on Microservice Autoscaling},
-  author = {Asadi, Navidreza and Ursu, R\u{a}zvan-Mihai and Zerwas, Johannes and Wong, Leon and Kellerer, Wolfgang},
+  author = {Asadi, Navidreza and Ursu, Răzvan-Mihai and Zerwas, Johannes and Wong, Leon and Kellerer, Wolfgang},
   conference={ACM SIGCOMM 2025},
   year={2025},
   publisher={Association for Computing Machinery},
