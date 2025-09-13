@@ -7,15 +7,15 @@ place: "ACM SIGCOMM 2025 Next-Generation Network Observability Workshop (SIGCOMM
 date: "2025/09/09"
 status: "a"
 # award: "Best Poster Award"
-# pdf: https://2025.eurosys.org/posters/final/eurosys25posters-final13.pdf
-# link: "https://2025.eurosys.org/posters/final/eurosys25posters-final13.pdf"
+pdf: https://dl.acm.org/doi/pdf/10.1145/3748496.3748991
+link: "https://dl.acm.org/doi/abs/10.1145/3748496.3748991"
 bibtex: "
-@article{simurgh2025,   
+@inproceedings{asadi2025simurgh,
   title={Simurgh: Multi-Agent Adversarial Benchmarking for Proactive Microservice Observability},
-  author={Asadi, Navidreza and Ursu, Răzvan-Mihai and Wong, Leon and Kellerer, Wolfgang},
-  conference={ACM SIGCOMM 2025},
-  year={2025},
-  publisher={Association for Computing Machinery},
+  author={Asadi, Navidreza and Ursu, R{\u{a}}zvan-Mihai and Wong, Leon and Kellerer, Wolfgang},
+  booktitle={Proceedings of the 1st Workshop on Next-Generation Network Observability at ACM SIGCOMM 2025},
+  pages={21--28},
+  year={2025}
 }
 "
 misc:
