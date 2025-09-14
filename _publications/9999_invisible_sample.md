@@ -2,7 +2,7 @@
 title: "Publication Title"
 tags: "Computer Science, Machine Learning"
 authors: "Navidreza Asadi, Second Author"
-type: "p" # r: technical reports or archives | c: conferences | j: journals | b: book (chapter) | p: poster ==> default: "r"
+type: "p" # r: technical reports or archives | c: conferences | j: journals | b: book (chapter) | p: patent ==> default: "r"
 date: "2021/01" # day can be added too. Publications will be sorted according to this metadata.
 place: "IEEE Transactions on Mobile Computing" # Name of the conference, journal, etc.
 IF: 6.075 # Journal impact factor
