@@ -7,15 +7,15 @@ place: "ACM SOSP 2025 Practical Adoption Challenges of ML for Systems Workshop (
 date: "2025/10/13"
 status: "a"
 # award: "Best Poster Award"
-# pdf: https://2025.eurosys.org/posters/final/eurosys25posters-final13.pdf
-# link: "https://2025.eurosys.org/posters/final/eurosys25posters-final13.pdf"
+pdf: https://dl.acm.org/doi/pdf/10.1145/3766882.3767176
+link: "https://dl.acm.org/doi/abs/10.1145/3766882.3767176"
 bibtex: "
-@article{asadi2025robustrlautoscaler,   
+@inproceedings{asadi2025challenges,
   title={Challenges in Designing Robust RL-Based Autoscalers},
-  author={Asadi, Navidreza and Ali, Dalal and Ursu, Răzvan-Mihai and Kellerer, Wolfgang},
-  conference={ACM SOSP 2025},
-  year={2025},
-  publisher={Association for Computing Machinery},
+  author={Asadi, Navidreza and Ali, Dalal and Ursu, Razvan-Mihai and Kellerer, Wolfgang},
+  booktitle={ACM SOSP 2025 Proceedings of the 4th Workshop on Practical Adoption Challenges of ML for Systems},
+  pages={44--49},
+  year={2025}
 }
 "
 misc:
