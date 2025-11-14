@@ -80,10 +80,12 @@ a {  color: #c10000;}
 i.fab, i.fa, i.fas {color: #ccc; }
 i.fa-gitlab:hover{color: #E65100;}
 i.fa-github:hover{color: #4f4f98;}
-i.fa-envelope:hover{color: #1E88E5;}
+i.fa-envelope:hover{color: #870000;}
 i.fa-youtube:hover{color: #ab000d;}
 i.fa-telegram:hover{color: #006db3;}
 i.fa-twitter:hover{color: #1da1f2;}
+i.fa-linkedin:hover{color: #0a66c2;}
+
 
 /* award/trophy color */
 .pub-award i.fas.fa-trophy {

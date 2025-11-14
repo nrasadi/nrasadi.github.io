@@ -22,12 +22,15 @@ social:
   # - name: Google Scholar
   #   link: /
   #   class: fas fa-graduation-cap fa-2x
-  - name: Telegram
-    link: https://t.me/nrasadi
-    class: fab fa-telegram fa-2x
+  # - name: Telegram
+  #   link: https://t.me/nrasadi
+  #   class: fab fa-telegram fa-2x
   # - name: Youtube
   #   link: /
   #   class: fab fa-youtube fa-2x
+  - name: LinkedIn  
+    link: https://www.linkedin.com/in/navidreza-asadi/
+    class: fab fa-linkedin fa-2x
   - name: Twitter
     link: https://x.com/NavidrezaAsadi
     class: fab fa-twitter fa-2x
@@ -41,6 +44,7 @@ social:
   - name: Tac Academy
     link: https://tacacademy.github.io/
     class: fas fa-2x easy-icon
+
 
 research_interests:
   title: "Research Interests:"

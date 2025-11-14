@@ -80,10 +80,11 @@ a {  color: #c10000;}
 i.fab, i.fa, i.fas {color: #222; }
 i.fa-gitlab:hover{color: #E65100;}
 i.fa-github:hover{color: #4f4f98;}
-i.fa-envelope:hover{color: #1E88E5;}
+i.fa-envelope:hover{color: #870000;}
 i.fa-youtube:hover{color: #ab000d;}
 i.fa-telegram:hover{color: #006db3;}
 i.fa-twitter:hover{color: #1da1f2;}
+i.fa-linkedin:hover{color: #0a66c2;}
 
 /* award/trophy color */
 .pub-award i.fas.fa-trophy {
@@ -248,6 +249,20 @@ table th, table td{border: 1px solid #bbb;}
     color: white;
   }
   .evaluationForm-btn-icon {
+    color: white;
+  }
+}
+
+#deadline-tracker {
+  background-color: initial;
+  color: initial;
+  .w3-btn {
+    background-color: #870000;
+    color: white;
+  }
+  .w3-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
     color: white;
   }
 }
