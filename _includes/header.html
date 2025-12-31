@@ -23,14 +23,15 @@
       {% else %}
       Home
       {% endif %}
-    </b></a></h3>
-    {% for item in site.data.header %}
+    </b></a>
+  </h3>
+  {% for item in site.data.header %}
 
-      <a href="{{ item.link | absolute_url }}" {% if page.url == item.link %}style="color: white;"{% endif %}
-        class="w3-bar-item w3-button w3-hover-none w3-hover-text-white" id="{{ item.link}}">
-        {{ item.name }}
-      </a>
-    {% endfor %}
+    <a href="{{ item.link | absolute_url }}" {% if page.url == item.link %}style="color: white;"{% endif %}
+      class="w3-bar-item w3-button w3-hover-none w3-hover-text-white" id="{{ item.link}}">
+      {{ item.name }}
+    </a>
+  {% endfor %}
     {% if nocontact == False %}
       <a class="w3-bar-item w3-button w3-hover-none w3-hover-text-white w3-text-white"
       onclick="document.getElementById('contact-modal').style.display='block';
@@ -39,18 +40,18 @@
       </a>
     {% endif %}
 
-    <!-- <a id="dark-mode-button" > -->
-      <a onclick="toggleDarkMode()" id="dark-mode-button" class="w3-right">
-        <i id="icon-dark" class="fas fa-adjust fa-lg"></i></a>
-    <!-- </a> -->
+  <!-- <a id="dark-mode-button" > -->
+    <a onclick="toggleDarkMode()" id="dark-mode-button" class="w3-right">
+      <i id="icon-dark" class="fas fa-adjust fa-lg"></i></a>
+  <!-- </a> -->
 
-      <div id="burger" onclick="burgermenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+  <div id="burger" onclick="burgermenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
 </div>

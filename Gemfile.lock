@@ -3,15 +3,19 @@ GEM
   specs:
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
+    base64 (0.3.0)
+    bigdecimal (4.0.1)
     colorator (1.1.0)
     concurrent-ruby (1.2.2)
+    csv (3.3.5)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
+    ffi (1.15.5)
     ffi (1.15.5-x64-mingw-ucrt)
     forwardable-extended (2.6.0)
-    google-protobuf (3.23.2-x64-mingw-ucrt)
+    google-protobuf (3.23.2)
     http_parser.rb (0.8.0)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
@@ -61,6 +65,8 @@ GEM
     rexml (3.2.5)
     rouge (4.1.1)
     safe_yaml (1.0.5)
+    sass-embedded (1.62.1-arm64-darwin)
+      google-protobuf (~> 3.21)
     sass-embedded (1.62.1-x64-mingw-ucrt)
       google-protobuf (~> 3.21)
     terminal-table (3.0.2)
@@ -74,9 +80,13 @@ GEM
     webrick (1.8.1)
 
 PLATFORMS
+  arm64-darwin-25
   x64-mingw-ucrt
 
 DEPENDENCIES
+  base64
+  bigdecimal
+  csv
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.3.2)
   jekyll-feed (~> 0.12)

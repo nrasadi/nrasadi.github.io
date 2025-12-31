@@ -34,7 +34,7 @@ layout: boxed
     <div style="text-align:justify" class="w3-margin w3-container">
         <div id="article-list">
             <ul class="fa-ul">
-                {% for post in all_posts limit:{{site.constants.max_latest_posts}} %}
+                {% for post in all_posts limit:site.constants.max_latest_posts %}
                     {% if post.visible != false %}
                         <li class="article-item">
                             <span class="fa-li"><i class="fas fa-chevron-right"></i></span>

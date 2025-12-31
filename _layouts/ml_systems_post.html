@@ -4,7 +4,8 @@ layout: boxed_narrow
 
 {% if page.photo.link %}
     {% assign image_path = page.photo.link | relative_url %}
-    {% if site.static_files | where: "path", image_path | first %}
+    {% assign static_image = site.static_files | where: "path", image_path | first %}
+    {% if static_image %}
         <div>
             <img src="{{image_path}}" alt="{{page.photo.caption}}" class="w3-image" style="width: 100%;">
             {% if page.photo.caption != nil %}
@@ -35,9 +36,13 @@ layout: boxed_narrow
 
 <!-- OTHER POSTS  -->
 
-{% assign more_posts = page.tags != empty or page.categories != empty %}
+{% if page.tags != empty or page.categories != empty %}
+  {% assign more_posts = true %}
+{% else %}
+  {% assign more_posts = false %}
+{% endif %}
 {% assign unique_posts = "" | split: "," %}
-{% if more_posts != empty %}
+{% if more_posts %}
     {% for tag in page.tags %}
         {% for post in site.ml_systems %}
             {% if post.tags contains tag and post.url != page.url %}
