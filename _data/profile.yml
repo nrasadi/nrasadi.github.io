@@ -6,7 +6,7 @@ name:
 status:
   title: Graduate Student
   place:
-    name: CE Deptartment </br> Technical University of Munich (TUM)
+    name: CE Department </br> Technical University of Munich (TUM)
     link: https://www.ce.cit.tum.de/en/lkn/team/mitarbeiter/asadi-navidreza/
   photo: Navid.jpg  # Put your profile picture inside the statics/photos directory (Resize it to 500x500 before)
 
