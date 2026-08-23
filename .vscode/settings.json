@@ -1,0 +1,15 @@
+{
+  "markdown.editor.updateLinksOnPaste.enabled": false,
+  "files.watcherExclude": {
+    "**/_site/**": true,
+    "**/.jekyll-cache/**": true,
+    "**/statics/fontawesome5.15/**": true,
+    "**/statics/fontawesome6.7.2/**": true
+  },
+  "search.exclude": {
+    "**/_site/**": true,
+    "**/.jekyll-cache/**": true,
+    "**/statics/fontawesome5.15/**": true,
+    "**/statics/fontawesome6.7.2/**": true
+  }
+}
