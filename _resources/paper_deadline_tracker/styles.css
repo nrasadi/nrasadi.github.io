@@ -1,0 +1,1497 @@
+:root {
+  color-scheme: var(--tracker-color-scheme, dark);
+  --bg: #404040;
+  --bg-accent: #317873;
+  --panel: var(--tracker-panel, rgba(17, 17, 17, 0.96));
+  --panel-alt: var(--tracker-panel-alt, #1f1f1f);
+  --panel-border: var(--tracker-border, #444444);
+  --text: var(--tracker-text, #dddddd);
+  --muted: var(--tracker-muted, #aaaaaa);
+  --muted-strong: var(--tracker-heading, #dddddd);
+  --accent: #0067a5;
+  --accent-strong: #1c39bb;
+  --accent-alt: #00a693;
+  --warm: var(--tracker-heading, #dddddd);
+  --warning: #f38400;
+  --plum: #870074;
+  --sand: var(--tracker-muted, #aaaaaa);
+  --olive: #317873;
+  --tracker-status-planning: #c2b07e;
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif, "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji";
+  color: var(--text);
+}
+
+.resource-app-main {
+  min-width: 0;
+  padding-top: 4em;
+}
+
+.deadline-tracker-app h1,
+.deadline-tracker-app h2 {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif !important;
+}
+
+.shell {
+  width: min(1400px, calc(100% - 20px));
+  margin: 0 auto;
+  padding: 8px 0 16px;
+}
+
+.hero {
+  display: grid;
+  /* Matches .content's columns so the CSV card lines up with the Deadlines panel below. */
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font: 700 0.75rem/1.2 "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--warm);
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.4rem, 2vw, 2.3rem);
+  line-height: 1;
+  max-width: 28ch;
+}
+
+.lede {
+  margin-top: 8px;
+  max-width: 62ch;
+  color: var(--muted);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.hero-card,
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(14px);
+}
+
+.hero-card {
+  padding: 8px;
+  position: relative;
+  z-index: 25;
+}
+
+.row-form label {
+  display: grid;
+  gap: 8px;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.row-form input,
+.row-form textarea,
+.row-form select,
+#searchInput,
+.table-panel input,
+.table-panel textarea,
+.table-panel select {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--tracker-border, #444444);
+  background: var(--tracker-input, #111111);
+  color: var(--text);
+  font: inherit;
+  outline: none;
+}
+
+.row-form input::placeholder,
+.row-form textarea::placeholder,
+.table-panel input::placeholder,
+.table-panel textarea::placeholder,
+#searchInput::placeholder {
+  color: var(--tracker-placeholder, #777777);
+}
+
+.row-form input:focus,
+.row-form textarea:focus,
+.row-form select:focus,
+#searchInput:focus,
+.table-panel input:focus,
+.table-panel textarea:focus,
+.table-panel select:focus {
+  border-color: var(--tracker-primary-button, #870000);
+}
+
+.actions,
+.form-actions {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* The whole CSV toolbar sits on a single line; it wraps only when it truly cannot fit. */
+.hero-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Kept in the DOM for the picker and for drag-and-drop, but driven by the Open CSV button. */
+.file-input-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-card .actions {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 0;
+  flex: 1 1 auto;
+}
+
+.hero-card .actions > button,
+.hero-card .actions > .export-group {
+  min-width: 0;
+  width: auto;
+  flex: 1 1 auto;
+}
+
+.hero-card .actions > button {
+  white-space: nowrap;
+  line-height: 1.1;
+  min-height: 36px;
+}
+
+.hero-card .actions > .export-group {
+  display: flex;
+}
+
+.hero-card .actions > .export-group > #exportCalendarBtn {
+  width: 100%;
+}
+
+.hero-card .status {
+  margin-top: 8px;
+}
+
+.export-group {
+  position: relative;
+  z-index: 50;
+}
+
+.export-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 8px;
+  display: grid;
+  gap: 6px;
+  min-width: 180px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.export-menu[hidden] { display: none; }
+.export-menu button { width: 100%; text-align: left; }
+
+.form-actions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+button {
+  border: 1px solid var(--tracker-button-border, #555555);
+  border-radius: 10px;
+  padding: 8px 12px;
+  background: var(--tracker-button, #870000);
+  color: var(--tracker-button-text, #ffffff);
+  font: 700 0.92rem/1 "Avenir Next", "Segoe UI", sans-serif;
+  cursor: pointer;
+  transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  border-color: var(--tracker-button-hover, #650000);
+  background: var(--tracker-button-hover, #650000);
+}
+
+button svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+button.primary {
+  background: var(--tracker-primary-button, #870000);
+  color: var(--tracker-button-text, #ffffff);
+  border-color: var(--tracker-primary-button, #870000);
+}
+
+button.primary:hover {
+  background: var(--tracker-primary-button-hover, #000000);
+  border-color: var(--tracker-primary-button-hover, #000000);
+}
+
+button.danger {
+  color: var(--warm);
+}
+
+.status {
+  margin-top: 12px;
+  color: var(--muted);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 14px;
+  position: relative;
+  z-index: 0;
+}
+
+.content > * {
+  min-width: 0;
+}
+
+.panel {
+  padding: 14px;
+}
+
+.panel-head {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.panel-head h2 {
+  color: var(--muted-strong);
+}
+
+.panel-head p,
+.table-summary {
+  color: var(--muted);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.row-form {
+  display: grid;
+  gap: 10px;
+}
+
+.notes-field {
+  grid-column: 1 / -1;
+}
+
+.table-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.gantt-panel {
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 16px;
+  background: var(--panel-alt);
+  border: 1px solid var(--panel-border);
+  min-width: 0;
+}
+
+.gantt-controls {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.gantt-scroll-control {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.gantt-slider-label {
+  font: 700 1rem/1.2 "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--sand);
+}
+
+#ganttSlider {
+  width: 100%;
+  height: 20px;
+  accent-color: var(--accent-alt);
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+}
+
+#ganttSlider::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(194, 176, 126, 0.18);
+  border: 1px solid rgba(194, 176, 126, 0.12);
+}
+
+#ganttSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -8px;
+  border-radius: 50%;
+  background: var(--accent-alt);
+  border: 1px solid rgba(194, 176, 126, 0.2);
+}
+
+#ganttSlider::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(194, 176, 126, 0.18);
+  border: 1px solid rgba(194, 176, 126, 0.12);
+}
+
+#ganttSlider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-alt);
+  border: 1px solid rgba(194, 176, 126, 0.2);
+}
+
+/* ---- Timeline preferences bar (visibility toggles + highlight thresholds) ---- */
+
+.tracker-prefs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin-top: 2px;
+}
+
+.pref-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--panel-border);
+  background: var(--tracker-panel-muted, #232323);
+}
+
+.pref-group-title {
+  font: 700 0.68rem/1 "Avenir Next", "Segoe UI", sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-strong);
+  padding: 0 4px 0 2px;
+}
+
+/* Each visibility toggle lights up in the colour of the status it controls. */
+.pref-toggle {
+  --pref-tone: var(--accent-alt);
+}
+
+.pref-toggle[data-tone="planning"] { --pref-tone: var(--tracker-status-planning, #c2b07e); }
+.pref-toggle[data-tone="submitted"] { --pref-tone: var(--accent-strong); }
+.pref-toggle[data-tone="accepted"] { --pref-tone: var(--accent-alt); }
+.pref-toggle[data-tone="withdrawn"] { --pref-tone: var(--sand); }
+.pref-toggle[data-tone="rejected"] { --pref-tone: var(--plum); }
+.pref-toggle[data-tone="past"] { --pref-tone: var(--olive); }
+
+.pref-divider {
+  width: 1px;
+  align-self: stretch;
+  margin: 1px 3px;
+  background: rgba(194, 176, 126, 0.2);
+}
+
+.pref-toggle,
+.pref-number,
+.pref-static {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--panel-border);
+  background: var(--tracker-input, #111111);
+  font: 700 0.76rem/1 "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 140ms ease, background 140ms ease, color 140ms ease;
+}
+
+.pref-toggle:hover,
+.pref-number:hover {
+  border-color: rgba(194, 176, 126, 0.3);
+}
+
+.pref-static {
+  cursor: default;
+}
+
+.pref-toggle.is-empty {
+  opacity: 0.45;
+}
+
+.pref-group.is-muted .pref-number,
+.pref-group.is-muted .pref-static {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pref-segment {
+  display: inline-flex;
+  align-items: stretch;
+  padding: 2px;
+  border-radius: 999px;
+  border: 1px solid var(--panel-border);
+  background: var(--tracker-input, #111111);
+}
+
+.pref-segment button {
+  padding: 3px 11px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: 700 0.72rem/1.35 "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.pref-segment button:hover {
+  transform: none;
+  color: var(--tracker-button-text, #ffffff);
+  border-color: var(--tracker-button-hover, #650000);
+}
+
+.pref-segment button.is-selected {
+  background: color-mix(in srgb, var(--accent-alt) 45%, transparent);
+  border-color: rgba(0, 166, 147, 0.55);
+  color: var(--tracker-selected-text, #ffffff);
+}
+
+.table-panel .tracker-prefs input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid var(--panel-border);
+  background: var(--tracker-panel-muted, #232323);
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease;
+}
+
+.table-panel .tracker-prefs input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--muted);
+  transition: transform 140ms ease, background 140ms ease;
+}
+
+.table-panel .tracker-prefs input[type="checkbox"]:checked {
+  background: color-mix(in srgb, var(--pref-tone) 62%, transparent);
+  border-color: color-mix(in srgb, var(--pref-tone) 70%, transparent);
+}
+
+.table-panel .tracker-prefs input[type="checkbox"]:checked::after {
+  transform: translateX(12px);
+  background: var(--tracker-button-text, #ffffff);
+}
+
+.table-panel .tracker-prefs input[type="checkbox"]:focus-visible {
+  outline: 2px solid rgba(0, 166, 147, 0.7);
+  outline-offset: 2px;
+}
+
+.pref-toggle:has(input:checked) {
+  color: var(--tracker-selected-text, #ffffff);
+  border-color: color-mix(in srgb, var(--pref-tone) 45%, transparent);
+  background: color-mix(in srgb, var(--pref-tone) 16%, transparent);
+}
+
+.pref-toggle:has(input:checked) .pref-count {
+  background: color-mix(in srgb, var(--pref-tone) 28%, transparent);
+  color: var(--tracker-selected-text, #ffffff);
+}
+
+.pref-count {
+  min-width: 18px;
+  padding: 2px 5px;
+  border-radius: 999px;
+  background: var(--tracker-panel-muted, #232323);
+  font-size: 0.68rem;
+  text-align: center;
+  color: var(--sand);
+}
+
+.table-panel .tracker-prefs input[type="number"] {
+  width: 52px;
+  padding: 3px 4px 3px 6px;
+  border-radius: 7px;
+  border: 1px solid var(--panel-border);
+  background: var(--tracker-input, #111111);
+  color: var(--text);
+  font: 700 0.76rem/1.2 "Avenir Next", "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+.pref-unit {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 0.7rem;
+}
+
+.pref-swatch {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 auto;
+  border-radius: 4px;
+  border: 1px solid rgba(194, 176, 126, 0.24);
+}
+
+.swatch-critical {
+  background: var(--warning);
+}
+
+.swatch-soon {
+  background: var(--sand);
+}
+
+.swatch-overdue {
+  background: var(--plum);
+}
+
+.pref-reset {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.gantt-viewport {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.gantt-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.gantt-axis {
+  margin-bottom: 12px;
+}
+
+/* Move the axis track right to align with the timeline tracks (label column width + gap) */
+.gantt-axis-track {
+  margin-left: calc(135px + 2px - 5px);
+}
+
+/* Keep the legend aligned with the timeline track area when placed outside the viewport */
+.gantt-legend {
+  margin-left: calc(135px + 2px);
+}
+
+/* Ensure the leftmost tick label ('Today') doesn't get clipped by the rounded track */
+.gantt-axis-tick.start {
+  transform: translateX(6px);
+}
+
+.gantt-axis-track {
+  position: relative;
+  min-height: 34px;
+  border-radius: 12px;
+  border: 1px solid var(--panel-border);
+  background: var(--tracker-panel-muted, #232323);
+  /* left padding removed so ticks align with track left edge; keep right padding for rounded corner spacing */
+  padding: 12px 40px 12px 0;
+  box-sizing: border-box;
+}
+
+.gantt-axis-tick {
+  position: absolute;
+  top: 6px;
+  display: grid;
+  gap: 1px;
+  transform: translateX(-50%);
+  padding-top: 4px;
+  white-space: nowrap;
+}
+
+.gantt-axis-tick.end {
+  transform: translateX(-100%);
+}
+
+.gantt-axis-label {
+  font: 700 0.68rem/1.1 "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--sand);
+}
+
+.gantt-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  margin-bottom: 14px;
+}
+
+.gantt-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 700 0.8rem/1.2 "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--muted);
+}
+
+.gantt-swatch {
+  width: 22px;
+  height: 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(194, 176, 126, 0.18);
+}
+
+.gantt-chart {
+  display: grid;
+  gap: 5px;
+  width: max-content;
+  min-width: 100%;
+}
+
+.gantt-empty {
+  padding: 14px 0 4px;
+  color: var(--muted);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+}
+
+.gantt-row {
+  display: grid;
+  grid-template-columns: 135px auto;
+  gap: 0px;
+  align-items: center;
+}
+
+.gantt-row-label {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: var(--panel-alt);
+  padding: 4px 0;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 700;
+  color: var(--text);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.gantt-track {
+  position: relative;
+  height: 22px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--tracker-panel-muted, #232323);
+  border: 1px solid var(--panel-border);
+}
+
+.gantt-segment {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 0px;
+}
+
+.gantt-segment.gantt-rounded-start {
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+}
+
+.gantt-segment.gantt-rounded-end {
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+}
+
+/* Split segment: top half = abstract color, bottom half = paper color */
+.gantt-segment-split {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 0px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.gantt-segment-split > div {
+  flex: 1 1 0;
+  width: 100%;
+}
+
+.gantt-segment-split.gantt-rounded-start {
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+}
+
+.gantt-segment-split.gantt-rounded-end {
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+}
+
+.gantt-segment-split-top {
+  min-height: 0;
+  min-width: 0;
+}
+
+.gantt-segment-split-bottom {
+  min-height: 0;
+  min-width: 0;
+}
+
+.table-wrap {
+  overflow: auto;
+  border-radius: 16px;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-alt);
+  min-width: 0;
+}
+
+.table-wrap.drag-over {
+  outline: 3px dashed rgba(0, 166, 147, 0.6);
+  background: linear-gradient(90deg, rgba(0,166,147,0.06), rgba(28,57,187,0.04));
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 980px;
+  table-layout: fixed;
+}
+
+th:nth-child(1), td:nth-child(1) { width: 160px; }
+th:nth-child(2), td:nth-child(2) { width: 88px; }
+th:nth-child(3), td:nth-child(3) { width: 88px; }
+/* Narrow notification and dates slightly */
+th:nth-child(4), td:nth-child(4) { width: 75px; }
+th:nth-child(5), td:nth-child(5) { width: 105px; }
+/* Widen location column */
+th:nth-child(6), td:nth-child(6) { width: 140px; }
+th:nth-child(7), td:nth-child(7) { width: auto; }
+
+th:nth-child(1),
+td:nth-child(1) {
+  padding-right: 8px;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  padding-left: 8px;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--panel-border);
+  text-align: left;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+}
+
+td {
+  font-family: "Avenir Next", "Segoe UI", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: var(--tracker-table-head, #1f1f1f);
+  color: var(--text);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 1;
+}
+
+tbody tr:hover {
+  background: var(--tracker-row-hover, #2a2a2a);
+}
+
+.deadline-soon {
+  background: rgba(194, 176, 126, 0.1);
+  color: var(--text);
+}
+
+.deadline-critical {
+  background: rgba(243, 132, 0, 0.18);
+  color: var(--text);
+}
+
+.deadline-overdue {
+  background: rgba(135, 0, 116, 0.16);
+  color: var(--text);
+}
+
+tr.deadline-soon td:first-child {
+  border-left: 4px solid var(--sand);
+}
+
+tr.deadline-critical td:first-child {
+  border-left: 4px solid var(--warning);
+}
+
+tr.deadline-overdue td:first-child {
+  border-left: 4px solid var(--plum);
+}
+
+td.deadline-soon,
+td.deadline-critical,
+td.deadline-overdue {
+  font-weight: 700;
+}
+
+/* ---- Collapsed groups pushed to the bottom of the table ---- */
+
+.table-group-row td {
+  padding: 0;
+  border-bottom: 1px solid var(--panel-border);
+  background: var(--tracker-panel-alt, #1f1f1f);
+}
+
+.table-group-row:hover td {
+  background: var(--tracker-row-hover, #2a2a2a);
+}
+
+.table-group-row + tr td {
+  border-top: 1px solid rgba(194, 176, 126, 0.1);
+}
+
+.table-group-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 14px;
+  border: 0;
+  border-left: 4px solid rgba(194, 176, 126, 0.3);
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted-strong);
+  font: 700 0.74rem/1 "Avenir Next", "Segoe UI", sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.table-group-toggle:hover {
+  transform: none;
+  color: var(--tracker-button-text, #ffffff);
+}
+
+.table-group-planning .table-group-toggle {
+  border-left-color: color-mix(in srgb, var(--tracker-status-planning, #c2b07e) 70%, transparent);
+}
+
+.table-group-submitted .table-group-toggle {
+  border-left-color: color-mix(in srgb, var(--accent-strong) 80%, transparent);
+}
+
+.table-group-accepted .table-group-toggle {
+  border-left-color: color-mix(in srgb, var(--accent-alt) 70%, transparent);
+}
+
+.table-group-past .table-group-toggle {
+  border-left-color: color-mix(in srgb, var(--olive) 80%, transparent);
+}
+
+.table-group-withdrawn .table-group-toggle {
+  border-left-color: color-mix(in srgb, var(--sand) 70%, transparent);
+}
+
+.table-group-rejected .table-group-toggle {
+  border-left-color: color-mix(in srgb, var(--plum) 80%, transparent);
+}
+
+.table-group-caret {
+  width: 10px;
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+.table-group-count {
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--tracker-panel-muted, #232323);
+  color: var(--sand);
+  letter-spacing: 0.04em;
+}
+
+.table-group-hint {
+  margin-left: auto;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--tracker-button-text, #ffffff);
+}
+
+tbody tr.row-inactive td {
+  opacity: 0.62;
+}
+
+tbody tr.row-inactive:hover td {
+  opacity: 0.85;
+}
+
+.gantt-row-inactive {
+  opacity: 0.55;
+}
+
+.gantt-row-inactive:hover {
+  opacity: 0.85;
+}
+
+.conference-cell {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: help;
+}
+
+.conference-cell-layout {
+  display: grid;
+  gap: 8px;
+}
+
+/* Location column: restrict flex/wrapping rules to only the Location column to avoid
+   affecting conference cell layout and action buttons. */
+.table-wrap td:nth-child(6) > div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.table-wrap td:nth-child(6) > div span {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.table-wrap td:nth-child(6) img {
+  vertical-align: middle;
+  width: 20px;
+  height: auto;
+  display: block;
+}
+
+/* Reduce horizontal padding between Dates (col 5) and Location (col 6) only */
+th:nth-child(5), td:nth-child(5) { padding-right: 6px; }
+th:nth-child(6), td:nth-child(6) { padding-left: 6px; }
+
+/* Prevent long inline content in Location and Notes columns from overlapping adjacent rows */
+.table-wrap td:nth-child(6), .table-wrap td:nth-child(7) {
+  line-height: 1.28;
+  overflow-wrap: anywhere;
+}
+
+.conference-cell-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.conference-name-input {
+  min-width: 0;
+}
+
+.conference-actions {
+  display: grid;
+  gap: 4px;
+  align-items: start;
+}
+
+.conference-actions-row {
+  display: flex;
+  gap: 4px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.notes-cell {
+  white-space: pre-wrap;
+}
+
+.cell-muted {
+  color: var(--muted);
+}
+
+.row-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.row-actions button {
+  padding: 7px 9px;
+  font-size: 0.72rem;
+  min-width: 34px;
+}
+
+.conference-actions-row button {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.conference-actions .icon-button,
+.conference-actions .primary {
+  min-width: 0;
+  padding: 6px 0;
+  width: 32px;
+  min-height: 32px;
+}
+
+.conference-actions .status-button {
+  width: auto;
+  padding: 6px 8px;
+  min-height: 32px;
+}
+
+.conference-actions .icon-button:not(.status-button) {
+  background: var(--tracker-row-action-bg, #333333);
+  border-color: var(--panel-border);
+  color: var(--tracker-row-action-text, #dddddd);
+}
+
+.conference-actions .icon-button:not(.status-button):hover {
+  background: var(--tracker-row-action-hover, #444444);
+  border-color: var(--tracker-border-strong, #555555);
+  color: var(--tracker-row-action-text, #dddddd);
+}
+
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+}
+
+.status-button {
+  gap: 6px;
+  min-width: 0;
+  padding-inline: 10px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.status-button span {
+  font-size: 0.68rem;
+  line-height: 1;
+}
+
+.status-button:disabled {
+  cursor: default;
+}
+
+.status-button-caret {
+  font-size: 0.6rem;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+/* ---- Status picker menu (rendered on <body> so the table's overflow cannot clip it) ---- */
+
+.status-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(104px, 1fr));
+  gap: 4px;
+  padding: 6px;
+  border-radius: 14px;
+  border: 1px solid var(--panel-border);
+  background: var(--tracker-menu, #222222);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px) scale(0.98);
+  transform-origin: top left;
+  transition: opacity 150ms ease, transform 150ms ease, visibility 0s linear 150ms;
+}
+
+.status-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  transition: opacity 150ms ease, transform 150ms ease, visibility 0s;
+}
+
+.status-menu-heading {
+  grid-column: 1 / -1;
+  padding: 6px 8px 7px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid rgba(194, 176, 126, 0.14);
+  font: 700 0.68rem/1.2 "Avenir Next", "Segoe UI", sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-strong);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 100%;
+  min-height: 46px;
+  padding: 8px 6px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text);
+  font: 700 0.8rem/1 "Avenir Next", "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+.status-menu-face {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.status-menu-item:hover,
+.status-menu-item:focus-visible {
+  transform: none;
+  background: var(--tracker-row-hover, #2a2a2a);
+  border-color: var(--tracker-border-strong, #555555);
+  outline: none;
+}
+
+.status-menu-item.is-current {
+  background: rgba(0, 166, 147, 0.14);
+  border-color: rgba(0, 166, 147, 0.4);
+  color: var(--tracker-selected-text, #ffffff);
+}
+
+.status-menu-dot {
+  width: 11px;
+  height: 11px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  border: 1px solid rgba(194, 176, 126, 0.28);
+}
+
+.status-menu-label {
+  white-space: nowrap;
+}
+
+.status-menu-note {
+  font: 400 0.58rem/1.1 "Avenir Next", "Segoe UI", sans-serif;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+.status-planning {
+  --row-status-tone: var(--tracker-status-planning, #c2b07e);
+}
+
+.status-writing {
+  --row-status-tone: var(--tracker-status-writing, #0067a5);
+}
+
+.status-submitted {
+  --row-status-tone: var(--tracker-status-submitted, #1c39bb);
+}
+
+.status-accepted {
+  --row-status-tone: var(--tracker-status-accepted, #006b60);
+}
+
+.status-rejected {
+  --row-status-tone: var(--tracker-status-rejected, #700060);
+}
+
+.status-withdrawn {
+  --row-status-tone: var(--tracker-status-withdrawn, #555555);
+}
+
+.status-planning,
+.status-writing,
+.status-submitted,
+.status-accepted,
+.status-rejected,
+.status-withdrawn {
+  color: var(--tracker-status-text, #ffffff);
+  background: color-mix(
+    in srgb,
+    var(--row-status-tone) var(--tracker-status-strength, 60%),
+    var(--tracker-status-surface, #111111)
+  );
+  border-color: color-mix(in srgb, var(--row-status-tone) 70%, var(--panel-border));
+}
+
+.icon-button.danger {
+  color: var(--tracker-row-action-text, #dddddd);
+}
+
+.link {
+  color: var(--accent-alt);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.empty-row td {
+  text-align: center;
+  padding: 24px 14px;
+  color: var(--muted);
+}
+
+.highlight {
+  animation: pulse 0.55s ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    background: rgba(0, 166, 147, 0.16);
+  }
+  100% {
+    background: rgba(0, 166, 147, 0);
+  }
+}
+
+@media (max-width: 1080px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .table-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gantt-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card .actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gantt-row-label {
+    position: static;
+    background: transparent;
+    padding: 0;
+  }
+
+  .gantt-axis-track,
+  .gantt-legend {
+    margin-left: 0;
+  }
+
+  #ganttSlider {
+    height: 18px;
+  }
+}
+
+@media (max-width: 720px) {
+  .shell {
+    width: calc(100% - 12px);
+    padding: 10px 0 14px;
+  }
+
+  h1 {
+    max-width: 100%;
+    font-size: 1.65rem;
+  }
+
+  .hero {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .hero-card,
+  .panel {
+    border-radius: 14px;
+  }
+
+  .hero-card .actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .hero-card .actions > button,
+  .hero-card .actions > .export-group {
+    width: 100%;
+  }
+
+  .hero-card .actions > .export-group {
+    display: block;
+  }
+
+  .form-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .hero-card button,
+  .form-actions button,
+  .row-form input,
+  .row-form select {
+    min-height: 44px;
+  }
+
+  /* Pill-sized controls must keep hugging their labels rather than stretching. */
+  .pref-segment button,
+  .pref-reset,
+  .status-menu-item {
+    width: auto;
+  }
+
+  .gantt-panel {
+    padding: 10px;
+  }
+
+  .tracker-prefs {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .pref-group {
+    width: 100%;
+    border-radius: 12px;
+    padding: 8px;
+  }
+
+  .pref-group-title {
+    width: 100%;
+    padding-bottom: 2px;
+  }
+
+  .pref-divider {
+    display: none;
+  }
+
+  .gantt-viewport,
+  .table-wrap {
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 760px;
+  }
+
+  th:first-child,
+  td:first-child {
+    position: sticky;
+    left: 0;
+  }
+
+  th:first-child {
+    z-index: 3;
+  }
+
+  tbody td:first-child {
+    z-index: 2;
+    background: var(--panel-alt);
+  }
+
+  .status-menu {
+    width: min(calc(100vw - 16px), 360px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .shell {
+    width: calc(100% - 8px);
+  }
+
+  .hero-card .actions {
+    grid-template-columns: 1fr;
+  }
+
+  .panel,
+  .hero-card {
+    padding: 10px;
+  }
+
+  .pref-toggle,
+  .pref-number,
+  .pref-static {
+    padding-inline: 7px;
+  }
+
+  .table-panel .tracker-prefs input[type="number"] {
+    width: 48px;
+  }
+}

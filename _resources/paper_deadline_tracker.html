@@ -1,0 +1,219 @@
+---
+layout: resource_app
+title: Paper Deadline Tracker
+app_stylesheet: /resources/paper_deadline_tracker/styles.css
+app_stylesheet_version: 11
+app_script_version: 4
+---
+
+<div class="deadline-tracker-app">
+  <div class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Submission Planning</p>
+          <h1>Deadline Tracker</h1>
+          <!--
+          <p class="lede">
+            Load a colocated CSV, edit deadlines in the table, then save changes back to the file or download an updated copy.
+          </p>
+          -->
+        </div>
+        <div class="hero-card">
+          <div class="hero-controls">
+            <input id="fileInput" class="file-input-hidden" type="file" accept=".csv,text/csv" tabindex="-1" aria-hidden="true" />
+            <div class="actions">
+              <button id="openCsvBtn" type="button">Open CSV</button>
+              <button id="createCsvBtn" type="button">Create new CSV</button>
+              <button id="saveBtn" type="button" class="primary">Save changes</button>
+              <button id="downloadBtn" type="button">Download CSV</button>
+              <div class="export-group">
+                <button id="exportCalendarBtn" type="button">Export calendar</button>
+                <div id="exportCalendarMenu" class="export-menu" hidden>
+                  <button data-provider="google" type="button">Google Calendar</button>
+                  <button data-provider="ical" type="button">iCal / Download (.ics)</button>
+                  <button data-provider="yahoo" type="button">Yahoo Calendar</button>
+                  <button data-provider="outlook" type="button">Outlook</button>
+                </div>
+              </div>
+              <button id="exportPngBtn" type="button">Download PNG</button>
+            </div>
+          </div>
+          <p id="fileStatus" class="status">App loads saved tracker from browser cache by default. Use 'Create new CSV' or 'Save changes' to write.</p>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="panel form-panel">
+          <div class="panel-head">
+            <h2>Add or edit a row</h2>
+            <p>Fill the fields below to create a new deadline entry or update an existing one.</p>
+          </div>
+          <form id="rowForm" class="row-form">
+            <input type="hidden" id="rowId" />
+            <label>
+              Conference name
+              <input id="conferenceName" required placeholder="International Conference on ..." />
+            </label>
+            <label>
+              Acronym
+              <input id="conferenceAcronym" placeholder="ICML" />
+            </label>
+            <label>
+              Abstract deadline
+              <input id="abstractDeadline" type="date" />
+            </label>
+            <label>
+              Paper deadline
+              <input id="paperDeadline" type="date" />
+            </label>
+            <label>
+              Notification date
+              <input id="notificationDate" type="date" />
+            </label>
+            <label>
+              Conference dates
+              <input id="conferenceDates" placeholder="Jul 12-18, 2026" />
+            </label>
+            <label>
+              Location
+              <input id="location" placeholder="City, Country" />
+            </label>
+            <label>
+              Submission link
+              <input id="submissionLink" type="url" placeholder="https://..." />
+            </label>
+            <label>
+              Status
+              <select id="status">
+                <option value="Planning">Planning</option>
+                <option value="Writing">Writing</option>
+                <option value="Submitted">Submitted</option>
+                <option value="Accepted">Accepted</option>
+                <option value="Rejected">Rejected</option>
+                <option value="Withdrawn">Withdrawn</option>
+              </select>
+            </label>
+            <label class="notes-field">
+              Notes
+              <textarea id="notes" rows="3" placeholder="Track topics, venue, and reminders"></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="primary" type="submit">Save row</button>
+              <button id="clearFormBtn" type="button">Clear</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel table-panel">
+          <div class="panel-head table-head">
+            <div>
+              <h2>Deadlines</h2>
+              <p id="tableSummary">No rows loaded yet.</p>
+            </div>
+            <input id="searchInput" type="search" placeholder="Filter conferences" />
+          </div>
+          <div class="gantt-panel">
+            <div class="panel-head">
+              <h2>Timeline</h2>
+              <p id="ganttSummary">No timeline data yet.</p>
+            </div>
+            <div class="gantt-controls">
+              <div class="tracker-prefs">
+                <div class="pref-group" role="group" aria-label="Which conferences to show">
+                  <span class="pref-group-title">Show</span>
+                  <label class="pref-toggle" data-tone="planning" title="Conferences not started yet">
+                    <input id="togglePlanning" type="checkbox" />
+                    <span class="pref-toggle-label">Planning</span>
+                    <span id="countPlanning" class="pref-count">0</span>
+                  </label>
+                  <label class="pref-toggle" data-tone="submitted" title="Conferences submitted and awaiting a decision">
+                    <input id="toggleSubmitted" type="checkbox" />
+                    <span class="pref-toggle-label">Submitted</span>
+                    <span id="countSubmitted" class="pref-count">0</span>
+                  </label>
+                  <label class="pref-toggle" data-tone="accepted" title="Conferences with an accepted paper">
+                    <input id="toggleAccepted" type="checkbox" />
+                    <span class="pref-toggle-label">Accepted</span>
+                    <span id="countAccepted" class="pref-count">0</span>
+                  </label>
+                  <span class="pref-divider" aria-hidden="true"></span>
+                  <label class="pref-toggle" data-tone="past" title="Conferences whose dates have all passed">
+                    <input id="togglePast" type="checkbox" />
+                    <span class="pref-toggle-label">Past</span>
+                    <span id="countPast" class="pref-count">0</span>
+                  </label>
+                  <label class="pref-toggle" data-tone="withdrawn" title="Conferences marked as withdrawn">
+                    <input id="toggleWithdrawn" type="checkbox" />
+                    <span class="pref-toggle-label">Withdrawn</span>
+                    <span id="countWithdrawn" class="pref-count">0</span>
+                  </label>
+                  <label class="pref-toggle" data-tone="rejected" title="Conferences marked as rejected">
+                    <input id="toggleRejected" type="checkbox" />
+                    <span class="pref-toggle-label">Rejected</span>
+                    <span id="countRejected" class="pref-count">0</span>
+                  </label>
+                </div>
+                <div class="pref-group" role="group" aria-label="Deadline highlight thresholds">
+                  <span class="pref-group-title">Highlight</span>
+                  <div id="highlightSegment" class="pref-segment" role="radiogroup" aria-label="Which rows get deadline highlighting">
+                    <button type="button" role="radio" data-mode="off" aria-checked="false" title="Never tint rows by deadline proximity">Off</button>
+                    <button type="button" role="radio" data-mode="active" aria-checked="true" title="Only tint rows still being worked on (Planning, Writing)">Active</button>
+                    <button type="button" role="radio" data-mode="all" aria-checked="false" title="Tint every row, including submitted, accepted, rejected and withdrawn">All</button>
+                  </div>
+                  <label class="pref-number" title="Deadlines this close are flagged as critical">
+                    <span class="pref-swatch swatch-critical" aria-hidden="true"></span>
+                    Critical
+                    <input id="criticalDaysInput" type="number" min="0" max="365" step="1" />
+                    <span class="pref-unit">days</span>
+                  </label>
+                  <label class="pref-number" title="Deadlines this close are flagged as approaching">
+                    <span class="pref-swatch swatch-soon" aria-hidden="true"></span>
+                    Soon
+                    <input id="soonDaysInput" type="number" min="0" max="365" step="1" />
+                    <span class="pref-unit">days</span>
+                  </label>
+                  <span class="pref-static" title="Deadlines already in the past">
+                    <span class="pref-swatch swatch-overdue" aria-hidden="true"></span>
+                    Overdue
+                  </span>
+                  <button id="resetPrefsBtn" class="pref-reset" type="button" title="Restore default thresholds and visibility">Reset</button>
+                </div>
+              </div>
+            </div>
+            <div id="ganttViewport" class="gantt-viewport">
+              <div id="ganttChart" class="gantt-chart" aria-label="Conference timeline chart"></div>
+            </div>
+            <div class="gantt-scroll-control">
+              <label class="gantt-slider-label" for="ganttSlider">Scroll timeline</label>
+              <input id="ganttSlider" type="range" min="0" max="0" value="0" step="1" />
+            </div>
+          </div>
+          <div id="tableWrap" class="table-wrap" aria-label="Drop CSV file here or browse to open">
+            <table>
+              <thead>
+                <tr>
+                  <th>Conference</th>
+                  <th>Abstract</th>
+                  <th>Paper</th>
+                  <th>Notif.</th>
+                  <th>Dates</th>
+                  <th>Location</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <template id="emptyRowTemplate">
+      <tr class="empty-row">
+        <td colspan="7">Load a CSV or add your first conference deadline.</td>
+      </tr>
+    </template>
+
+</div>
+
+<script src="{{ '/resources/paper_deadline_tracker/app.js' | relative_url }}?v={{ page.app_script_version }}"></script>

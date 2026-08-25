@@ -1,4 +1,40 @@
 /* // Default light theme */
+:root {
+  --tracker-color-scheme: light;
+  --tracker-panel: rgba(255, 255, 255, 0.96);
+  --tracker-panel-alt: #f7f7f7;
+  --tracker-panel-muted: #efefef;
+  --tracker-border: #dddddd;
+  --tracker-border-strong: #bbbbbb;
+  --tracker-text: #333333;
+  --tracker-muted: #666666;
+  --tracker-heading: #870000;
+  --tracker-input: #ffffff;
+  --tracker-placeholder: #777777;
+  --tracker-button: #111111;
+  --tracker-button-hover: #333333;
+  --tracker-button-border: #111111;
+  --tracker-button-text: #ffffff;
+  --tracker-primary-button: #870000;
+  --tracker-primary-button-hover: #000000;
+  --tracker-selected-text: #333333;
+  --tracker-table-head: #efefef;
+  --tracker-row-hover: #f5f5f5;
+  --tracker-menu: #ffffff;
+  --tracker-status-planning: #c2b07e;
+  --tracker-status-writing: #0067a5;
+  --tracker-status-submitted: #1c39bb;
+  --tracker-status-accepted: #006b60;
+  --tracker-status-rejected: #700060;
+  --tracker-status-withdrawn: #555555;
+  --tracker-row-action-bg: #efefef;
+  --tracker-row-action-hover: #dddddd;
+  --tracker-row-action-text: #333333;
+  --tracker-status-surface: #ffffff;
+  --tracker-status-strength: 35%;
+  --tracker-status-text: #333333;
+}
+
 body {
     background-color: #ffffff;
     color: #333333;

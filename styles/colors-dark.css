@@ -1,3 +1,39 @@
+:root {
+  --tracker-color-scheme: dark;
+  --tracker-panel: rgba(17, 17, 17, 0.96);
+  --tracker-panel-alt: #1f1f1f;
+  --tracker-panel-muted: #232323;
+  --tracker-border: #444444;
+  --tracker-border-strong: #555555;
+  --tracker-text: #dddddd;
+  --tracker-muted: #aaaaaa;
+  --tracker-heading: #ff6b6b;
+  --tracker-input: #111111;
+  --tracker-placeholder: #999999;
+  --tracker-button: #000000;
+  --tracker-button-hover: #222222;
+  --tracker-button-border: #555555;
+  --tracker-button-text: #ffffff;
+  --tracker-primary-button: #870000;
+  --tracker-primary-button-hover: #000000;
+  --tracker-selected-text: #ffffff;
+  --tracker-table-head: #1f1f1f;
+  --tracker-row-hover: #2a2a2a;
+  --tracker-menu: #222222;
+  --tracker-status-planning: #c2b07e;
+  --tracker-status-writing: #0067a5;
+  --tracker-status-submitted: #1c39bb;
+  --tracker-status-accepted: #006b60;
+  --tracker-status-rejected: #700060;
+  --tracker-status-withdrawn: #555555;
+  --tracker-row-action-bg: #333333;
+  --tracker-row-action-hover: #444444;
+  --tracker-row-action-text: #dddddd;
+  --tracker-status-surface: #111111;
+  --tracker-status-strength: 35%;
+  --tracker-status-text: #ffffff;
+}
+
 /* ml_systems */
 .mlsys-dates {  color: #999;}
 
