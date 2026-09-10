@@ -4,7 +4,8 @@ tags: "Decentralized Federated Learning, Gossip Learning, Communication Efficien
 authors: "Navidreza Asadi, Lars Wulfert, Chi Xia, Halil İbrahim Bengü, Hendrik Wöhrle, Wolfgang Kellerer"
 type: "c"
 place: "ACM MobiCom 2026"
-date: "2026/10/28"
+date: "2026/12/28"
+# date: "2026/10/28"
 # status: "a"
 # award: "Best Paper Award"
 # pdf: files\papers\NavidrezaAsadi_MobiCom2026_TinyGist.pdf
