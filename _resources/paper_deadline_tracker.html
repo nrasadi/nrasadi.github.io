@@ -2,8 +2,8 @@
 layout: resource_app
 title: Paper Deadline Tracker
 app_stylesheet: /resources/paper_deadline_tracker/styles.css
-app_stylesheet_version: 11
-app_script_version: 4
+app_stylesheet_version: 12
+app_script_version: 5
 ---
 
 <div class="deadline-tracker-app">
@@ -22,9 +22,9 @@ app_script_version: 4
           <div class="hero-controls">
             <input id="fileInput" class="file-input-hidden" type="file" accept=".csv,text/csv" tabindex="-1" aria-hidden="true" />
             <div class="actions">
-              <button id="openCsvBtn" type="button">Open CSV</button>
+              <button id="openCsvBtn" aria-keyshortcuts="Control+o Meta+o" type="button">Open CSV</button>
               <button id="createCsvBtn" type="button">Create new CSV</button>
-              <button id="saveBtn" type="button" class="primary">Save changes</button>
+              <button id="saveBtn" aria-keyshortcuts="Control+s Meta+s" type="button" class="primary">Save changes</button>
               <button id="downloadBtn" type="button">Download CSV</button>
               <div class="export-group">
                 <button id="exportCalendarBtn" type="button">Export calendar</button>
@@ -38,6 +38,20 @@ app_script_version: 4
               <button id="exportPngBtn" type="button">Download PNG</button>
             </div>
           </div>
+          <details id="keyboardShortcuts" class="keyboard-shortcuts">
+            <summary>Keyboard shortcuts</summary>
+            <dl>
+              <dt><kbd>/</kbd></dt><dd>Focus and select the conference filter</dd>
+              <dt><kbd>Ctrl/Cmd + S</kbd></dt><dd>Save changes to CSV (includes inline edits)</dd>
+              <dt><kbd>Ctrl/Cmd + O</kbd></dt><dd>Open a CSV</dd>
+              <dt><kbd>Ctrl/Cmd + Enter</kbd></dt><dd>Save the row being edited, or the focused add-row form</dd>
+              <dt><kbd>E</kbd></dt><dd>Edit the focused table row, or the first filtered row</dd>
+              <dt><kbd>N</kbd></dt><dd>Focus the add-row form (keeps any draft)</dd>
+              <dt><kbd>Esc</kbd></dt><dd>Close a menu, cancel inline editing, or clear the focused filter</dd>
+              <dt><kbd>?</kbd></dt><dd>Show or hide this reference</dd>
+            </dl>
+            <p>Single-key shortcuts are inactive while typing. Save row before saving the CSV when using the add-row form.</p>
+          </details>
           <p id="fileStatus" class="status">App loads saved tracker from browser cache by default. Use 'Create new CSV' or 'Save changes' to write.</p>
         </div>
       </header>
@@ -110,7 +124,7 @@ app_script_version: 4
               <h2>Deadlines</h2>
               <p id="tableSummary">No rows loaded yet.</p>
             </div>
-            <input id="searchInput" type="search" placeholder="Filter conferences" />
+            <input id="searchInput" aria-label="Filter conferences" aria-keyshortcuts="/" type="search" placeholder="Filter conferences" />
           </div>
           <div class="gantt-panel">
             <div class="panel-head">

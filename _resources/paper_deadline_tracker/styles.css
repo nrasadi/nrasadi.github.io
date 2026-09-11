@@ -1495,3 +1495,32 @@ th:nth-child(6), td:nth-child(6) { padding-left: 6px; }
     width: 48px;
   }
 }
+
+.keyboard-shortcuts {
+  margin-top: 12px;
+  font-size: 0.85rem;
+}
+
+.keyboard-shortcuts summary {
+  cursor: pointer;
+}
+
+.keyboard-shortcuts dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 16px;
+}
+
+.keyboard-shortcuts dd {
+  margin: 0;
+}
+
+.keyboard-shortcuts kbd {
+  font: inherit;
+  font-weight: 600;
+}
+
+tr[data-row-id]:focus-visible {
+  outline: 2px solid var(--accent, #3686ff);
+  outline-offset: -2px;
+}

@@ -1162,6 +1162,7 @@ function ensureStatusMenu() {
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && isStatusMenuOpen()) {
+      event.preventDefault();
       const anchor = statusMenu.anchor;
       closeStatusMenu();
       anchor?.focus({ preventScroll: true });
@@ -1806,6 +1807,7 @@ function createGroupSeparatorRow(group, count) {
 function createTableRow(row, demoted = false) {
   const tr = document.createElement("tr");
   tr.dataset.rowId = row.id;
+  tr.tabIndex = 0;
 
   if (demoted) {
     tr.classList.add("row-inactive", `row-group-${getRowGroup(row)}`);
@@ -2964,7 +2966,90 @@ async function onSave() {
   }
 }
 
+function handleKeyboardShortcut(event) {
+  if (event.defaultPrevented || event.isComposing || event.repeat || event.altKey) return;
+  const target = event.target;
+  const typing = target instanceof Element && (
+    target.closest("input, textarea, select") || target.isContentEditable
+  );
+  const key = event.key.toLowerCase();
+  const command = event.ctrlKey || event.metaKey;
+  const focusRow = (rowId) => {
+    elements.tableBody.querySelector(`[data-row-id="${CSS.escape(rowId)}"]`)?.focus();
+  };
+
+  if (command) {
+    if (event.shiftKey) return;
+    if (key === "s" || key === "o") {
+      event.preventDefault();
+      (key === "s" ? elements.saveBtn : elements.openCsvBtn).click();
+    } else if (key === "enter") {
+      if (state.editingRowId) {
+        event.preventDefault();
+        const rowId = state.editingRowId;
+        commitInlineEdit(rowId);
+        if (!state.editingRowId) focusRow(rowId);
+      } else if (elements.rowForm.contains(target)) {
+        event.preventDefault();
+        elements.rowForm.requestSubmit();
+      }
+    }
+    return;
+  }
+
+  if (key === "escape") {
+    const calendarMenu = document.getElementById("exportCalendarMenu");
+    if (isStatusMenuOpen()) {
+      event.preventDefault();
+      const anchor = statusMenu.anchor;
+      closeStatusMenu();
+      anchor?.focus();
+    } else if (calendarMenu && !calendarMenu.hidden) {
+      event.preventDefault();
+      calendarMenu.hidden = true;
+      elements.exportCalendarBtn.focus();
+    } else if (target === elements.searchInput) {
+      event.preventDefault();
+      elements.searchInput.value = "";
+      elements.searchInput.dispatchEvent(new Event("input", { bubbles: true }));
+    } else if (state.editingRowId) {
+      event.preventDefault();
+      const rowId = state.editingRowId;
+      cancelInlineEdit();
+      focusRow(rowId);
+    }
+    return;
+  }
+
+  if (typing) return;
+  if (key === "/" && !event.shiftKey) {
+    event.preventDefault();
+    elements.searchInput.focus();
+    elements.searchInput.select();
+  } else if (key === "n" && !event.shiftKey) {
+    event.preventDefault();
+    elements.conferenceName.focus();
+  } else if (key === "e" && !event.shiftKey) {
+    const row = target.closest?.("tr[data-row-id]") || elements.tableBody.querySelector("tr[data-row-id]");
+    if (row) {
+      event.preventDefault();
+      // Keep an existing inline draft instead of replacing it with another editor.
+      if (state.editingRowId) {
+        elements.tableBody.querySelector(`[data-row-id="${CSS.escape(state.editingRowId)}"] [data-field="conferenceName"]`)?.focus();
+      } else {
+        startInlineEdit(row.dataset.rowId);
+      }
+    }
+  } else if (key === "?") {
+    event.preventDefault();
+    const help = document.getElementById("keyboardShortcuts");
+    help.open = !help.open;
+    help.querySelector("summary").focus();
+  }
+}
+
 function wireEvents() {
+  document.addEventListener("keydown", handleKeyboardShortcut);
   // The native file input is hidden so the picker can be a button matching the rest of the bar.
   elements.openCsvBtn?.addEventListener("click", () => {
     elements.fileInput.click();
