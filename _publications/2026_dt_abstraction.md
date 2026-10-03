@@ -6,6 +6,7 @@ type: "c"
 place: "17th International Conference on Network of the Future (NoF 2026)"
 date: "2026/10/01"
 # status: "a"
+award: "Best Paper Award"
 # pdf: ""
 # link: ""
 bibtex: |
