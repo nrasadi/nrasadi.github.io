@@ -8,17 +8,17 @@ date: "2025/03/30"
 # status: "a"
 award: "Best Poster Award"
 pdf: https://2025.eurosys.org/posters/final/eurosys25posters-final13.pdf
-link: "https://2025.eurosys.org/posters/final/eurosys25posters-final13.pdf"
-bibtex: "
-@article{beyondlayers2025,   
-  title={Beyond Layers: Container Registries for Files Distribution and On-Demand Image Partitioning},
-  author={Bartolomeo, Giovanni and Asadi, Navidreza and Kellerer, Wolfgang and Ott, Jörg and Mohan, Nitinder},
-  conference={ACM EuroSys 2025},
-  year={2025},
-  publisher={Association for Computing Machinery},
-  url={https://2025.eurosys.org/posters/final/eurosys25posters-final13.pdf},
-}
-"
+link: "https://2dfs.github.io/"
+code: "https://github.com/2dfs"
+bibtex: |
+  @misc{beyondlayers2025,
+    author       = {Bartolomeo, Giovanni and Asadi, Navidreza and Kellerer, Wolfgang and Ott, J{\"o}rg and Mohan, Nitinder},
+    title        = {Beyond Layers: Container Registries for Files Distribution and On-Demand Image Partitioning},
+    howpublished = {ACM European Conference on Computer Systems (EuroSys '25)},
+    year         = {2025},
+    month        = mar,
+    url          = {https://2025.eurosys.org/posters/final/eurosys25posters-final13.pdf}
+  }
 misc:
     - title: "* Equal Contribution"
 ---
